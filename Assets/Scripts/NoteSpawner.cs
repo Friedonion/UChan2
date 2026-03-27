@@ -47,7 +47,8 @@ public class NoteSpawner : MonoBehaviour
         {
             noteScript.hp = 5; // 5번 부쳐야 함
             noteObj.transform.localScale *= 2.0f; // 크기를 2배로
-            noteObj.GetComponent<Renderer>().material.color = Color.magenta; // 연타 노트는 보라색
+            noteObj.GetComponent<Renderer>().material.color = new Color(1, 0, 1, 1); // 연타 노트는 보라색
+            noteScript.type = NoteType.Fanning;
         }
         
         // 3. 임시 시각화 도구 생성
