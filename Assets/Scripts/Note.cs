@@ -20,7 +20,8 @@ public class Note : MonoBehaviour
     private bool isMissed = false;
 
     private float lastHitTime = 0f;
-    private float hitCooldown = 0.00f; // 보스 타격 시 연타 방지 쿨타임
+    private float hitCooldown = 0.00f; 
+    private Vector3 lastHitDirection = Vector3.zero; // 보스 왕복 판정용
 
     void Start()
     {
@@ -73,7 +74,7 @@ public class Note : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(  speed * Time.deltaTime * Vector3.back);
+        transform.Translate(speed * Time.deltaTime * Vector3.back);
 
         if (!isMissed && transform.position.z < -1.0f)
         {
@@ -107,48 +108,47 @@ public class Note : MonoBehaviour
     void CheckHitSuccess(FanSystem fan)
     {
         float currentSpeed = fan.Velocity.magnitude;
-        if (currentSpeed < minSwingSpeed)
-        {
-            return;
-        }
+        if (currentSpeed < minSwingSpeed) return;
 
         Vector3 moveDir = fan.Velocity.normalized;
-        
-        // Slashing과 Boss는 축(Axis)만 맞으면 되므로 절댓값 사용
-        float directionMatch = (type == NoteType.Slashing || type == NoteType.Boss) 
-            ? Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) 
-            : Vector3.Dot(moveDir, targetDirection);
-
         bool isCorrectAction = false;
-        bool isCorrectDirection = directionMatch > 0.5f; // 60도 범위
+        bool isCorrectDirection = false;
 
+        // 타입별 판정 로직 분리
         switch (type)
         {
             case NoteType.Slashing:
+                // 축(Axis) 판정: 양방향 허용
+                if (Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) > 0.5f) isCorrectDirection = true;
                 // 날(Edge) 판정
-                float slashDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
-                if (slashDot < 0.4f) isCorrectAction = true;
+                if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) < 0.4f) isCorrectAction = true;
                 break;
+
             case NoteType.Fanning:
+                // 정방향 판정만 허용
+                if (Vector3.Dot(moveDir, targetDirection) > 0.5f) isCorrectDirection = true;
                 // 면(Face) 판정
-                float fanDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
-                if (fanDot > 0.6f) isCorrectAction = true;
+                if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) > 0.6f) isCorrectAction = true;
                 break;
+
             case NoteType.Hit:
-                isCorrectAction = true; 
-                isCorrectDirection = true;
+                isCorrectDirection = true; // 방향 무관
+                isCorrectAction = true;    // 액션 무관 (접혀있는지는 OnTriggerStay에서 체크됨)
                 break;
+
             case NoteType.Boss:
-                // 보스는 면(Face)으로 쳐야 함
-                float bossFaceDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
-                if (bossFaceDot > 0.6f)
+                // 면(Face) 판정 우선 체크
+                if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) > 0.6f) isCorrectAction = true;
+
+                if (lastHitDirection == Vector3.zero)
                 {
-                    // 왕복 판정: 첫 타격이거나, 이전 타격 방향과 반대일 때만 인정
-                    if (lastHitDirection == Vector3.zero || Vector3.Dot(moveDir, lastHitDirection) < -0.5f)
-                    {
-                        isCorrectAction = true;
-                        lastHitDirection = moveDir; // 방향 업데이트
-                    }
+                    // [첫 타격] 축(Axis)만 맞으면 어느 쪽이든 인정
+                    if (Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) > 0.5f) isCorrectDirection = true;
+                }
+                else
+                {
+                    // [이후 타격] 반드시 이전 타격의 반대 방향이어야 함
+                    if (Vector3.Dot(moveDir, lastHitDirection) < -0.5f) isCorrectDirection = true;
                 }
                 break;
         }
@@ -156,8 +156,17 @@ public class Note : MonoBehaviour
         if (isCorrectAction && isCorrectDirection)
         {
             hp--; 
-            lastHitTime = Time.time; // 히트 시점 기록
-            if (type == NoteType.Boss) transform.localScale *= 0.95f;
+            lastHitTime = Time.time;
+            lastHitDirection = moveDir; // 현재 방향 저장 (왕복 판정용)
+
+            // 타격 피드백 (사운드 및 진동)
+            if (GameManager.Instance != null) GameManager.Instance.PlayHitSound(type);
+            
+            // 타입별로 진동 세기 차별화 가능 (옵션)
+            float hapticIntensity = (type == NoteType.Boss) ? 0.8f : 0.5f; 
+            if (fan != null) fan.TriggerHaptic(hapticIntensity);
+
+            if (type == NoteType.Boss && bossIndicator) bossIndicator.transform.localScale *= 0.65f;
 
             if (hp <= 0)
             {

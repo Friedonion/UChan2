@@ -1,10 +1,36 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR; // 안정적인 햅틱을 위해 추가
 
 public class FanSystem : MonoBehaviour
 {
     [Header("Input Settings")]
     public InputActionReference toggleAction; 
+    public InputActionReference hapticAction; // 진동용 액션 (참조용으로 유지)
+
+    [Header("Haptic Settings")]
+    public float defaultHapticIntensity = 0.5f;
+    public float defaultHapticDuration = 0.1f;
+
+    public void TriggerHaptic(float intensity = -1f, float duration = -1f)
+    {
+        float finalIntensity = (intensity < 0) ? defaultHapticIntensity : intensity;
+        float finalDuration = (duration < 0) ? defaultHapticDuration : duration;
+
+        // 오브젝트 이름이나 액션 이름을 통해 어느 손인지 판별합니다.
+        // 보통 "Left Hand", "Right Hand" 등으로 이름이 지어지기 때문입니다.
+        bool isLeft = transform.name.ToLower().Contains("left") || 
+                      (hapticAction != null && hapticAction.name.ToLower().Contains("left"));
+        
+        XRNode node = isLeft ? XRNode.LeftHand : XRNode.RightHand;
+        
+        // 유니티 표준 XR 장치에서 해당 노드의 장치를 찾아 진동을 보냅니다.
+        var device = InputDevices.GetDeviceAtXRNode(node);
+        if (device.isValid)
+        {
+            device.SendHapticImpulse(0u, finalIntensity, finalDuration);
+        }
+    }
 
     [Header("Fan Visual Settings")]
     [Range(3, 20)]
