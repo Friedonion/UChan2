@@ -60,7 +60,7 @@ public class NoteSpawner : MonoBehaviour
         if (rand < 0.1f) // 10% 확률로 보스(LR) 등장
         {
             noteScript.type = NoteType.Boss;
-            noteScript.hp = 3; // 보스는 10번 타격 필요
+            noteScript.hp = 6; // 왕복 3회 (편도 6회) 타격 필요
             noteObj.transform.localScale *= 2.5f; 
         }
         else if (rand < 0.4f) // 30% 확률로 부채질(Fanning)

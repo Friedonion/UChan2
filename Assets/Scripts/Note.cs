@@ -113,7 +113,12 @@ public class Note : MonoBehaviour
         }
 
         Vector3 moveDir = fan.Velocity.normalized;
-        float directionMatch = ((type == NoteType.Slashing)? Mathf.Abs(Vector3.Dot(moveDir, targetDirection)): Vector3.Dot(moveDir, targetDirection));
+        
+        // Slashing과 Boss는 축(Axis)만 맞으면 되므로 절댓값 사용
+        float directionMatch = (type == NoteType.Slashing || type == NoteType.Boss) 
+            ? Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) 
+            : Vector3.Dot(moveDir, targetDirection);
+
         bool isCorrectAction = false;
         bool isCorrectDirection = directionMatch > 0.5f; // 60도 범위
 
@@ -134,8 +139,17 @@ public class Note : MonoBehaviour
                 isCorrectDirection = true;
                 break;
             case NoteType.Boss:
-                fanDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
-                if (fanDot > 0.6f) isCorrectAction = true;
+                // 보스는 면(Face)으로 쳐야 함
+                float bossFaceDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
+                if (bossFaceDot > 0.6f)
+                {
+                    // 왕복 판정: 첫 타격이거나, 이전 타격 방향과 반대일 때만 인정
+                    if (lastHitDirection == Vector3.zero || Vector3.Dot(moveDir, lastHitDirection) < -0.5f)
+                    {
+                        isCorrectAction = true;
+                        lastHitDirection = moveDir; // 방향 업데이트
+                    }
+                }
                 break;
         }
 
