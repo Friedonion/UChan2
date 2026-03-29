@@ -1,21 +1,26 @@
 using UnityEngine;
 
-public enum NoteType { Slashing, Fanning, Normal }
+public enum NoteType { Slashing, Fanning, Hit, Boss }
 
 public class Note : MonoBehaviour
 {
-    public NoteType type = NoteType.Normal;
+    public NoteType type = NoteType.Hit;
+    public Vector3 targetDirection = Vector3.right; // 기본값: 왼쪽에서 오른쪽으로 베기
     public float speed = 3.0f;
     public float lifeTime = 5.0f;
 
     [Header("Visual Elements")]
-    public GameObject slashIndicator; // 베기용 선
-    public GameObject fanIndicator;   // 부치기용 화살표
-    public GameObject normalIndicator; // 일반용 점
+    public GameObject slashIndicator; 
+    public GameObject fanIndicator;   
+    public GameObject hitIndicator; 
+    public GameObject bossIndicator;
 
-    public float minSwingSpeed = 1.0f; 
-    public int hp = 1; // 노트의 체력 (연타 노트용)
+    public float minSwingSpeed = 0.1f; 
+    public int hp = 1; 
     private bool isMissed = false;
+
+    private float lastHitTime = 0f;
+    private float hitCooldown = 0.00f; // 보스 타격 시 연타 방지 쿨타임
 
     void Start()
     {
@@ -23,95 +28,133 @@ public class Note : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    void SetupVisuals()
+    public void SetupVisuals()
     {
-        // 모든 인디케이터를 일단 끕니다.
         if (slashIndicator) slashIndicator.SetActive(false);
         if (fanIndicator) fanIndicator.SetActive(false);
-        if (normalIndicator) normalIndicator.SetActive(false);
+        if (hitIndicator) hitIndicator.SetActive(false);
+        if (bossIndicator) bossIndicator.SetActive(false);
 
-        // 타입에 따라 적절한 인디케이터를 켜고 색상을 바꿉니다.
-        Renderer renderer = GetComponent<Renderer>();
-        
+        // 목표 방향에 맞춰 인디케이터만 회전시킵니다.
+        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, Vector3.Cross(Vector3.forward,targetDirection));
+
         switch (type)
         {
             case NoteType.Slashing:
-                if (slashIndicator) slashIndicator.SetActive(true);
-                if (renderer) renderer.material.color = Color.red; // 베기는 빨간색
+                if (slashIndicator)
+                {
+                    slashIndicator.SetActive(true);
+                    slashIndicator.transform.localRotation = targetRotation;
+                }
                 break;
             case NoteType.Fanning:
-                if (fanIndicator) fanIndicator.SetActive(true);
-                if (renderer) renderer.material.color = Color.blue; // 부치기는 파란색
+                if (fanIndicator)
+                {
+                    fanIndicator.SetActive(true);
+                    fanIndicator.transform.localRotation = targetRotation;
+                }
                 break;
-            case NoteType.Normal:
-                if (normalIndicator) normalIndicator.SetActive(true);
-                if (renderer) renderer.material.color = Color.white; // 일반은 하얀색
+            case NoteType.Hit:
+                if (hitIndicator)
+                {
+                    hitIndicator.SetActive(true);
+                    hitIndicator.transform.localRotation = targetRotation;
+                }
+                break;
+            case NoteType.Boss:
+                if (bossIndicator)
+                {
+                    bossIndicator.SetActive(true);
+                    bossIndicator.transform.localRotation = targetRotation;
+                }
                 break;
         }
     }
 
     void Update()
     {
-        transform.Translate(Vector3.back * speed * Time.deltaTime);
+        transform.Translate(  speed * Time.deltaTime * Vector3.back);
+
+        if (!isMissed && transform.position.z < -1.0f)
+        {
+            isMissed = true;
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.NoteMissed();
+            }
+            Destroy(gameObject, 0.1f);
+        }
     }
 
-    private void OnTriggerEnter(Collider foreign)
+    private void OnTriggerStay(Collider foreign)
     {
+        if (isMissed) return;
+        if (Time.time < lastHitTime + hitCooldown) return;
+
         FanSystem fan = foreign.GetComponentInParent<FanSystem>();
-        if (fan != null && fan.IsOpened)
+        if (fan != null)
         {
-            CheckHitSuccess(fan);
+            // 판정 조건: Hit 타입은 부채가 접혀 있어야 함, 나머지는 펴져 있어야 함
+            bool fanStateCorrect = (type == NoteType.Hit) ? !fan.IsOpened : fan.IsOpened;
+            
+            if (fanStateCorrect)
+            {
+                CheckHitSuccess(fan);
+            }
         }
     }
 
     void CheckHitSuccess(FanSystem fan)
     {
-        // 휘두르는 속도가 너무 느리면 무시
-        if (fan.Velocity.magnitude < minSwingSpeed) return;
+        float currentSpeed = fan.Velocity.magnitude;
+        if (currentSpeed < minSwingSpeed)
+        {
+            return;
+        }
 
         Vector3 moveDir = fan.Velocity.normalized;
-        Vector3 fanNormal = fan.FanNormal;
-        float alignment = Mathf.Abs(Vector3.Dot(moveDir, fanNormal));
-
-        bool isSuccess = false;
+        float directionMatch = ((type == NoteType.Slashing)? Mathf.Abs(Vector3.Dot(moveDir, targetDirection)): Vector3.Dot(moveDir, targetDirection));
+        bool isCorrectAction = false;
+        bool isCorrectDirection = directionMatch > 0.5f; // 60도 범위
 
         switch (type)
         {
             case NoteType.Slashing:
-                if (alignment < 0.4f) isSuccess = true; 
+                // 날(Edge) 판정
+                float slashDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
+                if (slashDot < 0.4f) isCorrectAction = true;
                 break;
             case NoteType.Fanning:
-                if (alignment > 0.6f) isSuccess = true; 
+                // 면(Face) 판정
+                float fanDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
+                if (fanDot > 0.6f) isCorrectAction = true;
                 break;
-            case NoteType.Normal:
-                isSuccess = true;
+            case NoteType.Hit:
+                isCorrectAction = true; 
+                isCorrectDirection = true;
+                break;
+            case NoteType.Boss:
+                fanDot = Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal));
+                if (fanDot > 0.6f) isCorrectAction = true;
                 break;
         }
 
-        if (isSuccess)
+        if (isCorrectAction && isCorrectDirection)
         {
-            hp--; // 체력 감소
-            
-            // 시각적 피드백: 맞을 때마다 조금씩 작아짐
-            transform.localScale *= 0.85f;
+            hp--; 
+            lastHitTime = Time.time; // 히트 시점 기록
+            if (type == NoteType.Boss) transform.localScale *= 0.95f;
 
             if (hp <= 0)
             {
                 if (GameManager.Instance != null)
-                {
                     GameManager.Instance.AddScore(type, fan.Velocity.magnitude);
-                }
                 Destroy(gameObject);
             }
             else
             {
-                Debug.Log($"🤜 히트! (남은 횟수: {hp})");
+                Debug.Log($"🤜 정확한 히트! (남은 HP: {hp})");
             }
         }
-    }
-
-    void OnDestroy()
-    {
-        // Miss 판정은 플레이어 뒤쪽의 트리거 영역에서 처리하는 것을 추천합니다.
     }
 }
