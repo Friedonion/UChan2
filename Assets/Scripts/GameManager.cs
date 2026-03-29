@@ -14,14 +14,25 @@ public class GameManager : MonoBehaviour
     public int pointsPerNote = 100;
     public int damagePerMiss = 10;
 
+    [Header("Audio Settings")]
+    public AudioClip slashSound; 
+    public AudioClip hitSound; 
+    public AudioClip fanSound; 
+    private AudioSource audioSource;
+
     void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
         else Destroy(gameObject);
     }
 
     public void AddScore(NoteType type, float velocity)
     {
+        // AddScore에서는 더 이상 PlayHitSound를 호출하지 않고 Note.cs에서 직접 호출하도록 함
         // 속도에 비례해서 가산점 부여 (최대 1.5배)
         float speedBonus = Mathf.Clamp(velocity / 5f, 1f, 1.5f);
         int finalPoints = Mathf.RoundToInt(pointsPerNote * speedBonus);
@@ -30,6 +41,32 @@ public class GameManager : MonoBehaviour
         combo++;
         
         Debug.Log($"✨ HIT! 점수: {score} | 콤보: {combo} | 체력: {health}");
+    }
+
+    public void PlayHitSound(NoteType type)
+    {
+        if (audioSource == null) return;
+
+        AudioClip clipToPlay = null;
+
+        switch (type)
+        {
+            case NoteType.Slashing:
+                clipToPlay = slashSound;
+                break;
+            case NoteType.Hit:
+                clipToPlay = hitSound;
+                break;
+            case NoteType.Fanning:
+            case NoteType.Boss:
+                clipToPlay = fanSound;
+                break;
+        }
+
+        if (clipToPlay != null)
+        {
+            audioSource.PlayOneShot(clipToPlay);
+        }
     }
 
     public void NoteMissed()
