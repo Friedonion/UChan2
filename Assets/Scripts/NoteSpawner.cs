@@ -3,8 +3,24 @@ using UnityEngine;
 public class NoteSpawner : MonoBehaviour
 {
     public GameObject notePrefab;
+    
+    [Header("Note Models")]
+    public GameObject slashModel;    // 기본 베기 모델 (회전하여 사용)
+    public GameObject fanningModel;  // 부채질 모델
+    public GameObject hitModel;      // 타격 모델 (접기 전용)
+    public GameObject bossModel;     // 보스 모델 (LR)
+
     public float spawnInterval = 2.0f;
     private float timer;
+
+    private Vector3[] possibleDirections = new Vector3[]
+    {
+        Vector3.up, Vector3.down, Vector3.left, Vector3.right,
+        (Vector3.up + Vector3.left).normalized,
+        (Vector3.up + Vector3.right).normalized,
+        (Vector3.down + Vector3.left).normalized,
+        (Vector3.down + Vector3.right).normalized
+    };
 
     void Update()
     {
@@ -20,7 +36,6 @@ public class NoteSpawner : MonoBehaviour
     {
         GameObject noteObj;
         
-        // 1. 노트 기본형 생성
         if (notePrefab != null)
         {
             noteObj = Instantiate(notePrefab, transform.position, Quaternion.identity);
@@ -38,47 +53,88 @@ public class NoteSpawner : MonoBehaviour
             rb.isKinematic = true;
         }
 
-        // 2. 노트 타입 랜덤 지정
         Note noteScript = noteObj.GetComponent<Note>();
-        noteScript.type = (NoteType)Random.Range(0, 3);
         
-        // 추가: 20% 확률로 연타 노트 생성
-        if (Random.value < 0.2f)
+        // 1. 노트 타입 결정
+        float rand = Random.value;
+        if (rand < 0.1f) // 10% 확률로 보스(LR) 등장
         {
-            noteScript.hp = 5; // 5번 부쳐야 함
-            noteObj.transform.localScale *= 2.0f; // 크기를 2배로
-            noteObj.GetComponent<Renderer>().material.color = new Color(1, 0, 1, 1); // 연타 노트는 보라색
+            noteScript.type = NoteType.Boss;
+            noteScript.hp = 3; // 보스는 10번 타격 필요
+            noteObj.transform.localScale *= 2.5f; 
+        }
+        else if (rand < 0.4f) // 30% 확률로 부채질(Fanning)
+        {
             noteScript.type = NoteType.Fanning;
         }
+        else if (rand < 0.7f) // 30% 확률로 베기(Slashing)
+        {
+            noteScript.type = NoteType.Slashing;
+        }
+        else // 30% 확률로 타격(Hit - 접기 전용)
+        {
+            noteScript.type = NoteType.Hit;
+        }
         
-        // 3. 임시 시각화 도구 생성
-        CreateTemporaryIndicator(noteScript);
+        // 2. 목표 방향 지정 (랜덤 설정 복구)
+        noteScript.targetDirection = possibleDirections[Random.Range(0, possibleDirections.Length)];
+        
+        // 3. 모델 기반 시각화 생성
+        CreateNoteVisuals(noteScript);
     }
 
-    void CreateTemporaryIndicator(Note note)
+    void CreateNoteVisuals(Note note)
     {
-        // 베기용 (빨간색 얇은 선)
-        GameObject line = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        line.transform.SetParent(note.transform);
-        line.transform.localPosition = new Vector3(0, 0, -0.16f);
-        line.transform.localScale = new Vector3(0.8f, 0.1f, 0.1f);
-        line.GetComponent<Renderer>().material.color = Color.black;
-        note.slashIndicator = line;
+        foreach (Transform child in note.transform)
+        {
+            if (child.name.Contains("Visual")) Destroy(child.gameObject);
+        }
 
-        // 부치기용 (파란색 화살표 모양 - 삼각형 대신 작은 큐브 조합)
-        GameObject arrow = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        arrow.transform.SetParent(note.transform);
-        arrow.transform.localPosition = new Vector3(0, 0, -0.16f);
-        arrow.transform.localScale = new Vector3(0.3f, 0.3f, 0.1f);
-        arrow.GetComponent<Renderer>().material.color = Color.cyan;
-        note.fanIndicator = arrow;
+        GameObject visualModel = null;
 
-        // 일반용 (하얀색 점)
-        GameObject dot = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        dot.transform.SetParent(note.transform);
-        dot.transform.localPosition = new Vector3(0, 0, -0.16f);
-        dot.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        dot.GetComponent<Renderer>().material.color = Color.grey;
-        note.normalIndicator = dot;
+        switch (note.type)
+        {
+            case NoteType.Slashing:
+                visualModel = slashModel;
+                if (visualModel)
+                {
+                    GameObject obj = Instantiate(visualModel, note.transform);
+                    obj.name = "Visual_Slashing";
+                    note.slashIndicator = obj;
+                }
+                break;
+
+            case NoteType.Fanning:
+                visualModel = fanningModel;
+                if (visualModel)
+                {
+                    GameObject obj = Instantiate(visualModel, note.transform);
+                    obj.name = "Visual_Fanning";
+                    note.fanIndicator = obj;
+                }
+                break;
+
+            case NoteType.Hit:
+                visualModel = hitModel;
+                if (visualModel)
+                {
+                    GameObject obj = Instantiate(visualModel, note.transform);
+                    obj.name = "Visual_Hit";
+                    note.hitIndicator = obj;
+                }
+                break;
+
+            case NoteType.Boss:
+                visualModel = bossModel;
+                if (visualModel)
+                {
+                    GameObject obj = Instantiate(visualModel, note.transform);
+                    obj.name = "Visual_Boss";
+                    note.bossIndicator = obj;
+                }
+                break;
+        }
+
+        note.SetupVisuals();
     }
 }
