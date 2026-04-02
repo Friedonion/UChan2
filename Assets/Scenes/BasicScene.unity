@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleAction: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  hapticAction: {fileID: 0}
+  defaultHapticIntensity: 0.5
+  defaultHapticDuration: 0.1
   ribCount: 8
   maxOpenAngle: 130
   ribLength: 0.35
@@ -304,6 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 331028916}
+  - component: {fileID: 331028917}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -326,6 +330,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331028917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331028915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d593fe1b2a6662458a58e84af853d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  combo: 0
+  health: 100
+  maxHealth: 100
+  pointsPerNote: 100
+  damagePerMiss: 10
+  slashSound: {fileID: 8300000, guid: 349450939aa28b34886f783d3f4188c5, type: 3}
+  hitSound: {fileID: 8300000, guid: 8635ef199b55a1c41a29cbde7dcdd9ad, type: 3}
+  fanSound: {fileID: 8300000, guid: cd9923a284cfe3649ab67daee44401f3, type: 3}
 --- !u!1001 &441087506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -662,7 +687,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613947e0cb941a8498662026dd20ad03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 4360472495821500898, guid: bd5852460865e49409e8cf3ed2ada5f5, type: 3}
+  slashModel: {fileID: 919132149155446097, guid: d4ac680410302954ba5803b87201b290, type: 3}
+  fanningModel: {fileID: 919132149155446097, guid: 6eab44dc5be81b343873c8e88c652443, type: 3}
+  hitModel: {fileID: 919132149155446097, guid: 3a7c2f2e95778604a9872ae363a5fd24, type: 3}
+  bossModel: {fileID: 919132149155446097, guid: ad7ee1298c1bb8b4fb71e9c0444f6f46, type: 3}
   spawnInterval: 2
 --- !u!4 &1981672585
 Transform:
