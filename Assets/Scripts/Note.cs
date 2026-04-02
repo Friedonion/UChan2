@@ -5,9 +5,14 @@ public enum NoteType { Slashing, Fanning, Hit, Boss }
 public class Note : MonoBehaviour
 {
     public NoteType type = NoteType.Hit;
-    public Vector3 targetDirection = Vector3.right; // 기본값: 왼쪽에서 오른쪽으로 베기
-    public float speed = 3.0f;
-    public float lifeTime = 5.0f;
+    public Vector3 targetDirection = Vector3.right;
+    
+    [Header("Movement Settings")]
+    private float spawnZ;
+    private float hitZ = 0f;
+    private float hitTime;
+    private float travelTime;
+    private bool initialized = false;
 
     [Header("Visual Elements")]
     public GameObject slashIndicator; 
@@ -21,12 +26,21 @@ public class Note : MonoBehaviour
 
     private float lastHitTime = 0f;
     private float hitCooldown = 0.00f; 
-    private Vector3 lastHitDirection = Vector3.zero; // 보스 왕복 판정용
+    private Vector3 lastHitDirection = Vector3.zero;
 
-    void Start()
+    public void Initialize(NoteType type, Vector3 direction, float hitTime, float travelTime, float spawnZ)
     {
+        this.type = type;
+        this.targetDirection = direction;
+        this.hitTime = hitTime;
+        this.travelTime = travelTime;
+        this.spawnZ = spawnZ;
+        
+        if (type == NoteType.Boss) hp = 3;
+        else hp = 1;
+
         SetupVisuals();
-        Destroy(gameObject, lifeTime);
+        initialized = true;
     }
 
     public void SetupVisuals()
@@ -36,72 +50,48 @@ public class Note : MonoBehaviour
         if (hitIndicator) hitIndicator.SetActive(false);
         if (bossIndicator) bossIndicator.SetActive(false);
 
-        // 목표 방향에 맞춰 인디케이터만 회전시킵니다.
-        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, Vector3.Cross(Vector3.forward,targetDirection));
+        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, Vector3.Cross(Vector3.forward, targetDirection));
 
         switch (type)
         {
-            case NoteType.Slashing:
-                if (slashIndicator)
-                {
-                    slashIndicator.SetActive(true);
-                    slashIndicator.transform.localRotation = targetRotation;
-                }
-                break;
-            case NoteType.Fanning:
-                if (fanIndicator)
-                {
-                    fanIndicator.SetActive(true);
-                    fanIndicator.transform.localRotation = targetRotation;
-                }
-                break;
-            case NoteType.Hit:
-                if (hitIndicator)
-                {
-                    hitIndicator.SetActive(true);
-                    hitIndicator.transform.localRotation = targetRotation;
-                }
-                break;
-            case NoteType.Boss:
-                if (bossIndicator)
-                {
-                    bossIndicator.SetActive(true);
-                    bossIndicator.transform.localRotation = targetRotation;
-                }
-                break;
+            case NoteType.Slashing: if (slashIndicator) { slashIndicator.SetActive(true); slashIndicator.transform.localRotation = targetRotation; } break;
+            case NoteType.Fanning: if (fanIndicator) { fanIndicator.SetActive(true); fanIndicator.transform.localRotation = targetRotation; } break;
+            case NoteType.Hit: if (hitIndicator) { hitIndicator.SetActive(true); hitIndicator.transform.localRotation = targetRotation; } break;
+            case NoteType.Boss: if (bossIndicator) { bossIndicator.SetActive(true); bossIndicator.transform.localRotation = targetRotation; } break;
         }
     }
 
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime * Vector3.back);
+        if (!initialized) return;
 
-        if (!isMissed && transform.position.z < -1.0f)
+        // 시간 기반 위치 계산 (Beat Saber 방식)
+        float currentTime = (float)AudioSettings.dspTime;
+        float spawnTime = hitTime - travelTime;
+        float progress = (currentTime - spawnTime) / travelTime;
+
+        float currentZ = Mathf.Lerp(spawnZ, hitZ, progress);
+        transform.position = new Vector3(transform.position.x, transform.position.y, currentZ);
+
+        // 판정선을 지나쳤을 때 (progress > 1.0f 면 hitZ를 넘은 것)
+        if (!isMissed && progress > 1.1f)
         {
             isMissed = true;
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.NoteMissed();
-            }
+            if (GameManager.Instance != null) GameManager.Instance.NoteMissed();
             Destroy(gameObject, 0.1f);
         }
     }
 
     private void OnTriggerStay(Collider foreign)
     {
-        if (isMissed) return;
+        if (isMissed || !initialized) return;
         if (Time.time < lastHitTime + hitCooldown) return;
 
         FanSystem fan = foreign.GetComponentInParent<FanSystem>();
         if (fan != null)
         {
-            // 판정 조건: Hit 타입은 부채가 접혀 있어야 함, 나머지는 펴져 있어야 함
             bool fanStateCorrect = (type == NoteType.Hit) ? !fan.IsOpened : fan.IsOpened;
-            
-            if (fanStateCorrect)
-            {
-                CheckHitSuccess(fan);
-            }
+            if (fanStateCorrect) CheckHitSuccess(fan);
         }
     }
 
@@ -114,42 +104,24 @@ public class Note : MonoBehaviour
         bool isCorrectAction = false;
         bool isCorrectDirection = false;
 
-        // 타입별 판정 로직 분리
         switch (type)
         {
             case NoteType.Slashing:
-                // 축(Axis) 판정: 양방향 허용
                 if (Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) > 0.5f) isCorrectDirection = true;
-                // 날(Edge) 판정
                 if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) < 0.4f) isCorrectAction = true;
                 break;
-
             case NoteType.Fanning:
-                // 정방향 판정만 허용
                 if (Vector3.Dot(moveDir, targetDirection) > 0.5f) isCorrectDirection = true;
-                // 면(Face) 판정
                 if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) > 0.6f) isCorrectAction = true;
                 break;
-
             case NoteType.Hit:
-                isCorrectDirection = true; // 방향 무관
-                isCorrectAction = true;    // 액션 무관 (접혀있는지는 OnTriggerStay에서 체크됨)
+                isCorrectDirection = true;
+                isCorrectAction = true;
                 break;
-
             case NoteType.Boss:
-                // 면(Face) 판정 우선 체크
                 if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) > 0.6f) isCorrectAction = true;
-
-                if (lastHitDirection == Vector3.zero)
-                {
-                    // [첫 타격] 축(Axis)만 맞으면 어느 쪽이든 인정
-                    if (Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) > 0.5f) isCorrectDirection = true;
-                }
-                else
-                {
-                    // [이후 타격] 반드시 이전 타격의 반대 방향이어야 함
-                    if (Vector3.Dot(moveDir, lastHitDirection) < -0.5f) isCorrectDirection = true;
-                }
+                if (lastHitDirection == Vector3.zero) { if (Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) > 0.5f) isCorrectDirection = true; }
+                else { if (Vector3.Dot(moveDir, lastHitDirection) < -0.5f) isCorrectDirection = true; }
                 break;
         }
 
@@ -157,26 +129,16 @@ public class Note : MonoBehaviour
         {
             hp--; 
             lastHitTime = Time.time;
-            lastHitDirection = moveDir; // 현재 방향 저장 (왕복 판정용)
+            lastHitDirection = moveDir;
 
-            // 타격 피드백 (사운드 및 진동)
             if (GameManager.Instance != null) GameManager.Instance.PlayHitSound(type);
-            
-            // 타입별로 진동 세기 차별화 가능 (옵션)
-            float hapticIntensity = (type == NoteType.Boss) ? 0.8f : 0.5f; 
-            if (fan != null) fan.TriggerHaptic(hapticIntensity);
-
+            if (fan != null) fan.TriggerHaptic(type == NoteType.Boss ? 0.8f : 0.5f);
             if (type == NoteType.Boss && bossIndicator) bossIndicator.transform.localScale *= 0.65f;
 
             if (hp <= 0)
             {
-                if (GameManager.Instance != null)
-                    GameManager.Instance.AddScore(type, fan.Velocity.magnitude);
+                if (GameManager.Instance != null) GameManager.Instance.AddScore(type, fan.Velocity.magnitude);
                 Destroy(gameObject);
-            }
-            else
-            {
-                Debug.Log($"🤜 정확한 히트! (남은 HP: {hp})");
             }
         }
     }
