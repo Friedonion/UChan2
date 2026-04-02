@@ -20,9 +20,10 @@ public class Note : MonoBehaviour
     public GameObject hitIndicator; 
     public GameObject bossIndicator;
 
-    public float minSwingSpeed = 0.1f; 
+    public float minSwingSpeed = 0.05f; 
     public int hp = 1; 
     private bool isMissed = false;
+    private bool isDead = false;
 
     private float lastHitTime = 0f;
     private float hitCooldown = 0.00f; 
@@ -84,7 +85,7 @@ public class Note : MonoBehaviour
 
     private void OnTriggerStay(Collider foreign)
     {
-        if (isMissed || !initialized) return;
+        if (isMissed || isDead || !initialized) return;
         if (Time.time < lastHitTime + hitCooldown) return;
 
         FanSystem fan = foreign.GetComponentInParent<FanSystem>();
@@ -97,6 +98,8 @@ public class Note : MonoBehaviour
 
     void CheckHitSuccess(FanSystem fan)
     {
+        if (isDead) return;
+
         float currentSpeed = fan.Velocity.magnitude;
         if (currentSpeed < minSwingSpeed) return;
 
@@ -107,12 +110,17 @@ public class Note : MonoBehaviour
         switch (type)
         {
             case NoteType.Slashing:
-                if (Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) > 0.5f) isCorrectDirection = true;
-                if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) < 0.4f) isCorrectAction = true;
+                // 축(Axis) 판정: 0.5f -> 0.4f로 완화 (더 넓은 각도 허용)
+                if (Mathf.Abs(Vector3.Dot(moveDir, targetDirection)) > 0.4f) isCorrectDirection = true;
+                // 날(Edge) 판정: 0.4f -> 0.5f로 조절 (베는 동작의 선명도)
+                if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) < 0.5f) isCorrectAction = true;
                 break;
+
             case NoteType.Fanning:
-                if (Vector3.Dot(moveDir, targetDirection) > 0.5f) isCorrectDirection = true;
-                if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) > 0.6f) isCorrectAction = true;
+                // 정방향 판정: 0.5f -> 0.35f로 완화
+                if (Vector3.Dot(moveDir, targetDirection) > 0.35f) isCorrectDirection = true;
+                // 면(Face) 판정: 0.6f -> 0.5f로 완화
+                if (Mathf.Abs(Vector3.Dot(moveDir, fan.FanNormal)) > 0.5f) isCorrectAction = true;
                 break;
             case NoteType.Hit:
                 isCorrectDirection = true;
@@ -137,6 +145,7 @@ public class Note : MonoBehaviour
 
             if (hp <= 0)
             {
+                isDead = true;
                 if (GameManager.Instance != null) GameManager.Instance.AddScore(type, fan.Velocity.magnitude);
                 Destroy(gameObject);
             }
