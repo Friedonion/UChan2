@@ -24,8 +24,8 @@ public class ChartData
 
 public class NoteSpawner : MonoBehaviour
 {
+    private ChartDataSO activeChart; // 현재 플레이 중인 차트 (GameManager로부터 전달받음)
     public GameObject notePrefab;
-    public TextAsset chartJson; 
     
     [Header("Note Models")]
     public GameObject slashModel;
@@ -36,76 +36,91 @@ public class NoteSpawner : MonoBehaviour
     [Header("Grid Settings")]
     public float laneWidth = 0.5f;
     public float rowHeight = 0.5f;
-    public float spawnDistance = 25.0f; // 거리를 조금 더 늘림 (느린 속도 대비 시야 확보)
+    public float spawnDistance = 25.0f; 
 
-    private ChartData chart;
     private int nextNoteIndex = 0;
     private bool isPlaying = false;
     private float startTime;
 
-    void Start()
-    {
-        if (chartJson != null)
-        {
-            LoadChart(chartJson.text);
-            StartCoroutine(PlayChart());
-        }
-    }
+public void StartPlaying(ChartDataSO chart)
+{
+    if (isPlaying || chart == null) return;
+    activeChart = chart;
+    nextNoteIndex = 0;
+    StartCoroutine(PlayChart());
+}
 
-    public void LoadChart(string json)
+public void StopPlaying()
+{
+    isPlaying = false;
+    activeChart = null;
+    StopAllCoroutines();
+    
+    // 화면에 남아있는 모든 노트 비활성화 (풀로 반환)
+    Note[] activeNotes = FindObjectsOfType<Note>();
+    foreach (Note note in activeNotes)
     {
-        chart = JsonUtility.FromJson<ChartData>(json);
-        // 시간을 기준으로 정렬
-        chart.notes.Sort((a, b) => a.time.CompareTo(b.time));
+        if (note.gameObject.activeSelf) note.Deactivate();
     }
+}
 
-    System.Collections.IEnumerator PlayChart()
-    {
-        yield return new WaitForSeconds(1.0f);
-        
-        startTime = (float)AudioSettings.dspTime;
-        isPlaying = true;
-        
-        Debug.Log($"🎵 {chart.songName} 시작! (속도: {chart.travelTime}s)");
-    }
+System.Collections.IEnumerator PlayChart()
+{
+    yield return new WaitForSeconds(1.0f);
+
+    startTime = (float)AudioSettings.dspTime;
+    isPlaying = true;
+}
 
     void Update()
     {
-        if (!isPlaying || chart == null || nextNoteIndex >= chart.notes.Count) return;
+        if (!isPlaying || activeChart == null || nextNoteIndex >= activeChart.notes.Count) return;
 
         float currentTime = (float)AudioSettings.dspTime - startTime;
 
-        // JSON에서 가져온 travelTime 사용
-        while (nextNoteIndex < chart.notes.Count && 
-               chart.notes[nextNoteIndex].time - chart.travelTime <= currentTime)
+        while (nextNoteIndex < activeChart.notes.Count && 
+               activeChart.notes[nextNoteIndex].time - activeChart.travelTime <= currentTime)
         {
-            SpawnNote(chart.notes[nextNoteIndex]);
+            SpawnNote(activeChart.notes[nextNoteIndex]);
             nextNoteIndex++;
         }
     }
 
-    void SpawnNote(NoteInfo info)
+    void SpawnNote(NoteData info)
     {
         float x = (info.lane - 1.5f) * laneWidth;
         float y = (info.row - 0.5f) * rowHeight + 1.0f;
         Vector3 spawnPos = new Vector3(x, y, spawnDistance);
 
-        GameObject noteObj = Instantiate(notePrefab, spawnPos, Quaternion.identity);
+        GameObject noteObj;
+        if (NotePoolManager.Instance != null)
+        {
+            noteObj = NotePoolManager.Instance.GetNote(spawnPos, Quaternion.identity);
+        }
+        else
+        {
+            noteObj = Instantiate(notePrefab, spawnPos, Quaternion.identity);
+        }
+
         Note noteScript = noteObj.GetComponent<Note>();
 
-        Vector3 dir = new Vector3(info.direction[0], info.direction[1], info.direction[2]);
+        Vector3 dir = info.direction;
         if (dir == Vector3.zero) dir = Vector3.right;
 
-        AssignModels(noteScript, (NoteType)info.type);
+        AssignModels(noteScript, info.type);
 
-        // JSON에서 가져온 travelTime으로 초기화
-        noteScript.Initialize((NoteType)info.type, dir, startTime + info.time, chart.travelTime, spawnDistance);
+        // 전달받은 차트 데이터에서 가져온 travelTime으로 초기화
+        noteScript.Initialize(info.type, dir, startTime + info.time, activeChart.travelTime, spawnDistance);
     }
 
     void AssignModels(Note note, NoteType type)
     {
-        // Note 클래스의 인디케이터 필드에 모델을 할당합니다.
-        // 프리팹 내부에 미리 있을 수도 있지만, 여기서 동적으로 생성해 줄 수도 있습니다.
+        // 이미 생성된 비주얼 모델이 있는지 확인 (풀링 시 중복 생성 방지)
+        string modelName = "Visual_" + type.ToString();
+        Transform existingModel = note.transform.Find(modelName);
+        
+        if (existingModel != null) return; // 이미 있으면 통과
+
         GameObject visualModel = null;
         switch (type)
         {
@@ -118,7 +133,7 @@ public class NoteSpawner : MonoBehaviour
         if (visualModel != null)
         {
             GameObject obj = Instantiate(visualModel, note.transform);
-            obj.name = "Visual_" + type.ToString();
+            obj.name = modelName;
             
             // Note 스크립트의 해당 필드에 연결
             if (type == NoteType.Slashing) note.slashIndicator = obj;

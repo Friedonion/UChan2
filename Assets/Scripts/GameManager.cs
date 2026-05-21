@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public int damagePerMiss = 10;
 
     [Header("Audio Settings")]
+    public ChartDataSO currentChart; // 차트 데이터 추가
     public AudioClip musicTrack;
     public AudioClip slashSound; 
     public AudioClip hitSound; 
@@ -72,14 +73,22 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.UpdateHealth(100);
         }
         
-        // NoteSpawner에게 시작 신호를 보냄
-        FindObjectOfType<NoteSpawner>()?.StartPlaying();
-
-        if (musicTrack != null)
+        // NoteSpawner에게 차트 데이터를 전달하며 시작 신호를 보냄
+        if (currentChart != null)
         {
-            musicSource.clip = musicTrack;
-            musicSource.Play();
-            StartCoroutine(CheckMusicEnd());
+            FindObjectOfType<NoteSpawner>()?.StartPlaying(currentChart);
+            
+            if (musicTrack != null)
+            {
+                musicSource.clip = musicTrack;
+                // 차트의 offset만큼 기다리거나 처리할 수 있음 (현재는 단순 재생)
+                musicSource.Play();
+                StartCoroutine(CheckMusicEnd());
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No chart assigned to GameManager!");
         }
     }
 
@@ -110,12 +119,41 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddScore(NoteType type, float velocity)
+    public void AddScore(NoteType type, float velocity, string judgment)
     {
         if (currentState != GameState.Playing) return;
 
-        float speedBonus = Mathf.Clamp(velocity / 5f, 1f, 1.5f);
-        int finalPoints = Mathf.RoundToInt(pointsPerNote * speedBonus);
+        // 1. 판정 배율 결정
+        float judgmentMultiplier = 1.0f;
+        Color judgmentColor = UIManager.Instance.perfectColor;
+
+        switch (judgment)
+        {
+            case "PERFECT": 
+                judgmentMultiplier = 1.0f; 
+                judgmentColor = UIManager.Instance.perfectColor;
+                break;
+            case "GREAT": 
+                judgmentMultiplier = 0.8f; 
+                judgmentColor = UIManager.Instance.greatColor;
+                break;
+            case "GOOD": 
+                judgmentMultiplier = 0.5f; 
+                judgmentColor = Color.blue; // Good 색상은 파란색으로 임시 지정
+                break;
+        }
+
+        // 2. 속도 보너스 제거 (1.0 고정)
+        float speedBonus = 1.0f;
+
+        // 3. 콤보 배율 결정
+        int comboMultiplier = 1;
+        if (combo >= 30) comboMultiplier = 8;
+        else if (combo >= 20) comboMultiplier = 4;
+        else if (combo >= 10) comboMultiplier = 2;
+
+        // 4. 최종 점수 계산
+        int finalPoints = Mathf.RoundToInt(pointsPerNote * judgmentMultiplier * speedBonus * comboMultiplier);
 
         score += finalPoints;
         combo++;
@@ -124,9 +162,16 @@ public class GameManager : MonoBehaviour
         {
             UIManager.Instance.UpdateScore(score);
             UIManager.Instance.UpdateCombo(combo);
-            // 판정 UI (간단하게 PERFECT로 표시, 나중에 세분화 가능)
-            UIManager.Instance.ShowJudgment("PERFECT", UIManager.Instance.perfectColor);
+            UIManager.Instance.ShowJudgment(judgment, judgmentColor);
         }
+    }
+
+    // 보스 연타 등 중간 판정 표시용
+    public void ShowTemporaryJudgment(string judgment)
+    {
+        if (UIManager.Instance == null) return;
+        Color color = (judgment == "PERFECT") ? UIManager.Instance.perfectColor : UIManager.Instance.greatColor;
+        UIManager.Instance.ShowJudgment(judgment, color);
     }
 
     public void PlayHitSound(NoteType type)
@@ -179,6 +224,7 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.UpdateCombo(0);
             UIManager.Instance.UpdateHealth(health);
             UIManager.Instance.resultPanel.SetActive(false);
+            UIManager.Instance.startPanel.SetActive(true);
         }
     }
 }
