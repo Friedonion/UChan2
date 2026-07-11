@@ -1,0 +1,3 @@
+Animator on root: True
+Animators in children: 1
+- OpenFan

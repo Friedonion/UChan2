@@ -1,0 +1,846 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb78ff1f0447894a96198ace33f89e8, type: 3}
+  m_Name: catch catch
+  m_EditorClassIdentifier: 
+  songName: catch catch
+  audioClip: {fileID: 8300000, guid: 4e76816198eb3934ba856b7eb0af1461, type: 3}
+  coverSprite: {fileID: 21300000, guid: 71377209aecc3eb47b7a097c1367e1f2, type: 3}
+  bpm: 138
+  offset: 0
+  travelTime: 4.5
+  notes:
+  - time: 0.4347826
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.9124716, y: -0.40914014, z: 0}
+  - time: 1.5217391
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.977888, y: 0.20912941, z: 0}
+  - time: 2.6086955
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.9673899, y: 0.25329188, z: 0}
+  - time: 3.695652
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.3308761, y: -0.9436742, z: 0}
+  - time: 4.7826085
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.7403757, y: 0.6721933, z: 0}
+  - time: 5.869565
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.225514, y: -0.97423995, z: 0}
+  - time: 6.9565215
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.7434476, y: -0.66879416, z: 0}
+  - time: 8.043478
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.9728271, y: 0.23153308, z: 0}
+  - time: 9.130434
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.8271105, y: -0.56203926, z: 0}
+  - time: 10.217391
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.66894305, y: -0.7433137, z: 0}
+  - time: 11.304347
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.97633916, y: -0.21624485, z: 0}
+  - time: 12.391304
+    lane: 2
+    row: 1
+    type: 1
+    direction: {x: 0.81154555, y: -0.58428925, z: 0}
+  - time: 13.47826
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.67400336, y: -0.7387283, z: 0}
+  - time: 14.565217
+    lane: 0
+    row: 1
+    type: 1
+    direction: {x: 0.99736536, y: 0.07254194, z: 0}
+  - time: 15.652173
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.6599408, y: -0.7513177, z: 0}
+  - time: 16.73913
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.118326284, y: -0.9929748, z: 0}
+  - time: 17.826086
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.4378456, y: -0.8990502, z: 0}
+  - time: 18.913042
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.45936063, y: -0.8882498, z: 0}
+  - time: 20
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.8712545, y: 0.4908316, z: 0}
+  - time: 21.086956
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.64642566, y: 0.7629769, z: 0}
+  - time: 22.173912
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.59339786, y: -0.80490935, z: 0}
+  - time: 23.260868
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.27140972, y: 0.9624639, z: 0}
+  - time: 24.347826
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9970097, y: 0.07727662, z: 0}
+  - time: 25.434782
+    lane: 0
+    row: 0
+    type: 1
+    direction: {x: 0.60771126, y: 0.7941581, z: 0}
+  - time: 26.521738
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.4568768, y: 0.88953, z: 0}
+  - time: 27.608694
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.5622472, y: -0.8269692, z: 0}
+  - time: 28.695652
+    lane: 0
+    row: 1
+    type: 4
+    direction: {x: 0.5, y: 3, z: 20.675007}
+  - time: 29.782608
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.97420746, y: -0.22565441, z: 0}
+  - time: 30.869564
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.90390277, y: -0.42773798, z: 0}
+  - time: 31.95652
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.9791671, y: 0.20305592, z: 0}
+  - time: 33.043476
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.77392495, y: -0.6332773, z: 0}
+  - time: 34.130432
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.9138444, y: -0.4060644, z: 0}
+  - time: 35.217392
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.8657697, y: 0.5004427, z: 0}
+  - time: 36.304348
+    lane: 2
+    row: 0
+    type: 1
+    direction: {x: 0.8235316, y: 0.56727034, z: 0}
+  - time: 37.391304
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.99744767, y: -0.07140132, z: 0}
+  - time: 38.47826
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.7817696, y: -0.6235674, z: 0}
+  - time: 39.565216
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.2066663, y: -0.9784115, z: 0}
+  - time: 40.652172
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.7757958, y: 0.630984, z: 0}
+  - time: 41.73913
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.9987696, y: -0.04959241, z: 0}
+  - time: 42.826084
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.32873622, y: -0.94442177, z: 0}
+  - time: 43.91304
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.02148036, y: 0.9997692, z: 0}
+  - time: 45
+    lane: 1
+    row: 0
+    type: 4
+    direction: {x: 1, y: 3, z: 12.758872}
+  - time: 46.086956
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.027695902, y: 0.9996164, z: 0}
+  - time: 47.173912
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.9888895, y: -0.14865263, z: 0}
+  - time: 48.260868
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.95705116, y: 0.28991905, z: 0}
+  - time: 49.347824
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.98061734, y: 0.1959326, z: 0}
+  - time: 50.43478
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.22817834, y: 0.97361934, z: 0}
+  - time: 51.521736
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.62322617, y: -0.78204167, z: 0}
+  - time: 52.608692
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.5575874, y: -0.8301183, z: 0}
+  - time: 53.695652
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9577189, y: 0.28770554, z: 0}
+  - time: 54.782608
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.8979697, y: 0.4400574, z: 0}
+  - time: 55.869564
+    lane: 3
+    row: 0
+    type: 1
+    direction: {x: 0.9998955, y: -0.014455721, z: 0}
+  - time: 56.95652
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.86924446, y: 0.49438256, z: 0}
+  - time: 58.043476
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.7109005, y: 0.70329255, z: 0}
+  - time: 59.130432
+    lane: 2
+    row: 1
+    type: 1
+    direction: {x: -0.3712662, y: -0.92852646, z: 0}
+  - time: 60.21739
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.76541024, y: 0.6435427, z: 0}
+  - time: 61.304344
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.6329345, y: -0.7742054, z: 0}
+  - time: 62.391304
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.71236175, y: 0.70181245, z: 0}
+  - time: 63.47826
+    lane: 2
+    row: 0
+    type: 1
+    direction: {x: -0.5120721, y: -0.8589425, z: 0}
+  - time: 64.565216
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.99083376, y: -0.13508718, z: 0}
+  - time: 65.65217
+    lane: 0
+    row: 0
+    type: 1
+    direction: {x: 0.56405705, y: 0.8257358, z: 0}
+  - time: 66.73913
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.521867, y: 0.85302687, z: 0}
+  - time: 67.82609
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.52922213, y: -0.8484833, z: 0}
+  - time: 68.91304
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.5718445, y: -0.82036203, z: 0}
+  - time: 70
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.5560539, y: 0.8311463, z: 0}
+  - time: 71.08695
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.6089376, y: -0.79321814, z: 0}
+  - time: 72.17391
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.6150582, y: -0.7884818, z: 0}
+  - time: 73.260864
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.606468, y: -0.79510784, z: 0}
+  - time: 74.347824
+    lane: 1
+    row: 0
+    type: 1
+    direction: {x: -0.99746925, y: 0.07109935, z: 0}
+  - time: 75.434784
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.29533586, y: 0.9553935, z: 0}
+  - time: 76.521736
+    lane: 0
+    row: 0
+    type: 1
+    direction: {x: -0.26653403, y: 0.9638255, z: 0}
+  - time: 77.608696
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.76666147, y: 0.6420516, z: 0}
+  - time: 78.69565
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.61398554, y: -0.78931737, z: 0}
+  - time: 79.78261
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.62567437, y: 0.7800843, z: 0}
+  - time: 80.86956
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.52485126, y: 0.85119396, z: 0}
+  - time: 81.95652
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.43943045, y: -0.8982766, z: 0}
+  - time: 83.04347
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.85256165, y: -0.52262664, z: 0}
+  - time: 84.13043
+    lane: 1
+    row: 1
+    type: 1
+    direction: {x: -0.06591488, y: -0.99782526, z: 0}
+  - time: 85.21739
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.79470116, y: 0.60700095, z: 0}
+  - time: 86.304344
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.9018351, y: 0.43208042, z: 0}
+  - time: 87.391304
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.5191179, y: -0.85470265, z: 0}
+  - time: 88.47826
+    lane: 2
+    row: 1
+    type: 1
+    direction: {x: 0.9480038, y: 0.31825897, z: 0}
+  - time: 89.565216
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.9262542, y: 0.37689942, z: 0}
+  - time: 90.65217
+    lane: 3
+    row: 0
+    type: 1
+    direction: {x: 0.96737343, y: -0.25335485, z: 0}
+  - time: 91.73913
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.114435844, y: -0.9934307, z: 0}
+  - time: 92.82608
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.94253874, y: 0.33409688, z: 0}
+  - time: 93.91304
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.97996914, y: 0.19914933, z: 0}
+  - time: 95
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.019826613, y: 0.9998035, z: 0}
+  - time: 96.08695
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.9876683, y: 0.15656078, z: 0}
+  - time: 97.17391
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.13667823, y: -0.9906155, z: 0}
+  - time: 98.260864
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.997371, y: -0.07246402, z: 0}
+  - time: 99.347824
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.49601045, y: -0.86831653, z: 0}
+  - time: 100.43478
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.6757316, y: -0.73714775, z: 0}
+  - time: 101.521736
+    lane: 3
+    row: 0
+    type: 1
+    direction: {x: 0.1761331, y: -0.98436636, z: 0}
+  - time: 102.608696
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9635347, y: 0.26758334, z: 0}
+  - time: 103.69565
+    lane: 1
+    row: 0
+    type: 1
+    direction: {x: -0.5978625, y: 0.8015986, z: 0}
+  - time: 104.78261
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.40552413, y: -0.9140843, z: 0}
+  - time: 105.86956
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.38395476, y: -0.9233519, z: 0}
+  - time: 106.95652
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.3963214, y: 0.91811186, z: 0}
+  - time: 108.04347
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.0055408785, y: -0.9999847, z: 0}
+  - time: 109.13043
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.88356906, y: -0.4683009, z: 0}
+  - time: 110.217384
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.600476, y: 0.7996427, z: 0}
+  - time: 111.304344
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.5882334, y: 0.8086912, z: 0}
+  - time: 112.391304
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.6742991, y: 0.73845834, z: 0}
+  - time: 113.47826
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.7874549, y: -0.6163722, z: 0}
+  - time: 114.565216
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.92521656, y: 0.37943938, z: 0}
+  - time: 115.65217
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.4591206, y: -0.888374, z: 0}
+  - time: 116.73913
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.018314363, y: -0.9998323, z: 0}
+  - time: 117.82608
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.8703481, y: -0.49243703, z: 0}
+  - time: 118.91304
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.5217883, y: -0.85307497, z: 0}
+  - time: 119.99999
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.83667064, y: 0.54770637, z: 0}
+  - time: 121.08695
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.52675915, y: -0.8500146, z: 0}
+  - time: 122.17391
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.7043802, y: 0.7098229, z: 0}
+  - time: 123.260864
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.47558853, y: 0.8796678, z: 0}
+  - time: 124.347824
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: 0.7248401, y: -0.6889171, z: 0}
+  - time: 125.43478
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.9990753, y: -0.042994358, z: 0}
+  - time: 126.521736
+    lane: 2
+    row: 0
+    type: 1
+    direction: {x: -0.7728933, y: -0.634536, z: 0}
+  - time: 127.60869
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.81214964, y: 0.5834493, z: 0}
+  - time: 128.69565
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.58717823, y: 0.8094577, z: 0}
+  - time: 129.78261
+    lane: 0
+    row: 0
+    type: 1
+    direction: {x: 0.8073164, y: 0.59011877, z: 0}
+  - time: 130.86957
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.9137923, y: 0.40618163, z: 0}
+  - time: 131.95651
+    lane: 3
+    row: 1
+    type: 1
+    direction: {x: 0.5490783, y: -0.83577096, z: 0}
+  - time: 133.04347
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.65121126, y: 0.75889647, z: 0}
+  - time: 134.13043
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.8886573, y: -0.45857194, z: 0}
+  - time: 135.21739
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9998599, y: -0.016733019, z: 0}
+  - time: 136.30434
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.60167646, y: -0.79873997, z: 0}
+  - time: 137.3913
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.3609326, y: -0.93259186, z: 0}
+  - time: 138.47826
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.58874923, y: -0.80831575, z: 0}
+  - time: 139.56522
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.35095626, y: -0.9363919, z: 0}
+  - time: 140.65218
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.58313376, y: 0.81237614, z: 0}
+  - time: 141.73912
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.73417616, y: -0.6789591, z: 0}
+  - time: 142.82608
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.7041217, y: 0.7100793, z: 0}
+  - time: 143.91304
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.69384634, y: -0.7201231, z: 0}
+  - time: 145
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.60039294, y: 0.79970515, z: 0}
+  - time: 146.08694
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.78646815, y: 0.6176308, z: 0}
+  - time: 147.1739
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.5409462, y: 0.8410572, z: 0}
+  - time: 148.26086
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.7585682, y: 0.6515936, z: 0}
+  - time: 149.34782
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.999466, y: -0.03267584, z: 0}
+  - time: 150.43478
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9982308, y: -0.059457924, z: 0}
+  - time: 151.52173
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.85950875, y: 0.5111211, z: 0}
+  - time: 152.60869
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.47739267, y: -0.8786901, z: 0}
+  - time: 153.69565
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.4894101, y: -0.87205374, z: 0}
+  - time: 154.78261
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.7466333, y: -0.6652359, z: 0}
+  - time: 155.86955
+    lane: 0
+    row: 0
+    type: 1
+    direction: {x: 0.69203544, y: 0.7218636, z: 0}
+  - time: 156.95651
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.9958147, y: -0.09139515, z: 0}
+  - time: 158.04347
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.054199807, y: 0.9985301, z: 0}
+  - time: 159.13043
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.47798884, y: -0.87836593, z: 0}
+  - time: 160.21739
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.82542837, y: 0.56450695, z: 0}
+  - time: 161.30434
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.7893302, y: 0.6139689, z: 0}
+  - time: 162.3913
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.10035672, y: -0.9949515, z: 0}
+  - time: 163.47826
+    lane: 3
+    row: 0
+    type: 1
+    direction: {x: -0.78959984, y: 0.6136222, z: 0}
+  - time: 164.56522
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.53003985, y: 0.84797275, z: 0}
+  - time: 165.65218
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.8002235, y: -0.59970176, z: 0}
+  - time: 166.73912
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.8788581, y: -0.4770833, z: 0}
+  - time: 167.82608
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.40397248, y: -0.91477114, z: 0}
+  - time: 168.91304
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.434836, y: -0.9005097, z: 0}
+  - time: 170
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.9748905, y: 0.22268485, z: 0}
+  - time: 171.08694
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.3172664, y: -0.9483364, z: 0}
+  - time: 172.1739
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.5576595, y: -0.8300698, z: 0}
+  - time: 173.26086
+    lane: 2
+    row: 0
+    type: 1
+    direction: {x: 0.97563636, y: 0.21939388, z: 0}
+  - time: 174.34782
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.69617665, y: -0.7178705, z: 0}
+  - time: 175.43478
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.86406755, y: -0.5033759, z: 0}
+  - time: 176.52173
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.10462372, y: 0.99451184, z: 0}
+  - time: 177.60869
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.9899978, y: 0.14108235, z: 0}
+  - time: 178.69565
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.7439233, y: 0.668265, z: 0}
