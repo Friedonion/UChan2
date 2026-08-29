@@ -152,6 +152,9 @@ MonoBehaviour:
   fanIndicator: {fileID: 0}
   hitIndicator: {fileID: 0}
   bossIndicator: {fileID: 0}
+  wallIndicator: {fileID: 0}
+  holdFoldedIndicator: {fileID: 0}
+  holdOpenIndicator: {fileID: 0}
   hitRadius: 0.5
   minSwingSpeed: 0.4
   hp: 1
@@ -165,3 +168,4 @@ MonoBehaviour:
   bossGreatAngle: 50
   bossGoodAngle: 70
   maxThrustZRatio: 0.8
+  holdGuide: {fileID: 0}

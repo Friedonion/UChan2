@@ -100,7 +100,7 @@ public class PauseManager : MonoBehaviour
         GameManager.Instance.ResumeGame();
     }
 
-    // 일시정지 패널이 날아오는 노트에 가려지지 않도록, 일시정지 중엔 현재 활성화된 노트들을 숨김
+    // 일시정지 패널이 날아오는 노트에 가려지지 않도록, 일시정지 중엔 현재 활성화된 노트와 롱노트 가이드를 숨김
     void SetNotesVisible(bool visible)
     {
         if (!visible)
@@ -113,6 +113,18 @@ public class PauseManager : MonoBehaviour
                 {
                     hiddenNotes.Add(note.gameObject);
                     note.gameObject.SetActive(false);
+                }
+            }
+
+            // 🌟 롱노트 빔도 숨겨줍니다! 
+            // 안 숨기면 빔이 허공에 렌더링될 뿐만 아니라, Note가 강제로 꺼진 것을 보고 롱노트가 파괴되는 치명적 버그가 발생합니다.
+            LongNoteGuide[] activeGuides = FindObjectsOfType<LongNoteGuide>();
+            foreach (var guide in activeGuides)
+            {
+                if (guide.gameObject.activeSelf)
+                {
+                    hiddenNotes.Add(guide.gameObject);
+                    guide.gameObject.SetActive(false);
                 }
             }
         }

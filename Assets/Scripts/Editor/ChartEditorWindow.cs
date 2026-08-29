@@ -200,13 +200,19 @@ public class ChartEditorWindow : EditorWindow
         NoteSpawner spawner = FindObjectOfType<NoteSpawner>();
         if (spawner != null) spawnDist = spawner.spawnDistance;
         float wallPassRatio = so.travelTime / Mathf.Max(1f, spawnDist);
-
         float[] laneWallEndTimes = new float[4] { -1f, -1f, -1f, -1f };
+        float[] laneLongNoteEndTimes = new float[4] { -1f, -1f, -1f, -1f };
+        float longNoteCooldown = 0f;
 
         for (int i = 0; i < samples.Length; i += 1024)
         {
             float time = (float)i / (sampleRate * autoAudioClip.channels);
-            float volume = Mathf.Abs(samples[i]);
+            
+            float maxVol = 0f;
+            for(int j = 0; j < 1024 && (i+j) < samples.Length; j++) {
+                if (Mathf.Abs(samples[i+j]) > maxVol) maxVol = Mathf.Abs(samples[i+j]);
+            }
+            float volume = maxVol;
 
             if (volume > autoThreshold && time > lastSpawnTime + autoMinInterval)
             {
@@ -249,9 +255,30 @@ public class ChartEditorWindow : EditorWindow
                     if (quantizedTime < laneWallEndTimes[l]) isAnyWallActive = true;
                 }
 
-                if (!isAnyWallActive && streakRemaining == Random.Range(2, 5) && Random.value < 0.05f) 
+                int activeLongNotes = 0;
+                int activeLongNoteLane = -1;
+                for (int l = 0; l < 4; l++)
+                {
+                    if (quantizedTime < laneLongNoteEndTimes[l])
+                    {
+                        activeLongNotes++;
+                        activeLongNoteLane = l;
+                    }
+                }
+
+                if (activeLongNotes >= 2)
+                {
+                    lastSpawnTime = quantizedTime;
+                    continue; // Skip note generation entirely, hands are full
+                }
+
+                if (activeLongNotes == 0 && !isAnyWallActive && streakRemaining == Random.Range(2, 5) && Random.value < 0.05f) 
                 {
                     note.type = NoteType.Wall;
+                }
+                else if (quantizedTime > longNoteCooldown && activeLongNotes < 2 && Random.value < 0.03f) // 15% -> 3%로 롱노트 확률 대폭 감소
+                {
+                    note.type = (Random.value < 0.5f) ? NoteType.HoldFolded : NoteType.HoldOpen;
                 }
 
                 streakRemaining--;
@@ -259,7 +286,23 @@ public class ChartEditorWindow : EditorWindow
                 List<int> freeLanes = new List<int>();
                 for (int l = 0; l < 4; l++)
                 {
-                    if (quantizedTime >= laneWallEndTimes[l]) freeLanes.Add(l);
+                    if (quantizedTime >= laneWallEndTimes[l] && quantizedTime >= laneLongNoteEndTimes[l]) 
+                        freeLanes.Add(l);
+                }
+
+                // 와리가리 방지: 롱노트가 하나 진행중이면 반대쪽 레인만 freeLanes로 남김
+                if (activeLongNotes == 1 && activeLongNoteLane != -1)
+                {
+                    if (activeLongNoteLane <= 1)
+                    {
+                        freeLanes.Remove(0);
+                        freeLanes.Remove(1);
+                    }
+                    else
+                    {
+                        freeLanes.Remove(2);
+                        freeLanes.Remove(3);
+                    }
                 }
 
                 // --- 안전 지대(Safe Zone) 로직 ---
@@ -295,7 +338,64 @@ public class ChartEditorWindow : EditorWindow
                 if (note.type == NoteType.Wall)
                 {
                     note.direction = new Vector3(0.5f, 3f, Random.Range(10f, 30f)); // Default wall: width 0.5 (1 lane), height 3, depth 10~30
-                    laneWallEndTimes[note.lane] = quantizedTime + (note.direction.z * wallPassRatio) + 0.5f; // Add 0.5s padding
+                    float wallTimeLength = note.direction.z * wallPassRatio;
+                    // 벽은 중심축(Z=0)을 기준으로 앞뒤로 확장되므로 앞면(Front)이 현재 시간에 오도록 중심 시간을 뒤로 미룸
+                    // (과거에 이미 생성된 일반 노트들을 벽이 덮치는 현상 방지)
+                    note.time = quantizedTime + (wallTimeLength / 2f);
+                    laneWallEndTimes[note.lane] = quantizedTime + wallTimeLength + 0.5f; // Add 0.5s padding
+                }
+                else if (note.type == NoteType.HoldFolded || note.type == NoteType.HoldOpen)
+                {
+                    note.duration = Random.Range(1.0f, 3.0f);
+                    note.endLane = note.lane;
+
+                    if (Random.value < 0.5f)
+                    {
+                        List<int> possibleEndLanes = new List<int>();
+                        if (note.lane > 0 && freeLanes.Contains(note.lane - 1)) possibleEndLanes.Add(note.lane - 1);
+                        if (note.lane < 3 && freeLanes.Contains(note.lane + 1)) possibleEndLanes.Add(note.lane + 1);
+
+                        if (possibleEndLanes.Count > 0)
+                        {
+                            note.endLane = possibleEndLanes[Random.Range(0, possibleEndLanes.Count)];
+                            laneLongNoteEndTimes[note.endLane] = quantizedTime + note.duration;
+                        }
+                    }
+                    laneLongNoteEndTimes[note.lane] = quantizedTime + note.duration;
+                    longNoteCooldown = quantizedTime + note.duration + Random.Range(2.0f, 5.0f); // 롱노트 종료 후 최소 2~5초 휴식
+
+                    // --- 중간 지점(Midpoints) 곡선 추가 로직 ---
+                    if (note.lane != note.endLane)
+                    {
+                        // 대각선 이동: Smoothstep / 3개의 웨이포인트 추가
+                        int steps = 4;
+                        for (int k = 1; k < steps; k++)
+                        {
+                            float t = (float)k / steps;
+                            float smoothT = t * t * (3f - 2f * t); // 부드러운 S자 곡선
+                            float currentLane = Mathf.Lerp(note.lane, note.endLane, smoothT);
+                            
+                            // 밖으로 살짝 부풀어오르는 아치 추가
+                            float arc = Mathf.Sin(t * Mathf.PI) * 0.3f;
+                            float dir = Mathf.Sign(note.endLane - note.lane); // 이동 방향
+                            currentLane += arc * -dir; // 이동 방향 반대로 부풀게 함
+                            
+                            currentLane = Mathf.Clamp(currentLane, 0f, 3f);
+                            note.midpoints.Add(new LongNoteWaypoint { lane = currentLane, row = note.row });
+                        }
+                    }
+                    else if (Random.value < 0.5f)
+                    {
+                        // 직선 유지 시: 50% 확률로 좌우로 살짝 출렁이는 물결
+                        int steps = 5;
+                        for (int k = 1; k < steps; k++)
+                        {
+                            float t = (float)k / steps;
+                            float wiggle = Mathf.Sin(t * Mathf.PI * 2f) * 0.3f; // 한 바퀴 출렁임
+                            float currentLane = Mathf.Clamp(note.lane + wiggle, 0f, 3f);
+                            note.midpoints.Add(new LongNoteWaypoint { lane = currentLane, row = note.row });
+                        }
+                    }
                 }
                 else
                 {
@@ -814,7 +914,7 @@ public class ChartEditorWindow : EditorWindow
 
         GUILayout.Space(5);
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("Export JSON", GUILayout.Height(25)))
+        if (GUILayout.Button("Export to StreamingAssets", GUILayout.Height(25)))
         {
             ExportChartToJson();
         }
@@ -971,34 +1071,79 @@ public class ChartEditorWindow : EditorWindow
     {
         if (activeChart == null) return;
 
-        string path = EditorUtility.SaveFilePanel("Export Chart JSON Backup", "Assets", activeChart.name + "_backup", "json");
-        if (!string.IsNullOrEmpty(path))
+        // 곡 이름으로 StreamingAssets/Charts/<songName>/ 폴더를 만들고 그 안에
+        // chart.json + 오디오 + 커버 이미지를 함께 내보낸다.
+        // 빌드 후에는 이 폴더의 파일만 교체하면 재빌드 없이 채보가 바뀐다.
+        string songFolderName = string.IsNullOrEmpty(activeChart.songName) ? activeChart.name : activeChart.songName;
+        foreach (char c in Path.GetInvalidFileNameChars())
+            songFolderName = songFolderName.Replace(c, '_');
+        songFolderName = songFolderName.TrimEnd('.', ' '); // Windows는 폴더명 끝의 마침표/공백을 조용히 잘라내므로 미리 제거
+
+        string targetFolder = Path.Combine(Application.streamingAssetsPath, "Charts", songFolderName);
+        Directory.CreateDirectory(targetFolder);
+
+        ChartData data = new ChartData
         {
-            ChartData data = new ChartData
-            {
-                songName = activeChart.songName,
-                bpm = activeChart.bpm,
-                offset = activeChart.offset,
-                travelTime = activeChart.travelTime,
-                notes = new List<NoteInfo>()
-            };
+            songName = activeChart.songName,
+            bpm = activeChart.bpm,
+            offset = activeChart.offset,
+            travelTime = activeChart.travelTime,
+            notes = new List<NoteInfo>()
+        };
 
-            foreach (var note in activeChart.notes)
+        foreach (var note in activeChart.notes)
+        {
+            data.notes.Add(new NoteInfo
             {
-                data.notes.Add(new NoteInfo
-                {
-                    time = note.time,
-                    lane = note.lane,
-                    row = note.row,
-                    type = (int)note.type,
-                    direction = new float[] { note.direction.x, note.direction.y, note.direction.z }
-                });
-            }
-
-            string json = JsonUtility.ToJson(data, true);
-            File.WriteAllText(path, json);
-            AssetDatabase.Refresh();
-            EditorUtility.DisplayDialog("Success", $"Chart backup exported to:\n{path}", "OK");
+                time = note.time,
+                lane = note.lane,
+                row = note.row,
+                type = note.type.ToString(), // enum 순서가 바뀌어도 안전하도록 문자열로 저장
+                duration = note.duration,
+                endLane = note.endLane,
+                endRow = note.endRow,
+                midpoints = new List<LongNoteWaypoint>(note.midpoints),
+                direction = new float[] { note.direction.x, note.direction.y, note.direction.z }
+            });
         }
+
+        if (activeChart.audioClip != null)
+        {
+            string sourceAudioPath = AssetDatabase.GetAssetPath(activeChart.audioClip);
+            if (!string.IsNullOrEmpty(sourceAudioPath) && File.Exists(sourceAudioPath))
+            {
+                string audioFileName = Path.GetFileName(sourceAudioPath);
+                string destAudioPath = Path.Combine(targetFolder, audioFileName);
+                if (File.Exists(destAudioPath)) File.SetAttributes(destAudioPath, FileAttributes.Normal);
+                File.Copy(sourceAudioPath, destAudioPath, true);
+                data.audioFile = audioFileName;
+            }
+            else
+            {
+                Debug.LogWarning("[ChartEditorWindow] 오디오 클립의 원본 에셋 파일을 찾을 수 없어 audioFile을 비웁니다.");
+            }
+        }
+
+        if (activeChart.coverSprite != null && activeChart.coverSprite.texture != null)
+        {
+            string sourceCoverPath = AssetDatabase.GetAssetPath(activeChart.coverSprite.texture);
+            if (!string.IsNullOrEmpty(sourceCoverPath) && File.Exists(sourceCoverPath))
+            {
+                string coverFileName = Path.GetFileName(sourceCoverPath);
+                string destCoverPath = Path.Combine(targetFolder, coverFileName);
+                if (File.Exists(destCoverPath)) File.SetAttributes(destCoverPath, FileAttributes.Normal);
+                File.Copy(sourceCoverPath, destCoverPath, true);
+                data.coverFile = coverFileName;
+            }
+        }
+
+        string json = JsonUtility.ToJson(data, true);
+        string jsonPath = Path.Combine(targetFolder, "chart.json");
+        if (File.Exists(jsonPath)) File.SetAttributes(jsonPath, FileAttributes.Normal);
+        File.WriteAllText(jsonPath, json);
+
+        AssetDatabase.Refresh();
+        EditorUtility.DisplayDialog("Success",
+            $"Chart exported to:\n{jsonPath}\n\n빌드 후에는 이 폴더의 파일만 교체하면 채보가 바뀝니다.", "OK");
     }
 }

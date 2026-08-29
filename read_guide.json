@@ -1,0 +1,3 @@
+{
+  "csharpCode": "var text = System.IO.File.ReadAllText(\"Assets/Scripts/LongNoteGuide.cs\"); return text.Substring(text.IndexOf(\"private static Material GetSharedMaterial\"), 600);"
+}

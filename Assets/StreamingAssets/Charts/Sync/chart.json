@@ -1,0 +1,13 @@
+{
+    "songName": "Sync Test",
+    "bpm": 30,
+    "offset": 0.0,
+    "travelTime": 3,
+    "audioFile": "Sync.wav",
+    "coverFile": "",
+    "loop": true,
+    "loopPeriod": 2.0,
+    "notes": [
+        { "time": 3.0, "lane": 1, "row": 1, "type": "Hit", "duration": 0.0, "direction": [1,0,0] }
+    ]
+}

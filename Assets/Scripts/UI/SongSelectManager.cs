@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -18,8 +19,7 @@ using TMPro;
 /// </summary>
 public class SongSelectManager : MonoBehaviour
 {
-    [Header("Charts")]
-    public ChartDataSO[] charts;
+    private List<ChartData> charts = new List<ChartData>();
 
     [Header("UI")]
     public GameObject songSelectPanel;
@@ -34,6 +34,7 @@ public class SongSelectManager : MonoBehaviour
     public Button prevButton;
     public Button nextButton;
     public Button playButton;
+    public Toggle practiceModeToggle;
 
     [Header("Carousel")]
     public float cardSpacing  = 320f;
@@ -89,23 +90,33 @@ public class SongSelectManager : MonoBehaviour
         nextButton.onClick.AddListener(SelectNext);
         playButton.onClick.AddListener(OnPlayPressed);
 
+        StartCoroutine(ChartLoader.LoadAllCharts(OnChartsLoaded));
+    }
+
+    void OnChartsLoaded(List<ChartData> loadedCharts)
+    {
+        charts = loadedCharts;
+
+        if (charts.Count == 0)
+        {
+            Debug.LogError($"[SongSelectManager] 로드된 채보가 없습니다: {ChartLoader.ChartsFolder}");
+            return;
+        }
+
         BuildCards();
         RefreshSelection(instant: true);
 
-        if (charts.Length > 0)
-        {
-            int realIndex = (virtualIndex % charts.Length + charts.Length) % charts.Length;
-            PlayPreview(charts[realIndex].audioClip);
-        }
+        int realIndex = (virtualIndex % charts.Count + charts.Count) % charts.Count;
+        PlayPreview(charts[realIndex].audioClip);
     }
 
     void Update()
     {
-        if (cards == null || charts.Length == 0) return;
+        if (cards == null || charts.Count == 0) return;
 
         currentScroll = Mathf.Lerp(currentScroll, virtualIndex, Time.deltaTime * scrollSpeed);
 
-        float N = charts.Length;
+        float N = charts.Count;
         float halfN = N / 2f;
 
         for (int i = 0; i < cards.Length; i++)
@@ -130,8 +141,8 @@ public class SongSelectManager : MonoBehaviour
             Debug.LogError("[SongSelectManager] CardPrefab이 연결되지 않았습니다!");
             return;
         }
-        cards = new SongCard[charts.Length];
-        for (int i = 0; i < charts.Length; i++)
+        cards = new SongCard[charts.Count];
+        for (int i = 0; i < charts.Count; i++)
         {
             SongCard card = Instantiate(cardPrefab, cardContainer);
             if (card == null)
@@ -153,7 +164,7 @@ public class SongSelectManager : MonoBehaviour
     void SelectNext()
     {
         if (Time.unscaledTime - lastSelectTime < SelectCooldown) return;
-        if (charts.Length == 0) return;
+        if (charts.Count == 0) return;
         lastSelectTime = Time.unscaledTime;
         virtualIndex++;
         RefreshSelection();
@@ -162,7 +173,7 @@ public class SongSelectManager : MonoBehaviour
     void SelectPrev()
     {
         if (Time.unscaledTime - lastSelectTime < SelectCooldown) return;
-        if (charts.Length == 0) return;
+        if (charts.Count == 0) return;
         lastSelectTime = Time.unscaledTime;
         virtualIndex--;
         RefreshSelection();
@@ -170,7 +181,7 @@ public class SongSelectManager : MonoBehaviour
 
     void RefreshSelection(bool instant = false)
     {
-        if (cards == null || charts.Length == 0) return;
+        if (cards == null || charts.Count == 0) return;
 
         if (instant)
         {
@@ -178,13 +189,13 @@ public class SongSelectManager : MonoBehaviour
             cardContainer.localPosition = Vector3.zero; // 컨테이너 자체는 이동하지 않음
         }
 
-        int realIndex = (virtualIndex % charts.Length + charts.Length) % charts.Length;
+        int realIndex = (virtualIndex % charts.Count + charts.Count) % charts.Count;
 
         for (int i = 0; i < cards.Length; i++)
             if (cards[i] != null)
                 cards[i].SetSelected(i == realIndex, instant);
 
-        ChartDataSO chart = charts[realIndex];
+        ChartData chart = charts[realIndex];
         if (songNameText != null) songNameText.text = chart.songName;
         if (bpmText != null) bpmText.text = $"BPM  {chart.bpm}";
 
@@ -224,8 +235,9 @@ public class SongSelectManager : MonoBehaviour
     {
         if (previewCoroutine != null) StopCoroutine(previewCoroutine);
         previewAudioSource.Stop();
-        int realIndex = (virtualIndex % charts.Length + charts.Length) % charts.Length;
+        int realIndex = (virtualIndex % charts.Count + charts.Count) % charts.Count;
         SongSelection.Chart = charts[realIndex];
+        SongSelection.IsPracticeMode = practiceModeToggle != null ? practiceModeToggle.isOn : false;
         SceneManager.LoadScene("BasicScene");
     }
 }

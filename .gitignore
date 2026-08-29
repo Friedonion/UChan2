@@ -50,3 +50,25 @@ Assets/Models/Hit/model.obj
 Assets/Deoksugung_Palace/Meshes/Landscape/SM_Landscape_8.fbx
 
 Assets/Deoksugung_Palace/Meshes/Landscape/SM_Outside_Fence01a_Splines_0.fbx
+
+# AI and MCP related
+/.agent/
+/.claude/
+/.cursor/
+/.gemini/
+/.mcp.json
+/python-installer.exe
+/Tools/
+
+# AI and MCP related
+/.agent/
+/.claude/
+/.cursor/
+/.gemini/
+/.mcp.json
+/python-installer.exe
+/Tools/
+
+# Ignore large files
+*.pptx
+ODC/build_Final/

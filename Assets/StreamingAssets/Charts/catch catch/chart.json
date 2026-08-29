@@ -1,0 +1,4294 @@
+{
+    "songName": "catch catch",
+    "bpm": 98.0,
+    "offset": 0.0,
+    "travelTime": 4.5,
+    "audioFile": "catch catch.mp3",
+    "coverFile": "hq720.jpg",
+    "notes": [
+        {
+            "time": 0.30612245202064516,
+            "lane": 3,
+            "row": 0,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5277537703514099,
+                -0.8493974208831787,
+                0.0
+            ]
+        },
+        {
+            "time": 1.2244898080825806,
+            "lane": 3,
+            "row": 0,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.033056534826755527,
+                0.9994534850120544,
+                0.0
+            ]
+        },
+        {
+            "time": 1.8367347717285157,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9086328148841858,
+                -0.4175959825515747,
+                0.0
+            ]
+        },
+        {
+            "time": 2.448979616165161,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7439985871315002,
+                0.6681811809539795,
+                0.0
+            ]
+        },
+        {
+            "time": 3.0612244606018068,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9627328515052795,
+                0.27045419812202456,
+                0.0
+            ]
+        },
+        {
+            "time": 3.6734695434570314,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9995241761207581,
+                -0.030845340341329576,
+                0.0
+            ]
+        },
+        {
+            "time": 4.285714149475098,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.1707206666469574,
+                -0.9853194952011108,
+                0.0
+            ]
+        },
+        {
+            "time": 4.897959232330322,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9629659056663513,
+                -0.26962319016456606,
+                0.0
+            ]
+        },
+        {
+            "time": 5.510204315185547,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5964625477790833,
+                0.8026409149169922,
+                0.0
+            ]
+        },
+        {
+            "time": 6.122448921203613,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9814854264259338,
+                -0.1915368139743805,
+                0.0
+            ]
+        },
+        {
+            "time": 6.734694004058838,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.07083843648433685,
+                -0.9974877834320068,
+                0.0
+            ]
+        },
+        {
+            "time": 7.3469390869140629,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.06627397239208222,
+                -0.9978014230728149,
+                0.0
+            ]
+        },
+        {
+            "time": 7.959183692932129,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6736351251602173,
+                -0.73906409740448,
+                0.0
+            ]
+        },
+        {
+            "time": 8.571428298950196,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7595229148864746,
+                -0.6504805684089661,
+                0.0
+            ]
+        },
+        {
+            "time": 9.183673858642579,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.3832054138183594,
+                -0.9236631989479065,
+                0.0
+            ]
+        },
+        {
+            "time": 9.795918464660645,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.228124737739563,
+                0.9736319184303284,
+                0.0
+            ]
+        },
+        {
+            "time": 10.408163070678711,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.06454212963581085,
+                -0.9979150295257568,
+                0.0
+            ]
+        },
+        {
+            "time": 11.020408630371094,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7439286708831787,
+                0.6682590246200562,
+                0.0
+            ]
+        },
+        {
+            "time": 11.63265323638916,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9803084135055542,
+                -0.19747261703014375,
+                0.0
+            ]
+        },
+        {
+            "time": 12.244897842407227,
+            "lane": 0,
+            "row": 0,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8598703145980835,
+                -0.5105125308036804,
+                0.0
+            ]
+        },
+        {
+            "time": 12.85714340209961,
+            "lane": 0,
+            "row": 0,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7451104521751404,
+                0.6669411063194275,
+                0.0
+            ]
+        },
+        {
+            "time": 13.469388008117676,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9119053483009338,
+                -0.4104006886482239,
+                0.0
+            ]
+        },
+        {
+            "time": 14.081632614135743,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.24410240352153779,
+                0.9697494506835938,
+                0.0
+            ]
+        },
+        {
+            "time": 14.693878173828125,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7367595434188843,
+                0.6761548519134522,
+                0.0
+            ]
+        },
+        {
+            "time": 15.306122779846192,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5691803693771362,
+                0.8222126364707947,
+                0.0
+            ]
+        },
+        {
+            "time": 15.918367385864258,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.45326513051986697,
+                -0.8913757801055908,
+                0.0
+            ]
+        },
+        {
+            "time": 16.53061294555664,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9957814812660217,
+                0.09175644814968109,
+                0.0
+            ]
+        },
+        {
+            "time": 17.14285659790039,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.23955518007278443,
+                -0.970882773399353,
+                0.0
+            ]
+        },
+        {
+            "time": 17.755102157592775,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6491907835006714,
+                0.7606256604194641,
+                0.0
+            ]
+        },
+        {
+            "time": 18.367347717285158,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8424392342567444,
+                -0.5387912392616272,
+                0.0
+            ]
+        },
+        {
+            "time": 18.979591369628908,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.07585271447896958,
+                -0.9971190690994263,
+                0.0
+            ]
+        },
+        {
+            "time": 19.59183692932129,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7948650121688843,
+                -0.60678631067276,
+                0.0
+            ]
+        },
+        {
+            "time": 20.204082489013673,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8989328145980835,
+                0.438086599111557,
+                0.0
+            ]
+        },
+        {
+            "time": 20.816326141357423,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8775416016578674,
+                -0.4795004427433014,
+                0.0
+            ]
+        },
+        {
+            "time": 21.428571701049806,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9750360250473023,
+                0.2220468521118164,
+                0.0
+            ]
+        },
+        {
+            "time": 22.040817260742189,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.578104555606842,
+                0.8159626722335815,
+                0.0
+            ]
+        },
+        {
+            "time": 22.653060913085939,
+            "lane": 2,
+            "row": 0,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.4988196790218353,
+                -0.8667058348655701,
+                0.0
+            ]
+        },
+        {
+            "time": 23.26530647277832,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8946368098258972,
+                -0.44679421186447146,
+                0.0
+            ]
+        },
+        {
+            "time": 23.877552032470704,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7569180727005005,
+                -0.653509795665741,
+                0.0
+            ]
+        },
+        {
+            "time": 24.489795684814454,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.3764630854129791,
+                -0.9264315962791443,
+                0.0
+            ]
+        },
+        {
+            "time": 25.102041244506837,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6609447002410889,
+                0.7504345774650574,
+                0.0
+            ]
+        },
+        {
+            "time": 25.71428680419922,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.45037975907325747,
+                -0.8928371071815491,
+                0.0
+            ]
+        },
+        {
+            "time": 26.32653045654297,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7509598731994629,
+                -0.6603478193283081,
+                0.0
+            ]
+        },
+        {
+            "time": 26.93877601623535,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9924643635749817,
+                0.12253352999687195,
+                0.0
+            ]
+        },
+        {
+            "time": 27.551021575927736,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9983002543449402,
+                -0.058280427008867267,
+                0.0
+            ]
+        },
+        {
+            "time": 28.163265228271486,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.3459530770778656,
+                -0.938251793384552,
+                0.0
+            ]
+        },
+        {
+            "time": 28.775510787963868,
+            "lane": 1,
+            "row": 0,
+            "type": "HoldOpen",
+            "duration": 2.836674451828003,
+            "endLane": 1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "time": 29.38775634765625,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8633888363838196,
+                0.5045391321182251,
+                0.0
+            ]
+        },
+        {
+            "time": 30.0,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7609626054763794,
+                0.6487957239151001,
+                0.0
+            ]
+        },
+        {
+            "time": 30.612245559692384,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.0033757947385311128,
+                -0.9999942779541016,
+                0.0
+            ]
+        },
+        {
+            "time": 31.224489212036134,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9967149496078491,
+                -0.08098972588777542,
+                0.0
+            ]
+        },
+        {
+            "time": 31.836734771728517,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9552140235900879,
+                -0.29591596126556399,
+                0.0
+            ]
+        },
+        {
+            "time": 32.448978424072269,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5512005686759949,
+                -0.8343728184700012,
+                0.0
+            ]
+        },
+        {
+            "time": 33.06122589111328,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7769941687583923,
+                0.6295077204704285,
+                0.0
+            ]
+        },
+        {
+            "time": 33.67346954345703,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.4407266080379486,
+                0.8976414203643799,
+                0.0
+            ]
+        },
+        {
+            "time": 34.28571319580078,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.026811378076672555,
+                -0.9996405243873596,
+                0.0
+            ]
+        },
+        {
+            "time": 34.8979606628418,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9742723107337952,
+                0.22537408769130708,
+                0.0
+            ]
+        },
+        {
+            "time": 35.51020431518555,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.06300496309995651,
+                0.9980131983757019,
+                0.0
+            ]
+        },
+        {
+            "time": 36.1224479675293,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.987080991268158,
+                0.1602221578359604,
+                0.0
+            ]
+        },
+        {
+            "time": 36.73469543457031,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5414324998855591,
+                0.8407441973686218,
+                0.0
+            ]
+        },
+        {
+            "time": 37.34693908691406,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.646504282951355,
+                0.7629104256629944,
+                0.0
+            ]
+        },
+        {
+            "time": 37.95918273925781,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7251783013343811,
+                -0.6885610818862915,
+                0.0
+            ]
+        },
+        {
+            "time": 38.57143020629883,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5499290227890015,
+                -0.835211455821991,
+                0.0
+            ]
+        },
+        {
+            "time": 39.18367385864258,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8928162455558777,
+                0.45042094588279726,
+                0.0
+            ]
+        },
+        {
+            "time": 39.79591751098633,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.43079856038093569,
+                0.9024481177330017,
+                0.0
+            ]
+        },
+        {
+            "time": 40.408164978027347,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.47182273864746096,
+                -0.8816934823989868,
+                0.0
+            ]
+        },
+        {
+            "time": 41.020408630371097,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9786064028739929,
+                -0.20574145019054414,
+                0.0
+            ]
+        },
+        {
+            "time": 41.632652282714847,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8840174674987793,
+                -0.4674539566040039,
+                0.0
+            ]
+        },
+        {
+            "time": 42.24489974975586,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.09846022725105286,
+                -0.9951409697532654,
+                0.0
+            ]
+        },
+        {
+            "time": 42.85714340209961,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9601879119873047,
+                0.27935492992401125,
+                0.0
+            ]
+        },
+        {
+            "time": 43.46938705444336,
+            "lane": 1,
+            "row": 0,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8139967918395996,
+                0.5808693766593933,
+                0.0
+            ]
+        },
+        {
+            "time": 44.081634521484378,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.2230381965637207,
+                0.9748097062110901,
+                0.0
+            ]
+        },
+        {
+            "time": 44.693878173828128,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.3740027844905853,
+                -0.9274275302886963,
+                0.0
+            ]
+        },
+        {
+            "time": 45.306121826171878,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7098670601844788,
+                0.7043357491493225,
+                0.0
+            ]
+        },
+        {
+            "time": 45.91836929321289,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.04591870680451393,
+                -0.9989451766014099,
+                0.0
+            ]
+        },
+        {
+            "time": 46.53061294555664,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5493369698524475,
+                0.8356009125709534,
+                0.0
+            ]
+        },
+        {
+            "time": 47.14285659790039,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.3693115711212158,
+                0.9293056726455689,
+                0.0
+            ]
+        },
+        {
+            "time": 47.755104064941409,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7763909697532654,
+                -0.6302515268325806,
+                0.0
+            ]
+        },
+        {
+            "time": 48.367347717285159,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7622779011726379,
+                -0.6472498178482056,
+                0.0
+            ]
+        },
+        {
+            "time": 48.979591369628909,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6939789056777954,
+                0.7199952602386475,
+                0.0
+            ]
+        },
+        {
+            "time": 49.59183883666992,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.18729577958583833,
+                0.9823036193847656,
+                0.0
+            ]
+        },
+        {
+            "time": 50.20408248901367,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.976685106754303,
+                -0.21467678248882295,
+                0.0
+            ]
+        },
+        {
+            "time": 50.81632614135742,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7692254185676575,
+                0.638977587223053,
+                0.0
+            ]
+        },
+        {
+            "time": 51.42857360839844,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.33813047409057619,
+                -0.941099226474762,
+                0.0
+            ]
+        },
+        {
+            "time": 52.04081726074219,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7176483273506165,
+                0.6964056491851807,
+                0.0
+            ]
+        },
+        {
+            "time": 52.65306091308594,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.21262094378471375,
+                0.9771347641944885,
+                0.0
+            ]
+        },
+        {
+            "time": 53.26530838012695,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8569146990776062,
+                0.5154582262039185,
+                0.0
+            ]
+        },
+        {
+            "time": 53.8775520324707,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.907668948173523,
+                -0.4196869730949402,
+                0.0
+            ]
+        },
+        {
+            "time": 54.48979568481445,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9160387516021729,
+                -0.40108969807624819,
+                0.0
+            ]
+        },
+        {
+            "time": 55.10204315185547,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.433531254529953,
+                -0.9011384844779968,
+                0.0
+            ]
+        },
+        {
+            "time": 55.71428680419922,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6780679821968079,
+                0.7349991798400879,
+                0.0
+            ]
+        },
+        {
+            "time": 56.32653045654297,
+            "lane": 0,
+            "row": 0,
+            "type": "HoldFolded",
+            "duration": 1.54987633228302,
+            "endLane": 1,
+            "endRow": -1,
+            "midpoints": [
+                {
+                    "lane": 0.0,
+                    "row": 0.0
+                },
+                {
+                    "lane": 0.19999998807907105,
+                    "row": 0.0
+                },
+                {
+                    "lane": 0.6316179633140564,
+                    "row": 0.0
+                }
+            ],
+            "direction": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "time": 58.163265228271487,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.3239080607891083,
+                0.9460886120796204,
+                0.0
+            ]
+        },
+        {
+            "time": 58.7755126953125,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9455388784408569,
+                -0.3255091607570648,
+                0.0
+            ]
+        },
+        {
+            "time": 59.38775634765625,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.2732261121273041,
+                0.96194988489151,
+                0.0
+            ]
+        },
+        {
+            "time": 60.0,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5408474802970886,
+                -0.841120719909668,
+                0.0
+            ]
+        },
+        {
+            "time": 60.61224365234375,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.999978244304657,
+                0.006596327759325504,
+                0.0
+            ]
+        },
+        {
+            "time": 61.224491119384769,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.12022873759269715,
+                -0.9927462339401245,
+                0.0
+            ]
+        },
+        {
+            "time": 61.836734771728519,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6738793253898621,
+                0.7388414740562439,
+                0.0
+            ]
+        },
+        {
+            "time": 62.448978424072269,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.2907532751560211,
+                -0.9567980766296387,
+                0.0
+            ]
+        },
+        {
+            "time": 63.06122589111328,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6739477515220642,
+                -0.7387790679931641,
+                0.0
+            ]
+        },
+        {
+            "time": 63.67346954345703,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7444374561309815,
+                -0.6676921844482422,
+                0.0
+            ]
+        },
+        {
+            "time": 64.28571319580078,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6699969172477722,
+                0.7423639297485352,
+                0.0
+            ]
+        },
+        {
+            "time": 64.89795684814453,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.40904754400253298,
+                -0.9125130772590637,
+                0.0
+            ]
+        },
+        {
+            "time": 65.51020812988281,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8123533129692078,
+                0.5831654667854309,
+                0.0
+            ]
+        },
+        {
+            "time": 66.12245178222656,
+            "lane": 3,
+            "row": 1,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.28607267141342165,
+                0.958207905292511,
+                0.0
+            ]
+        },
+        {
+            "time": 66.73469543457031,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9978106021881104,
+                0.06613565236330033,
+                0.0
+            ]
+        },
+        {
+            "time": 67.34693908691406,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8503780961036682,
+                -0.5261720418930054,
+                0.0
+            ]
+        },
+        {
+            "time": 67.95918273925781,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8444666266441345,
+                0.535608172416687,
+                0.0
+            ]
+        },
+        {
+            "time": 68.57142639160156,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9311304688453674,
+                0.36468634009361269,
+                0.0
+            ]
+        },
+        {
+            "time": 69.18367767333985,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7041680812835693,
+                0.7100332379341126,
+                0.0
+            ]
+        },
+        {
+            "time": 69.7959213256836,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5935423970222473,
+                -0.8048027157783508,
+                0.0
+            ]
+        },
+        {
+            "time": 70.40816497802735,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8045346140861511,
+                -0.5939058065414429,
+                0.0
+            ]
+        },
+        {
+            "time": 71.0204086303711,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5701234936714172,
+                -0.821558952331543,
+                0.0
+            ]
+        },
+        {
+            "time": 71.63265228271485,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.3727013170719147,
+                0.9279513359069824,
+                0.0
+            ]
+        },
+        {
+            "time": 72.2448959350586,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9948930740356445,
+                0.10093493014574051,
+                0.0
+            ]
+        },
+        {
+            "time": 72.85714721679688,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8721846342086792,
+                0.48917677998542788,
+                0.0
+            ]
+        },
+        {
+            "time": 73.46939086914063,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5143681764602661,
+                -0.8575694561004639,
+                0.0
+            ]
+        },
+        {
+            "time": 74.08163452148438,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5003029704093933,
+                0.8658503890037537,
+                0.0
+            ]
+        },
+        {
+            "time": 74.69387817382813,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9953152537345886,
+                -0.09668245911598206,
+                0.0
+            ]
+        },
+        {
+            "time": 75.30612182617188,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.04258808121085167,
+                -0.999092698097229,
+                0.0
+            ]
+        },
+        {
+            "time": 75.91836547851563,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.023999912664294244,
+                0.9997119307518005,
+                0.0
+            ]
+        },
+        {
+            "time": 76.5306167602539,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.23836100101470948,
+                0.9711765646934509,
+                0.0
+            ]
+        },
+        {
+            "time": 77.14286041259766,
+            "lane": 1,
+            "row": 0,
+            "type": "HoldOpen",
+            "duration": 1.477027177810669,
+            "endLane": 1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "time": 77.7551040649414,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5128465294837952,
+                0.8584803342819214,
+                0.0
+            ]
+        },
+        {
+            "time": 78.36734771728516,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5942711234092712,
+                0.8042647838592529,
+                0.0
+            ]
+        },
+        {
+            "time": 78.9795913696289,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7349345088005066,
+                0.678138017654419,
+                0.0
+            ]
+        },
+        {
+            "time": 79.59183502197266,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.2017894983291626,
+                0.9794289469718933,
+                0.0
+            ]
+        },
+        {
+            "time": 80.2040786743164,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6580396294593811,
+                -0.7529833912849426,
+                0.0
+            ]
+        },
+        {
+            "time": 80.81632995605469,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7452332973480225,
+                0.666803777217865,
+                0.0
+            ]
+        },
+        {
+            "time": 81.42857360839844,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9661922454833984,
+                0.25782275199890139,
+                0.0
+            ]
+        },
+        {
+            "time": 82.04081726074219,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9518185257911682,
+                0.3066617250442505,
+                0.0
+            ]
+        },
+        {
+            "time": 82.65306091308594,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8542996048927307,
+                0.5197808146476746,
+                0.0
+            ]
+        },
+        {
+            "time": 83.26530456542969,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8594135046005249,
+                0.5112810730934143,
+                0.0
+            ]
+        },
+        {
+            "time": 83.87754821777344,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9735291600227356,
+                0.2285631000995636,
+                0.0
+            ]
+        },
+        {
+            "time": 84.48979949951172,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7255228757858276,
+                0.6881980299949646,
+                0.0
+            ]
+        },
+        {
+            "time": 85.10204315185547,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9063166379928589,
+                0.4225991368293762,
+                0.0
+            ]
+        },
+        {
+            "time": 88.73908233642578,
+            "lane": 3,
+            "row": 0,
+            "type": "Wall",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5,
+                3.0,
+                26.887052536010743
+            ]
+        },
+        {
+            "time": 86.32653045654297,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6782225966453552,
+                -0.7348565459251404,
+                0.0
+            ]
+        },
+        {
+            "time": 86.93877410888672,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.09321567416191101,
+                -0.9956459403038025,
+                0.0
+            ]
+        },
+        {
+            "time": 87.55101776123047,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.927676796913147,
+                0.3733842670917511,
+                0.0
+            ]
+        },
+        {
+            "time": 88.16326904296875,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6208736896514893,
+                0.7839106917381287,
+                0.0
+            ]
+        },
+        {
+            "time": 88.7755126953125,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9591556787490845,
+                -0.2828788459300995,
+                0.0
+            ]
+        },
+        {
+            "time": 89.38775634765625,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.564473569393158,
+                -0.825451135635376,
+                0.0
+            ]
+        },
+        {
+            "time": 90.0,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8349239826202393,
+                -0.5503652095794678,
+                0.0
+            ]
+        },
+        {
+            "time": 90.61224365234375,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7094999551773071,
+                -0.7047054767608643,
+                0.0
+            ]
+        },
+        {
+            "time": 91.2244873046875,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8373503684997559,
+                -0.5466665625572205,
+                0.0
+            ]
+        },
+        {
+            "time": 91.83673858642578,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.28423863649368288,
+                -0.9587535858154297,
+                0.0
+            ]
+        },
+        {
+            "time": 92.44898223876953,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7226598262786865,
+                0.6912038326263428,
+                0.0
+            ]
+        },
+        {
+            "time": 93.06122589111328,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9268902540206909,
+                -0.3753325343132019,
+                0.0
+            ]
+        },
+        {
+            "time": 93.67346954345703,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.765550971031189,
+                0.6433752179145813,
+                0.0
+            ]
+        },
+        {
+            "time": 94.28571319580078,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7129595279693604,
+                -0.7012051939964294,
+                0.0
+            ]
+        },
+        {
+            "time": 94.89795684814453,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.935565173625946,
+                -0.3531539738178253,
+                0.0
+            ]
+        },
+        {
+            "time": 95.51020812988281,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5626688599586487,
+                -0.8266823887825012,
+                0.0
+            ]
+        },
+        {
+            "time": 96.12245178222656,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.45119747519493105,
+                -0.8924241065979004,
+                0.0
+            ]
+        },
+        {
+            "time": 96.73469543457031,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6171776652336121,
+                0.7868238091468811,
+                0.0
+            ]
+        },
+        {
+            "time": 97.34693908691406,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7997303009033203,
+                0.6003594398498535,
+                0.0
+            ]
+        },
+        {
+            "time": 97.95918273925781,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8019091486930847,
+                0.597446084022522,
+                0.0
+            ]
+        },
+        {
+            "time": 98.57142639160156,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7649700045585632,
+                -0.6440659761428833,
+                0.0
+            ]
+        },
+        {
+            "time": 99.18367767333985,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.1363864243030548,
+                -0.9906556606292725,
+                0.0
+            ]
+        },
+        {
+            "time": 99.7959213256836,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7859410047531128,
+                -0.618301510810852,
+                0.0
+            ]
+        },
+        {
+            "time": 100.40816497802735,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9338827133178711,
+                0.35757941007614138,
+                0.0
+            ]
+        },
+        {
+            "time": 101.0204086303711,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7650891542434692,
+                0.643924355506897,
+                0.0
+            ]
+        },
+        {
+            "time": 101.63265228271485,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9760431051254273,
+                -0.217577263712883,
+                0.0
+            ]
+        },
+        {
+            "time": 102.2448959350586,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.718833863735199,
+                0.6951819062232971,
+                0.0
+            ]
+        },
+        {
+            "time": 102.85714721679688,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.352321594953537,
+                0.9358789920806885,
+                0.0
+            ]
+        },
+        {
+            "time": 103.46939086914063,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6317299008369446,
+                0.7751885652542114,
+                0.0
+            ]
+        },
+        {
+            "time": 104.08163452148438,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9942507147789002,
+                -0.10707665234804154,
+                0.0
+            ]
+        },
+        {
+            "time": 104.69387817382813,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7316526770591736,
+                0.6816775798797607,
+                0.0
+            ]
+        },
+        {
+            "time": 105.30612182617188,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.637082576751709,
+                0.7707955837249756,
+                0.0
+            ]
+        },
+        {
+            "time": 105.91836547851563,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7861925363540649,
+                0.6179817318916321,
+                0.0
+            ]
+        },
+        {
+            "time": 106.5306167602539,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.25711238384246828,
+                -0.9663815498352051,
+                0.0
+            ]
+        },
+        {
+            "time": 107.14286041259766,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6526986360549927,
+                0.757617712020874,
+                0.0
+            ]
+        },
+        {
+            "time": 107.7551040649414,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.38089829683303835,
+                0.9246169328689575,
+                0.0
+            ]
+        },
+        {
+            "time": 108.36734771728516,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.4906533658504486,
+                -0.871354877948761,
+                0.0
+            ]
+        },
+        {
+            "time": 108.9795913696289,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7590506672859192,
+                0.651031494140625,
+                0.0
+            ]
+        },
+        {
+            "time": 109.59183502197266,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.557846188545227,
+                -0.8299443125724793,
+                0.0
+            ]
+        },
+        {
+            "time": 110.20408630371094,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8948413729667664,
+                0.4463842213153839,
+                0.0
+            ]
+        },
+        {
+            "time": 110.81632995605469,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.23571054637432099,
+                -0.9718232750892639,
+                0.0
+            ]
+        },
+        {
+            "time": 111.42857360839844,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.852463960647583,
+                -0.522786021232605,
+                0.0
+            ]
+        },
+        {
+            "time": 112.04081726074219,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9371597766876221,
+                -0.34890052676200869,
+                0.0
+            ]
+        },
+        {
+            "time": 112.65306091308594,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8246035575866699,
+                -0.5657110214233398,
+                0.0
+            ]
+        },
+        {
+            "time": 113.26530456542969,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.988223671913147,
+                0.15301628410816194,
+                0.0
+            ]
+        },
+        {
+            "time": 113.87755584716797,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.12387870252132416,
+                0.992297351360321,
+                0.0
+            ]
+        },
+        {
+            "time": 114.48979949951172,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9512574076652527,
+                0.30839794874191286,
+                0.0
+            ]
+        },
+        {
+            "time": 115.10204315185547,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6199934482574463,
+                -0.7846069931983948,
+                0.0
+            ]
+        },
+        {
+            "time": 115.71428680419922,
+            "lane": 2,
+            "row": 1,
+            "type": "HoldFolded",
+            "duration": 2.3055927753448488,
+            "endLane": 3,
+            "endRow": -1,
+            "midpoints": [
+                {
+                    "lane": 1.9441180229187012,
+                    "row": 1.0
+                },
+                {
+                    "lane": 2.200000047683716,
+                    "row": 1.0
+                },
+                {
+                    "lane": 2.631618022918701,
+                    "row": 1.0
+                }
+            ],
+            "direction": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "time": 118.16326904296875,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7087497711181641,
+                -0.7054599523544312,
+                0.0
+            ]
+        },
+        {
+            "time": 118.7755126953125,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.3962879180908203,
+                -0.9181262850761414,
+                0.0
+            ]
+        },
+        {
+            "time": 119.38775634765625,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5885409712791443,
+                0.808467447757721,
+                0.0
+            ]
+        },
+        {
+            "time": 120.0,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8791550397872925,
+                -0.47653597593307497,
+                0.0
+            ]
+        },
+        {
+            "time": 120.61224365234375,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7605181932449341,
+                -0.6493166089057922,
+                0.0
+            ]
+        },
+        {
+            "time": 121.2244873046875,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7983486652374268,
+                -0.6021955013275147,
+                0.0
+            ]
+        },
+        {
+            "time": 121.83673858642578,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.004518148954957724,
+                -0.9999898076057434,
+                0.0
+            ]
+        },
+        {
+            "time": 122.44898223876953,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.4061896800994873,
+                -0.9137887954711914,
+                0.0
+            ]
+        },
+        {
+            "time": 123.06122589111328,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9861771464347839,
+                0.16569440066814423,
+                0.0
+            ]
+        },
+        {
+            "time": 123.67346954345703,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.1271178126335144,
+                -0.9918875694274902,
+                0.0
+            ]
+        },
+        {
+            "time": 124.28571319580078,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.18174631893634797,
+                -0.9833454489707947,
+                0.0
+            ]
+        },
+        {
+            "time": 124.89795684814453,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7724089026451111,
+                0.6351256370544434,
+                0.0
+            ]
+        },
+        {
+            "time": 125.51020812988281,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6961275339126587,
+                0.7179180979728699,
+                0.0
+            ]
+        },
+        {
+            "time": 126.12245178222656,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8113058805465698,
+                0.5846219062805176,
+                0.0
+            ]
+        },
+        {
+            "time": 126.73469543457031,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7865263819694519,
+                -0.6175567507743836,
+                0.0
+            ]
+        },
+        {
+            "time": 127.34693908691406,
+            "lane": 1,
+            "row": 1,
+            "type": "HoldOpen",
+            "duration": 2.983275890350342,
+            "endLane": 2,
+            "endRow": -1,
+            "midpoints": [
+                {
+                    "lane": 0.9441179633140564,
+                    "row": 1.0
+                },
+                {
+                    "lane": 1.2000000476837159,
+                    "row": 1.0
+                },
+                {
+                    "lane": 1.6316180229187012,
+                    "row": 1.0
+                }
+            ],
+            "direction": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "time": 130.4081573486328,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8562487959861755,
+                0.5165637135505676,
+                0.0
+            ]
+        },
+        {
+            "time": 131.02041625976563,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.48459696769714358,
+                -0.8747375011444092,
+                0.0
+            ]
+        },
+        {
+            "time": 131.63265991210938,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.3783649206161499,
+                -0.9256564974784851,
+                0.0
+            ]
+        },
+        {
+            "time": 132.24490356445313,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.366923451423645,
+                -0.9302511811256409,
+                0.0
+            ]
+        },
+        {
+            "time": 132.85714721679688,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.23371893167495728,
+                -0.9723042249679565,
+                0.0
+            ]
+        },
+        {
+            "time": 133.46939086914063,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.2990502417087555,
+                -0.9542373418807983,
+                0.0
+            ]
+        },
+        {
+            "time": 134.08163452148438,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5141999125480652,
+                -0.8576703071594238,
+                0.0
+            ]
+        },
+        {
+            "time": 134.69387817382813,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.14372804760932923,
+                0.9896171689033508,
+                0.0
+            ]
+        },
+        {
+            "time": 135.30612182617188,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9997459650039673,
+                -0.022540360689163209,
+                0.0
+            ]
+        },
+        {
+            "time": 135.91836547851563,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.605402946472168,
+                0.7959191203117371,
+                0.0
+            ]
+        },
+        {
+            "time": 136.53060913085938,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9848887920379639,
+                -0.17318791151046754,
+                0.0
+            ]
+        },
+        {
+            "time": 137.14285278320313,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9956753253936768,
+                0.09290172159671784,
+                0.0
+            ]
+        },
+        {
+            "time": 137.75509643554688,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6636879444122315,
+                0.7480095624923706,
+                0.0
+            ]
+        },
+        {
+            "time": 138.3673553466797,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9792075157165527,
+                0.2028609961271286,
+                0.0
+            ]
+        },
+        {
+            "time": 138.97959899902345,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.4641745388507843,
+                0.8857437968254089,
+                0.0
+            ]
+        },
+        {
+            "time": 139.5918426513672,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.541155993938446,
+                0.8409222364425659,
+                0.0
+            ]
+        },
+        {
+            "time": 140.20408630371095,
+            "lane": 0,
+            "row": 0,
+            "type": "HoldOpen",
+            "duration": 1.7199413776397706,
+            "endLane": 1,
+            "endRow": -1,
+            "midpoints": [
+                {
+                    "lane": 0.0,
+                    "row": 0.0
+                },
+                {
+                    "lane": 0.19999998807907105,
+                    "row": 0.0
+                },
+                {
+                    "lane": 0.6316179633140564,
+                    "row": 0.0
+                }
+            ],
+            "direction": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "time": 142.0408172607422,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.958855152130127,
+                0.2838958501815796,
+                0.0
+            ]
+        },
+        {
+            "time": 142.65306091308595,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.31789442896842959,
+                -0.9481261372566223,
+                0.0
+            ]
+        },
+        {
+            "time": 143.2653045654297,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.562124490737915,
+                0.827052652835846,
+                0.0
+            ]
+        },
+        {
+            "time": 143.87754821777345,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7224870920181274,
+                0.691384494304657,
+                0.0
+            ]
+        },
+        {
+            "time": 144.4897918701172,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9653516411781311,
+                -0.2609526216983795,
+                0.0
+            ]
+        },
+        {
+            "time": 145.10203552246095,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8830805420875549,
+                -0.46922144293785097,
+                0.0
+            ]
+        },
+        {
+            "time": 145.71429443359376,
+            "lane": 1,
+            "row": 1,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.268195241689682,
+                0.9633645415306091,
+                0.0
+            ]
+        },
+        {
+            "time": 146.3265380859375,
+            "lane": 3,
+            "row": 1,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.33107778429985049,
+                0.9436034560203552,
+                0.0
+            ]
+        },
+        {
+            "time": 146.93878173828126,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8677157163619995,
+                -0.4970606863498688,
+                0.0
+            ]
+        },
+        {
+            "time": 147.551025390625,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6559215188026428,
+                -0.7548291087150574,
+                0.0
+            ]
+        },
+        {
+            "time": 148.16326904296876,
+            "lane": 2,
+            "row": 1,
+            "type": "Fanning",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.34384503960609438,
+                0.9390263557434082,
+                0.0
+            ]
+        },
+        {
+            "time": 148.7755126953125,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8434062600135803,
+                -0.5372763872146606,
+                0.0
+            ]
+        },
+        {
+            "time": 149.38775634765626,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8707068562507629,
+                -0.4918023347854614,
+                0.0
+            ]
+        },
+        {
+            "time": 150.0,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6940193176269531,
+                -0.7199564576148987,
+                0.0
+            ]
+        },
+        {
+            "time": 150.61224365234376,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.700354814529419,
+                0.7137948274612427,
+                0.0
+            ]
+        },
+        {
+            "time": 151.2244873046875,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.778169572353363,
+                0.628054141998291,
+                0.0
+            ]
+        },
+        {
+            "time": 151.83673095703126,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9993031620979309,
+                -0.03732485696673393,
+                0.0
+            ]
+        },
+        {
+            "time": 152.448974609375,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.21803224086761475,
+                0.9759415984153748,
+                0.0
+            ]
+        },
+        {
+            "time": 153.0612335205078,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9034396409988403,
+                -0.4287152886390686,
+                0.0
+            ]
+        },
+        {
+            "time": 153.67347717285157,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9744486808776856,
+                0.2246101051568985,
+                0.0
+            ]
+        },
+        {
+            "time": 154.2857208251953,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.20328888297080995,
+                0.9791187644004822,
+                0.0
+            ]
+        },
+        {
+            "time": 154.89796447753907,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.977708637714386,
+                -0.20996618270874024,
+                0.0
+            ]
+        },
+        {
+            "time": 155.5102081298828,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.27948105335235598,
+                -0.9601512551307678,
+                0.0
+            ]
+        },
+        {
+            "time": 156.12245178222657,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5974604487419128,
+                0.8018984198570252,
+                0.0
+            ]
+        },
+        {
+            "time": 156.7346954345703,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.590165376663208,
+                0.8072823882102966,
+                0.0
+            ]
+        },
+        {
+            "time": 157.34693908691407,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9364644289016724,
+                -0.3507625162601471,
+                0.0
+            ]
+        },
+        {
+            "time": 157.9591827392578,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.981040358543396,
+                -0.1938035637140274,
+                0.0
+            ]
+        },
+        {
+            "time": 158.57142639160157,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.3307783007621765,
+                -0.9437085390090942,
+                0.0
+            ]
+        },
+        {
+            "time": 159.1836700439453,
+            "lane": 3,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8297409415245056,
+                -0.5581486821174622,
+                0.0
+            ]
+        },
+        {
+            "time": 159.79591369628907,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6331194043159485,
+                0.7740541100502014,
+                0.0
+            ]
+        },
+        {
+            "time": 160.4081573486328,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.8281428217887878,
+                -0.5605170726776123,
+                0.0
+            ]
+        },
+        {
+            "time": 161.02041625976563,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.5794572830200195,
+                0.8150026202201843,
+                0.0
+            ]
+        },
+        {
+            "time": 161.63265991210938,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9990234375,
+                -0.04418265447020531,
+                0.0
+            ]
+        },
+        {
+            "time": 162.24490356445313,
+            "lane": 3,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5992701053619385,
+                -0.8005469441413879,
+                0.0
+            ]
+        },
+        {
+            "time": 162.85714721679688,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6871622800827026,
+                0.7265039682388306,
+                0.0
+            ]
+        },
+        {
+            "time": 163.46939086914063,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.7321018576622009,
+                0.6811951994895935,
+                0.0
+            ]
+        },
+        {
+            "time": 164.08163452148438,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9598742723464966,
+                -0.2804306447505951,
+                0.0
+            ]
+        },
+        {
+            "time": 164.69387817382813,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.3478129804134369,
+                -0.937563955783844,
+                0.0
+            ]
+        },
+        {
+            "time": 165.30612182617188,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9922987818717957,
+                0.12386719882488251,
+                0.0
+            ]
+        },
+        {
+            "time": 165.91836547851563,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9588183760643005,
+                -0.2840200364589691,
+                0.0
+            ]
+        },
+        {
+            "time": 166.53060913085938,
+            "lane": 0,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.6480073928833008,
+                0.7616340517997742,
+                0.0
+            ]
+        },
+        {
+            "time": 167.14285278320313,
+            "lane": 0,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.43832117319107058,
+                -0.8988184332847595,
+                0.0
+            ]
+        },
+        {
+            "time": 167.75509643554688,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9231972098350525,
+                -0.3843265175819397,
+                0.0
+            ]
+        },
+        {
+            "time": 168.3673553466797,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.8989168405532837,
+                -0.43811923265457156,
+                0.0
+            ]
+        },
+        {
+            "time": 168.97959899902345,
+            "lane": 1,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9920773506164551,
+                -0.12562856078147889,
+                0.0
+            ]
+        },
+        {
+            "time": 169.5918426513672,
+            "lane": 3,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.28445059061050417,
+                0.9586907029151917,
+                0.0
+            ]
+        },
+        {
+            "time": 170.20408630371095,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.48248881101608279,
+                0.8759021162986755,
+                0.0
+            ]
+        },
+        {
+            "time": 170.8163299560547,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6329762935638428,
+                0.7741712331771851,
+                0.0
+            ]
+        },
+        {
+            "time": 171.42857360839845,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.1438005417585373,
+                0.9896066784858704,
+                0.0
+            ]
+        },
+        {
+            "time": 172.0408172607422,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.1637883484363556,
+                -0.9864955544471741,
+                0.0
+            ]
+        },
+        {
+            "time": 172.65306091308595,
+            "lane": 1,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.849504292011261,
+                0.5275816917419434,
+                0.0
+            ]
+        },
+        {
+            "time": 173.2653045654297,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7161756753921509,
+                0.6979200839996338,
+                0.0
+            ]
+        },
+        {
+            "time": 173.87754821777345,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.7441113591194153,
+                -0.6680555939674377,
+                0.0
+            ]
+        },
+        {
+            "time": 174.4897918701172,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.6521762013435364,
+                -0.7580674290657044,
+                0.0
+            ]
+        },
+        {
+            "time": 175.10203552246095,
+            "lane": 0,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.5751742124557495,
+                -0.8180308938026428,
+                0.0
+            ]
+        },
+        {
+            "time": 175.71429443359376,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9990736246109009,
+                -0.04303339868783951,
+                0.0
+            ]
+        },
+        {
+            "time": 176.3265380859375,
+            "lane": 2,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.9719645977020264,
+                0.2351270616054535,
+                0.0
+            ]
+        },
+        {
+            "time": 176.93878173828126,
+            "lane": 1,
+            "row": 1,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.05431533232331276,
+                -0.9985238313674927,
+                0.0
+            ]
+        },
+        {
+            "time": 177.551025390625,
+            "lane": 0,
+            "row": 0,
+            "type": "HoldOpen",
+            "duration": 2.4515185356140138,
+            "endLane": 0,
+            "endRow": -1,
+            "midpoints": [
+                {
+                    "lane": 0.28531697392463686,
+                    "row": 0.0
+                },
+                {
+                    "lane": 0.17633555829524995,
+                    "row": 0.0
+                },
+                {
+                    "lane": 0.0,
+                    "row": 0.0
+                },
+                {
+                    "lane": 0.0,
+                    "row": 0.0
+                }
+            ],
+            "direction": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "time": 178.16326904296876,
+            "lane": 2,
+            "row": 0,
+            "type": "Slashing",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                -0.363411545753479,
+                -0.9316287040710449,
+                0.0
+            ]
+        },
+        {
+            "time": 178.7755126953125,
+            "lane": 2,
+            "row": 0,
+            "type": "Hit",
+            "duration": 0.0,
+            "endLane": -1,
+            "endRow": -1,
+            "midpoints": [],
+            "direction": [
+                0.9749228358268738,
+                0.22254285216331483,
+                0.0
+            ]
+        }
+    ]
+}

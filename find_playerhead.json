@@ -1,0 +1,3 @@
+{
+  "csharpCode": "using UnityEngine;\npublic class Script {\n    public static object Main() {\n        var go = GameObject.FindGameObjectWithTag(\"PlayerHead\");\n        if (go == null) return \"Not Found\";\n        var result = go.name;\n        Transform parent = go.transform.parent;\n        while (parent != null) {\n            result = parent.name + \"/\" + result;\n            parent = parent.parent;\n        }\n        return result;\n    }\n}"
+}

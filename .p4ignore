@@ -43,3 +43,11 @@ Thumbs.db
 *.sln
 *.csproj
 
+# Python Virtual Environments
+venv/
+
+# Media / Videos
+*.mp4
+*.mov
+*.avi
+*.mkv

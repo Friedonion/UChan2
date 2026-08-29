@@ -1,0 +1,3667 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb78ff1f0447894a96198ace33f89e8, type: 3}
+  m_Name: catch catch3
+  m_EditorClassIdentifier: 
+  songName: catch catch
+  audioClip: {fileID: 8300000, guid: 4e76816198eb3934ba856b7eb0af1461, type: 3}
+  coverSprite: {fileID: 0}
+  bpm: 98
+  offset: 0
+  travelTime: 4.5
+  notes:
+  - time: 0.30612245
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.7002283, y: 0.713919, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 0.6122449
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.72039056, y: 0.69356865, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 1.2244898
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.7084626, y: -0.7057483, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 1.5306122
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.3077997, y: -0.9514512, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 1.8367348
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9315584, y: -0.36359173, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 2.142857
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.849388, y: 0.52776897, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 2.4489796
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.78562266, y: -0.618706, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 2.7551022
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.415289
+    endLane: 1
+    endRow: -1
+    midpoints: []
+  - time: 3.0612245
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.8340399, y: 0.5517041, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 3.367347
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.7914106, y: -0.6112849, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 3.6734695
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.92174065, y: 0.38780692, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 3.9795918
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.2260702, y: 0.974111, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 4.285714
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.5100844, y: -0.8601244, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 4.591837
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.6712777, y: 0.74120593, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 4.897959
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.7147318, y: 0.69939864, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 5.2040815
+    lane: 3
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.7222373
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 7.9591837
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.8338566, y: 0.5519812, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 8.265306
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.9230279, y: 0.3847331, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 8.571428
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.60072494, y: 0.7994558, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 8.877551
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.45292038, y: 0.89155096, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 9.183674
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.23234214, y: -0.97263414, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 9.489796
+    lane: 1
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.615439
+    endLane: 1
+    endRow: -1
+    midpoints: []
+  - time: 9.795918
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.630614, y: -0.7760966, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 10.102041
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.76430714, y: -0.6448524, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 10.408163
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.31736702, y: -0.9483028, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 10.714286
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.57687664, y: -0.8168313, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 11.020409
+    lane: 3
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.3699489
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 12.551021
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.56807303, y: 0.8229782, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 12.857143
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.9850174, y: 0.172455, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 13.163265
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.2567837
+    endLane: 2
+    endRow: -1
+    midpoints: []
+  - time: 13.469388
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.3176162
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 1.055882
+      row: 1
+    - lane: 0.8
+      row: 1
+    - lane: 0.36838204
+      row: 1
+  - time: 15
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.3293054
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 1.285317
+      row: 1
+    - lane: 1.1763356
+      row: 1
+    - lane: 0.82366437
+      row: 1
+    - lane: 0.71468306
+      row: 1
+  - time: 15.306123
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.66740537, y: -0.74469465, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 15.612245
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.76812774, y: -0.64029664, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 15.918367
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.6255821, y: -0.78015834, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 16.22449
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.81974775, y: -0.5727248, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 16.530613
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.931025
+    endLane: 2
+    endRow: -1
+    midpoints: []
+  - time: 17.44898
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.8231431, y: 0.567834, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 17.755102
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.9501333, y: -0.31184393, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 18.061224
+    lane: 1
+    row: 0
+    type: 4
+    direction: {x: 0.5, y: 3, z: 28.693419}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 19.591837
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.38050017, y: 0.92478085, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 19.897959
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.9993336, y: 0.036501337, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 20.204082
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.9991439, y: 0.041371584, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 20.510204
+    lane: 3
+    row: 1
+    type: 1
+    direction: {x: -0.87892795, y: -0.47695467, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 20.816326
+    lane: 2
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.663591
+    endLane: 3
+    endRow: -1
+    midpoints:
+    - lane: 1.944118
+      row: 1
+    - lane: 2.2
+      row: 1
+    - lane: 2.631618
+      row: 1
+  - time: 23.571428
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.17167836, y: 0.985153, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 23.877552
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.36754063, y: 0.93000746, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 24.183674
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.7401244, y: 0.67247, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 24.489796
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9003018, y: 0.4352662, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 24.79592
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.8519246, y: 0.5236646, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 25.102041
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.3205598, y: 0.94722825, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 25.408163
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.94338685, y: 0.3316944, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 25.714287
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.5031379, y: 0.86420614, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 26.020409
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.8732513, y: 0.48727012, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 26.32653
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.9961966, y: -0.087133326, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 26.632654
+    lane: 3
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.4959536
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 28.163265
+    lane: 3
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.2866542
+    endLane: 3
+    endRow: -1
+    midpoints: []
+  - time: 28.469389
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.65675455, y: -0.75410444, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 28.77551
+    lane: 1
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.4125454
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 1.055882
+      row: 1
+    - lane: 0.8
+      row: 1
+    - lane: 0.36838204
+      row: 1
+  - time: 30.306122
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.86681587, y: 0.49862847, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 30.612246
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.5935966, y: -0.8047627, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 30.918367
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.42269722, y: 0.906271, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 31.22449
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.7646531, y: 0.64444214, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 31.530613
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.18008773, y: 0.98365057, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 31.836735
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.8651831, y: 0.501456, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 32.142857
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.53089863, y: -0.8474353, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 32.44898
+    lane: 1
+    row: 1
+    type: 1
+    direction: {x: -0.10505896, y: -0.99446595, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 32.755104
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.7830122, y: 0.6220063, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 33.061226
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.755016, y: -0.6557064, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 33.367348
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.7688733, y: 0.6394012, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 33.67347
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.47945565, y: -0.8775661, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 33.97959
+    lane: 1
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.3563476
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 0.94411796
+      row: 1
+    - lane: 1.2
+      row: 1
+    - lane: 1.631618
+      row: 1
+  - time: 36.428574
+    lane: 2
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.6969733
+    endLane: 2
+    endRow: -1
+    midpoints: []
+  - time: 36.734695
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.48144594, y: -0.8764758, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 37.040817
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.92776656, y: -0.3731611, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 37.34694
+    lane: 0
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.5470884
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 0.28531697
+      row: 0
+    - lane: 0.17633556
+      row: 0
+    - lane: 0
+      row: 0
+    - lane: 0
+      row: 0
+  - time: 39.183674
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.99974984, y: -0.02236409, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 39.489796
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.19127502, y: 0.9815365, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 39.795918
+    lane: 3
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.3478775
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 1
+    - lane: 2.8
+      row: 1
+    - lane: 2.368382
+      row: 1
+  - time: 42.2449
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.6394508, y: 0.76883197, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 42.55102
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.5435709, y: -0.83936334, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 42.857143
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.2510736
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 0.94411796
+      row: 1
+    - lane: 1.2
+      row: 1
+    - lane: 1.631618
+      row: 1
+  - time: 45.30612
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.7163749, y: -0.6977155, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 45.612244
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.36899513, y: 0.9294313, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 45.91837
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.34185678, y: 0.93975204, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 46.22449
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.25666654, y: 0.96650004, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 46.530613
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.41185197, y: 0.9112507, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 46.836735
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.9305893, y: -0.3660649, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 47.142857
+    lane: 0
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.2753754
+    endLane: 0
+    endRow: -1
+    midpoints: []
+  - time: 47.44898
+    lane: 3
+    row: 0
+    type: 4
+    direction: {x: 0.5, y: 3, z: 16.69861}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 47.755104
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.39855224, y: 0.91714567, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 48.061226
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.5938291, y: -0.80459124, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 48.367348
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.7642229, y: 0.64495224, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 48.67347
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.4016602
+    endLane: 2
+    endRow: -1
+    midpoints: []
+  - time: 48.97959
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9806095, y: -0.19597197, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 49.285713
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.93882746, y: 0.34438786, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 49.59184
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.21328571, y: -0.97698987, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 49.89796
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.9062862, y: 0.42266455, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 50.204082
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.6852298, y: -0.7283269, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 50.510204
+    lane: 1
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.355269
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 0.94411796
+      row: 0
+    - lane: 1.2
+      row: 0
+    - lane: 1.631618
+      row: 0
+  - time: 52.959183
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.16089553, y: 0.98697144, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 53.26531
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.74768853, y: 0.66404957, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 53.57143
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9998328, y: 0.018284898, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 53.877552
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.35367435, y: -0.93536866, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 54.183674
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.31600526, y: 0.94875747, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 54.489796
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.7336426, y: -0.67953557, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 54.795918
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.9188923, y: -0.39450833, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 55.102043
+    lane: 2
+    row: 0
+    type: 4
+    direction: {x: 0.5, y: 3, z: 19.628857}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 55.408165
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.31602022, y: 0.94875246, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 55.714287
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: -0.5796316, y: -0.8148787, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 56.02041
+    lane: 0
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.6955383
+    endLane: 0
+    endRow: -1
+    midpoints: []
+  - time: 58.775513
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.34902447, y: -0.9371136, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 59.081635
+    lane: 1
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.9160297
+    endLane: 1
+    endRow: -1
+    midpoints: []
+  - time: 59.387756
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.50503975, y: 0.8630961, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 59.69388
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.5522811, y: -0.833658, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 60
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9124894, y: -0.40910032, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 60.30612
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9825066, y: -0.18622766, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 60.612244
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.9890712, y: 0.14743885, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 60.91837
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.8771271, y: -0.48025832, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 61.22449
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.69843286, y: -0.71567553, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 61.530613
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.31053394, y: -0.9505623, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 61.836735
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.31492054, y: 0.9491181, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 62.142857
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.77661383, y: 0.62997705, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 62.44898
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.78422004, y: -0.6204828, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 62.755104
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.24453472, y: 0.96964055, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 63.061226
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.115760416, y: -0.99327713, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 63.367348
+    lane: 0
+    row: 0
+    type: 1
+    direction: {x: -0.83719087, y: 0.5469108, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 63.67347
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9999517, y: -0.009823768, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 63.97959
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.6267233, y: -0.77924186, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 64.28571
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.97778034, y: -0.20963223, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 64.591835
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.54865783, y: -0.83604693, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 64.89796
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.84517515, y: 0.53448945, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 65.20408
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.38045454, y: -0.9247996, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 65.51021
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.5217788, y: 0.8530808, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 65.81633
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.79923177, y: 0.6010229, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 66.12245
+    lane: 2
+    row: 1
+    type: 1
+    direction: {x: -0.9482822, y: 0.31742844, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 66.42857
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.6774648, y: 0.73555523, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 66.734695
+    lane: 0
+    row: 0
+    type: 0
+    direction: {x: 0.8475286, y: 0.5307498, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 67.04082
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.73279047, y: 0.6804544, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 67.34694
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.6490503, y: -0.76074547, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 67.65306
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.6523557, y: 0.757913, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 67.95918
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.77339965, y: 0.6339187, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 68.265305
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.8549983, y: 0.51863086, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 68.57143
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.999312, y: 0.03708857, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 68.87755
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.92792094, y: 0.37277713, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 69.18368
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.7232819, y: -0.6905529, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 69.4898
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.5147805
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 1.285317
+      row: 1
+    - lane: 1.1763356
+      row: 1
+    - lane: 0.82366437
+      row: 1
+    - lane: 0.71468306
+      row: 1
+  - time: 69.79592
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9838677, y: 0.17889738, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 70.10204
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.9711178, y: -0.23860063, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 70.408165
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.0687625, y: 0.99763304, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 70.71429
+    lane: 2
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.0979741
+    endLane: 3
+    endRow: -1
+    midpoints:
+    - lane: 1.944118
+      row: 0
+    - lane: 2.2
+      row: 0
+    - lane: 2.631618
+      row: 0
+  - time: 71.938774
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.22133532, y: 0.97519773, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 72.244896
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.26019803, y: 0.96555525, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 72.55102
+    lane: 1
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.1171262
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 0.94411796
+      row: 0
+    - lane: 1.2
+      row: 0
+    - lane: 1.631618
+      row: 0
+  - time: 74.69388
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.9103052, y: 0.4139377, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 75
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.57405114, y: 0.81881946, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 75.30612
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.28573135, y: 0.95830977, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 75.61224
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.8308314, y: -0.5565243, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 75.918365
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.7221932, y: 0.69169134, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 76.22449
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.28551066, y: -0.9583755, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 76.53062
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.38027692, y: 0.9248727, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 76.83674
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.6090081, y: -0.7931641, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 77.14286
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.82714987, y: -0.5619815, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 77.44898
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.62904376, y: -0.77736986, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 77.755104
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.19498503, y: -0.98080623, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 78.061226
+    lane: 1
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.1809433
+    endLane: 1
+    endRow: -1
+    midpoints: []
+  - time: 78.36735
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.82935524, y: -0.5587216, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 78.67347
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.88576305, y: 0.46413773, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 78.97959
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.581802
+    endLane: 3
+    endRow: -1
+    midpoints:
+    - lane: 1.944118
+      row: 0
+    - lane: 2.2
+      row: 0
+    - lane: 2.631618
+      row: 0
+  - time: 80.81633
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.94889617, y: -0.31558847, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 81.12245
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.20942761, y: -0.97782415, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 81.42857
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.6969331, y: -0.7171362, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 81.734695
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9879257, y: -0.15492828, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 82.04082
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.70533013, y: 0.708879, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 82.34694
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.88935447, y: 0.45721838, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 82.65306
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.7382981, y: -0.6744745, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 82.95918
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.81606466, y: -0.57796067, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 83.265305
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.77532256, y: -0.6315656, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 83.57143
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.9309769, y: 0.36507803, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 83.87755
+    lane: 3
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.5328164
+    endLane: 3
+    endRow: -1
+    midpoints: []
+  - time: 84.18368
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.19199818, y: -0.9813953, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 84.4898
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.8317142, y: -0.55520403, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 84.79592
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.9999256, y: 0.0121964635, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 85.10204
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.0066649094, y: 0.99997777, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 85.408165
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.6067655, y: -0.7948809, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 85.71429
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.2497365
+    endLane: 1
+    endRow: -1
+    midpoints: []
+  - time: 86.63265
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.9979958, y: 0.06327945, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 86.938774
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.8616999, y: -0.5074183, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 87.244896
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.37676698, y: 0.9263081, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 87.55102
+    lane: 2
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.6642234
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 2.285317
+      row: 1
+    - lane: 2.1763356
+      row: 1
+    - lane: 1.8236644
+      row: 1
+    - lane: 1.714683
+      row: 1
+  - time: 87.85715
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.5591232
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 1.055882
+      row: 1
+    - lane: 0.8
+      row: 1
+    - lane: 0.36838204
+      row: 1
+  - time: 89.69388
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.017553551, y: 0.9998459, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 90
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.94914156, y: -0.31484956, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 90.30612
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.2622506, y: 0.9649998, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 90.61224
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.44328055, y: 0.896383, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 90.918365
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.7830056, y: -0.6220147, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 91.22449
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9709464, y: 0.23929715, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 91.53062
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.6895962, y: -0.72419417, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 91.83674
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.6720136, y: 0.7405388, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 92.14286
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.99557185, y: 0.09400319, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 92.44898
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.9563787, y: -0.29212973, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 92.755104
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.958666, y: 0.28453362, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 93.061226
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.7225408, y: -0.69132835, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 93.36735
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.13973314, y: -0.9901892, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 93.67347
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.081536576, y: 0.99667037, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 93.97959
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.9982243, y: 0.059567183, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 94.28571
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.8622413, y: 0.5064977, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 94.591835
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.83624697, y: 0.548353, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 94.89796
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.99978983, y: 0.020500459, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 95.20409
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.618955
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 2.055882
+      row: 0
+    - lane: 1.8
+      row: 0
+    - lane: 1.368382
+      row: 0
+  - time: 97.04082
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.29046336, y: -0.9568861, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 97.34694
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.89711803, y: -0.44179097, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 97.65306
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.6598246, y: -0.7514196, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 97.95918
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.9276259, y: 0.37351084, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 98.265305
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.985015, y: -0.17246874, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 98.57143
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.61703956, y: -0.7869321, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 98.87755
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.9887196, y: -0.14977811, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 99.18368
+    lane: 3
+    row: 0
+    type: 1
+    direction: {x: 0.9816383, y: 0.19075166, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 99.4898
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.7909557, y: 0.6118734, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 99.79592
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.8307157, y: 0.55669683, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 100.10204
+    lane: 2
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.4568956
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 2.285317
+      row: 0
+    - lane: 2.1763356
+      row: 0
+    - lane: 1.8236644
+      row: 0
+    - lane: 1.714683
+      row: 0
+  - time: 100.408165
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.16776358, y: 0.98582727, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 100.71429
+    lane: 0
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.8703167
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 0.28531697
+      row: 1
+    - lane: 0.17633556
+      row: 1
+    - lane: 0
+      row: 1
+    - lane: 0
+      row: 1
+  - time: 101.63265
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.7471065, y: 0.6647043, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 101.938774
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.009226386, y: -0.9999574, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 102.244896
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.02468731, y: -0.99969524, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 102.55102
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.852674, y: 0.5224433, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 102.85715
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.8062635, y: -0.5915566, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 103.16327
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.51177615, y: -0.8591188, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 103.46939
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.626054, y: 0.77977973, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 103.77551
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.9914517, y: 0.1304745, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 104.081635
+    lane: 3
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.5353557
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 105.918365
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.30378345, y: -0.9527411, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 106.22449
+    lane: 3
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.7347147
+    endLane: 3
+    endRow: -1
+    midpoints: []
+  - time: 106.53062
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.7784081, y: -0.62775856, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 106.83674
+    lane: 0
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.5086294
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 0
+      row: 0
+    - lane: 0.19999999
+      row: 0
+    - lane: 0.63161796
+      row: 0
+  - time: 108.36735
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.9629332, y: 0.2697402, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 108.67347
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.9596609, y: 0.28115988, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 108.97959
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.48304346, y: -0.87559634, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 109.28571
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.6095775, y: 0.7927265, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 109.591835
+    lane: 0
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.1685417
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 0.28531697
+      row: 1
+    - lane: 0.17633556
+      row: 1
+    - lane: 0
+      row: 1
+    - lane: 0
+      row: 1
+  - time: 109.89796
+    lane: 3
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.9752738
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 112.95918
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.63482195, y: 0.7726585, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 113.265305
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.45365116, y: 0.8911794, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 113.57143
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.9904515, y: -0.13786146, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 113.877556
+    lane: 2
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.473219
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 2.285317
+      row: 1
+    - lane: 2.1763356
+      row: 1
+    - lane: 1.8236644
+      row: 1
+    - lane: 1.714683
+      row: 1
+  - time: 114.18368
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.6785155, y: -0.7345861, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 114.4898
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.6156152, y: 0.7880469, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 114.79592
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.6683192
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 1.055882
+      row: 1
+    - lane: 0.8
+      row: 1
+    - lane: 0.36838204
+      row: 1
+  - time: 117.551025
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.05033614, y: 0.9987323, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 117.85715
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.7358632, y: -0.6771302, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 118.16327
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.93490326, y: 0.35490263, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 118.46939
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.3401474, y: -0.9403721, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 118.77551
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.27757993, y: -0.96070254, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 119.081635
+    lane: 2
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.0933192
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 2.055882
+      row: 0
+    - lane: 1.8
+      row: 0
+    - lane: 1.368382
+      row: 0
+  - time: 121.22449
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.5549563, y: -0.83187944, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 121.53062
+    lane: 0
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.9439006
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 0
+      row: 1
+    - lane: 0.19999999
+      row: 1
+    - lane: 0.63161796
+      row: 1
+  - time: 124.591835
+    lane: 1
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.5310942
+    endLane: 1
+    endRow: -1
+    midpoints: []
+  - time: 124.89796
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.7842131, y: -0.6204916, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 125.20409
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: -0.6522756, y: -0.75798184, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 125.51021
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.52006775, y: 0.8541251, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 125.81633
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.9808084, y: -0.19497445, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 126.12245
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.9628988, y: -0.26986268, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 126.42857
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.90698427, y: 0.42116454, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 126.734695
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.9628241, y: -0.27012905, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 127.04082
+    lane: 2
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.768682
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 2.055882
+      row: 0
+    - lane: 1.8
+      row: 0
+    - lane: 1.368382
+      row: 0
+  - time: 130.10204
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.7347542, y: 0.67833346, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 130.40816
+    lane: 3
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.0737748
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 131.63266
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.03228893, y: -0.9994786, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 131.93878
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.40103185, y: -0.91606414, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 132.2449
+    lane: 0
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.3236566
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 0
+      row: 0
+    - lane: 0.19999999
+      row: 0
+    - lane: 0.63161796
+      row: 0
+  - time: 134.69388
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.971206
+    endLane: 2
+    endRow: -1
+    midpoints: []
+  - time: 135
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.68558663, y: 0.727991, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 135.30612
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.87713635, y: -0.48024142, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 135.61224
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.47160932, y: 0.88180757, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 135.91837
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.638237, y: -0.7698399, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 136.22449
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.421136, y: -0.90699744, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 136.53061
+    lane: 1
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.0928857
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 1.285317
+      row: 0
+    - lane: 1.1763356
+      row: 0
+    - lane: 0.82366437
+      row: 0
+    - lane: 0.71468306
+      row: 0
+  - time: 136.83673
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.9765709, y: -0.21519588, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 137.14285
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.5281872, y: 0.849128, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 137.44897
+    lane: 2
+    row: 0
+    type: 1
+    direction: {x: 0.6063787, y: 0.795176, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 137.7551
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.6864812, y: 0.7271475, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 138.06122
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.8513334, y: 0.5246251, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 138.36736
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.9955625, y: -0.09410259, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 138.67348
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.3189437, y: -0.9477737, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 138.9796
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.090818875, y: 0.9958674, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 139.28572
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.5805962, y: 0.81419164, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 139.59184
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.5548045, y: 0.8319807, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 139.89796
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.004404654, y: 0.99999034, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 140.20409
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.8404674, y: 0.5418621, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 140.51021
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.4406083
+    endLane: 3
+    endRow: -1
+    midpoints:
+    - lane: 1.944118
+      row: 0
+    - lane: 2.2
+      row: 0
+    - lane: 2.631618
+      row: 0
+  - time: 142.04082
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.7954402
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 0.94411796
+      row: 1
+    - lane: 1.2
+      row: 1
+    - lane: 1.631618
+      row: 1
+  - time: 145.10204
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.8313059, y: 0.55581516, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 145.40816
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.8534429, y: -0.52118635, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 145.7143
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.6804262, y: -0.73281664, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 146.02042
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.21378131, y: -0.97688156, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 146.32654
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.42758182, y: -0.9039766, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 146.63266
+    lane: 2
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.8892055
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 2.285317
+      row: 1
+    - lane: 2.1763356
+      row: 1
+    - lane: 1.8236644
+      row: 1
+    - lane: 1.714683
+      row: 1
+  - time: 146.93878
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.20233008, y: 0.97931737, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 147.2449
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.18127279, y: -0.9834329, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 147.55103
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.64411503, y: 0.7649287, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 147.85715
+    lane: 1
+    row: 0
+    type: 1
+    direction: {x: 0.92595524, y: -0.37763324, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 148.16327
+    lane: 0
+    row: 0
+    type: 1
+    direction: {x: -0.7308708, y: -0.68251586, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 148.46939
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.3804255, y: 0.9248116, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 148.77551
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.92996144, y: 0.36765718, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 149.08163
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.9618267, y: 0.2736594, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 149.38776
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.91697645, y: 0.3989413, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 149.69388
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: -0.7964168, y: 0.604748, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 150
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.7609909, y: 0.6487625, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 150.30612
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: 0.38886225, y: 0.9212959, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 150.61224
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.3800268
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 0.94411796
+      row: 1
+    - lane: 1.2
+      row: 1
+    - lane: 1.631618
+      row: 1
+  - time: 152.14285
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.4304385, y: -0.90261996, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 152.44897
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.5638207, y: 0.8258972, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 152.7551
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.29066896, y: -0.95682365, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 153.06123
+    lane: 0
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.7064788
+    endLane: 0
+    endRow: -1
+    midpoints:
+    - lane: 0.28531697
+      row: 0
+    - lane: 0.17633556
+      row: 0
+    - lane: 0
+      row: 0
+    - lane: 0
+      row: 0
+  - time: 153.36736
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.5448964, y: -0.83850336, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 153.67348
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.4448887, y: 0.8955859, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 153.9796
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.9772635, y: 0.21202844, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 154.28572
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.8790817, y: -0.476671, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 154.59184
+    lane: 3
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.9372332
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 156.7347
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.4465735, y: 0.894747, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 157.04082
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.7089207, y: -0.7052882, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 157.34694
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.8728807, y: 0.48793367, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 157.65306
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.887688, y: -0.4604456, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 157.95918
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: 0.74914265, y: 0.66240877, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 158.2653
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.83642817, y: -0.54807657, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 158.57143
+    lane: 0
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.6991768
+    endLane: 0
+    endRow: -1
+    midpoints: []
+  - time: 158.87755
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.848379, y: -0.5293894, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 159.18367
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.5164147, y: 0.8563386, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 159.48979
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.045034517, y: 0.99898547, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 159.79591
+    lane: 2
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.7903292
+    endLane: 2
+    endRow: -1
+    midpoints: []
+  - time: 161.32654
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: 0.40244812, y: 0.91544276, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 161.63266
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: -0.8016593, y: -0.59778124, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 161.93878
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.14438288, y: -0.98952186, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 162.2449
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.92366457, y: 0.38320196, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 162.55103
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.34085128, y: 0.94011724, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 162.85715
+    lane: 1
+    row: 0
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.679786
+    endLane: 1
+    endRow: -1
+    midpoints: []
+  - time: 163.16327
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.7936442, y: -0.6083822, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 163.46939
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.63341117, y: 0.7738154, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 163.77551
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.09350786, y: -0.9956185, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 164.08163
+    lane: 2
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.3781476
+    endLane: 3
+    endRow: -1
+    midpoints:
+    - lane: 1.944118
+      row: 0
+    - lane: 2.2
+      row: 0
+    - lane: 2.631618
+      row: 0
+  - time: 166.53061
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.38573533, y: 0.92260945, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 166.83673
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9017513, y: -0.4322552, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 167.14285
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: 0.51340306, y: 0.8581476, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 167.44897
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: 0.90372163, y: -0.42812058, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 167.7551
+    lane: 1
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.837774
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 1.285317
+      row: 0
+    - lane: 1.1763356
+      row: 0
+    - lane: 0.82366437
+      row: 0
+    - lane: 0.71468306
+      row: 0
+  - time: 168.06123
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.6857116, y: -0.7278733, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 168.36736
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: -0.8498038, y: 0.5270991, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 168.67348
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.5651399, y: -0.8249951, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 168.9796
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.71301806, y: 0.7011457, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 169.28572
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: -0.7955993, y: 0.6058232, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 169.59184
+    lane: 3
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.5965688
+    endLane: 3
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 3
+      row: 0
+    - lane: 2.8236644
+      row: 0
+    - lane: 2.714683
+      row: 0
+  - time: 169.89796
+    lane: 0
+    row: 0
+    type: 2
+    direction: {x: -0.10672658, y: 0.99428844, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 170.20409
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.7208258, y: 0.6931163, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 170.51021
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.01844023, y: 0.99982995, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 170.81633
+    lane: 1
+    row: 0
+    type: 0
+    direction: {x: -0.5762349, y: -0.8172842, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 171.12245
+    lane: 1
+    row: 1
+    type: 0
+    direction: {x: -0.8837744, y: 0.46791318, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 171.42857
+    lane: 1
+    row: 0
+    type: 2
+    direction: {x: -0.12389006, y: 0.992296, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 171.7347
+    lane: 1
+    row: 1
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 2.159128
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 1.285317
+      row: 1
+    - lane: 1.1763356
+      row: 1
+    - lane: 0.82366437
+      row: 1
+    - lane: 0.71468306
+      row: 1
+  - time: 172.34694
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: 0.65482587, y: 0.7557798, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 172.65306
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.9372212, y: -0.34873527, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 172.95918
+    lane: 3
+    row: 0
+    type: 2
+    direction: {x: -0.67396235, y: -0.7387657, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 173.2653
+    lane: 3
+    row: 1
+    type: 0
+    direction: {x: 0.42709178, y: -0.9042083, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 173.57143
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.5594597, y: 0.8288576, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 173.87755
+    lane: 2
+    row: 0
+    type: 0
+    direction: {x: 0.9991373, y: 0.04152851, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 174.18367
+    lane: 0
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.3713152
+    endLane: 1
+    endRow: -1
+    midpoints:
+    - lane: 0
+      row: 1
+    - lane: 0.19999999
+      row: 1
+    - lane: 0.63161796
+      row: 1
+  - time: 175.7143
+    lane: 2
+    row: 1
+    type: 0
+    direction: {x: 0.27982563, y: -0.9600509, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 176.02042
+    lane: 3
+    row: 0
+    type: 6
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.5799423
+    endLane: 2
+    endRow: -1
+    midpoints:
+    - lane: 3
+      row: 0
+    - lane: 2.8
+      row: 0
+    - lane: 2.368382
+      row: 0
+  - time: 177.85715
+    lane: 3
+    row: 0
+    type: 0
+    direction: {x: -0.019924218, y: 0.99980146, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 178.16327
+    lane: 2
+    row: 0
+    type: 2
+    direction: {x: 0.99956656, y: -0.029439999, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []
+  - time: 178.46939
+    lane: 2
+    row: 1
+    type: 5
+    direction: {x: 0, y: 0, z: 0}
+    duration: 1.8317325
+    endLane: 2
+    endRow: -1
+    midpoints: []
+  - time: 178.77551
+    lane: 0
+    row: 1
+    type: 0
+    direction: {x: 0.3086883, y: -0.95116323, z: 0}
+    duration: 0
+    endLane: -1
+    endRow: -1
+    midpoints: []

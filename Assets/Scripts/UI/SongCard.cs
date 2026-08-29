@@ -24,7 +24,7 @@ public class SongCard : MonoBehaviour
 
     private Coroutine animCoroutine;
 
-    public void Setup(ChartDataSO chart)
+    public void Setup(ChartData chart)
     {
         titleText.text = chart.songName;
         bpmText.text   = $"BPM  {chart.bpm}";

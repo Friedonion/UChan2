@@ -1,0 +1,60 @@
+{
+    "songName": "LongNoteTest",
+    "bpm": 120.0,
+    "offset": 0.0,
+    "travelTime": 4.0,
+    "audioFile": "../Rock/Rock.wav",
+    "coverFile": "",
+    "notes": [
+        {
+            "time": 5.0,
+            "lane": 1,
+            "row": 0,
+            "type": "HoldFolded",
+            "duration": 3.0,
+            "endLane": 3,
+            "endRow": 0,
+            "midpoints": [
+                { "lane": 2.0, "row": 1.8 },
+                { "lane": 3.0, "row": 1.8 }
+            ],
+            "direction": [1.0, 0.0, 0.0]
+        },
+        {
+            "time": 10.0,
+            "lane": 0,
+            "row": 0,
+            "type": "HoldOpen",
+            "duration": 3.0,
+            "endLane": 2,
+            "endRow": 0,
+            "midpoints": [
+                { "lane": 1.0, "row": 1.8 },
+                { "lane": 2.0, "row": 1.8 }
+            ],
+            "direction": [1.0, 0.0, 0.0]
+        },
+        {
+            "time": 15.0,
+            "lane": 1,
+            "row": 1,
+            "type": "HoldFolded",
+            "duration": 3.0,
+            "endLane": 1,
+            "endRow": 1,
+            "midpoints": [],
+            "direction": [1.0, 0.0, 0.0]
+        },
+        {
+            "time": 20.0,
+            "lane": 2,
+            "row": 1,
+            "type": "HoldOpen",
+            "duration": 3.0,
+            "endLane": 2,
+            "endRow": 1,
+            "midpoints": [],
+            "direction": [1.0, 0.0, 0.0]
+        }
+    ]
+}

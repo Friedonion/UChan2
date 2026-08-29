@@ -64,8 +64,8 @@ public class SettingsManager : MonoBehaviour
         hitEffectOnBtn.onClick.AddListener(()  => SetHitEffect(true));
         hitEffectOffBtn.onClick.AddListener(() => SetHitEffect(false));
 
-        trailEffectOnBtn.onClick.AddListener(()  => SetTrailEffect(true));
-        trailEffectOffBtn.onClick.AddListener(() => SetTrailEffect(false));
+        if (trailEffectOnBtn != null) trailEffectOnBtn.onClick.AddListener(()  => SetTrailEffect(true));
+        if (trailEffectOffBtn != null) trailEffectOffBtn.onClick.AddListener(() => SetTrailEffect(false));
 
         RefreshAllUI();
     }
@@ -123,6 +123,8 @@ public class SettingsManager : MonoBehaviour
 
     void RefreshTrailEffectUI()
     {
+        if (trailEffectOnBg == null || trailEffectOffBg == null) return; // 씬에 트레일 이펙트 UI가 아직 없음
+
         bool on = VolumeSettings.TrailEffectOn;
         trailEffectOnBg.color  = on  ? new Color(0.2f, 0.7f, 0.4f) : new Color(0.15f, 0.15f, 0.15f);
         trailEffectOffBg.color = !on ? new Color(0.7f, 0.2f, 0.2f) : new Color(0.15f, 0.15f, 0.15f);

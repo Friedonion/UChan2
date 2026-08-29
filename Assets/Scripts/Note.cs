@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public enum NoteType { Slashing, Fanning, Hit, Boss, Wall }
+// HoldFolded/HoldOpen: 롱노트 시작/끝 전용 - 방향·각도 판정 없이 부채가 요구된 접힘 상태(접힘/펼침)일 때
+// 살짝 닿기만 해도 성공하며, 스윙 속도 요구도 면제된다(홀드 중 크게 휘두르면 가이드라인 밖으로 벗어나기 쉽기 때문).
+public enum NoteType { Slashing, Fanning, Hit, Boss, Wall, HoldFolded, HoldOpen }
 
 public class Note : MonoBehaviour
 {
@@ -57,6 +59,12 @@ public class Note : MonoBehaviour
     [Tooltip("찌르기(Thrust) 방지를 위한 Z축 이동 비율 임계값 (0~1 사이, 0.80이면 Z축 성분이 80% 이상일 때 찌르기로 판정하여 판정 제외)")]
     [Delayed] public float maxThrustZRatio = 0.8f;
 
+    // 롱노트 시작 노트일 때만 NoteSpawner가 채워준다 - 성공 시 이 가이드에 홀드 시작을 알린다.
+    public LongNoteGuide holdGuide;
+
+    // 🌟 [성능 최적화] 매 프레임 FindObjectsOfType 호출을 막기 위한 정적 캐싱 배열 (양손 부채 2개)
+    private static FanSystem[] cachedFans;
+
     private bool isMissed = false;
     private bool isDead = false;
 
@@ -77,6 +85,7 @@ public class Note : MonoBehaviour
         this.isMissed = false;
         this.lastHitTime = 0f;
         this.lastHitDirection = Vector3.zero;
+        this.holdGuide = null;
         
         if (type == NoteType.Boss) hp = 3;
         else if (type == NoteType.Wall) hp = 0; // Walls don't have HP
@@ -142,6 +151,8 @@ public class Note : MonoBehaviour
                 case NoteType.Slashing: if (slashIndicator) { slashIndicator.SetActive(true); slashIndicator.transform.localRotation = Quaternion.identity; } break;
                 case NoteType.Fanning: if (fanIndicator) { fanIndicator.SetActive(true); fanIndicator.transform.localRotation = Quaternion.identity; } break;
                 case NoteType.Hit: if (hitIndicator) { hitIndicator.SetActive(true); hitIndicator.transform.localRotation = Quaternion.identity; } break;
+                case NoteType.HoldFolded: if (hitIndicator) { hitIndicator.SetActive(true); hitIndicator.transform.localRotation = Quaternion.identity; } break;
+                case NoteType.HoldOpen: if (fanIndicator) { fanIndicator.SetActive(true); fanIndicator.transform.localRotation = Quaternion.identity; } break;
                 case NoteType.Boss: 
                     if (bossIndicator) 
                     { 
@@ -178,26 +189,29 @@ public class Note : MonoBehaviour
         // 판정선 근처(Z 차이가 작을 때) 스윕 충돌 강제 검사 (터널링 100% 방지)
         if (type != NoteType.Wall && !isMissed && !isDead && Mathf.Abs(currentZ - hitZ) < 1.2f)
         {
-            // 구 버전 FindObjectsOfType 지원 (유니티 버전에 관계없이 호환되도록 처리)
-            FanSystem[] fans = FindObjectsOfType<FanSystem>();
-            foreach (var fan in fans)
+            // 🌟 [성능 최적화] 씬에 있는 부채(2개)를 한 번만 찾아서 캐싱해두고 재사용합니다.
+            // 씬 재로드 시 배열은 남아있지만 안의 객체가 null이 되므로 반드시 [0] == null 체크를 포함해야 합니다!
+            if (cachedFans == null || cachedFans.Length == 0 || cachedFans[0] == null)
+            {
+                cachedFans = FindObjectsOfType<FanSystem>();
+            }
+
+            foreach (var fan in cachedFans)
             {
                 if (fan != null && fan.gameObject.activeInHierarchy)
                 {
-                    // 🌟 [HIT NOTE ORIGINAL RULES RESTORED]
-                    // 일반 치기(Hit)는 부채가 접혀있을 때(!IsOpened)만 작동하며,
-                    // 베기(Slashing)/부치기(Fanning)는 반드시 부채가 펼쳐져 있어야(IsOpened) 타격이 동작합니다.
-                    bool fanStateCorrect = (type == NoteType.Hit) ? !fan.IsOpened : fan.IsOpened;
+                    bool fanStateCorrect = IsFanStateCorrect(fan);
                     if (fanStateCorrect)
                     {
                         // 🌟 [STATIC TOUCH PREVENT & THRUST PREVENT]
-                        // 일반 치기(Hit)는 3D 전체 속도로 검사하지만, 베기(Slashing)/부치기(Fanning)/보스(Boss)는 
+                        // 일반 치기(Hit)는 3D 전체 속도로 검사하지만, 베기(Slashing)/부치기(Fanning)/보스(Boss)는
                         // Z축 찌르기를 필터링하기 위해 2D 투영 평면(XY 평면) 상에서의 스윙 속도를 검사합니다.
-                        float currentSpeed = (type == NoteType.Hit) 
-                            ? fan.Velocity.magnitude 
+                        float currentSpeed = (type == NoteType.Hit)
+                            ? fan.Velocity.magnitude
                             : Vector3.ProjectOnPlane(fan.Velocity, Vector3.forward).magnitude;
 
-                        if (currentSpeed < minSwingSpeed) continue;
+                        // 홀드(Hold) 타입은 스윙 속도를 요구하지 않는다 - 살짝 대기만 해도 성공해야 함.
+                        if (!IsHoldType && currentSpeed < minSwingSpeed) continue;
 
                         if (CheckSweptCollision(fan, hitRadius, out Vector3 customMoveDir))
                         {
@@ -216,6 +230,7 @@ public class Note : MonoBehaviour
             float distanceRatio = transform.localScale.z / Mathf.Max(1f, Mathf.Abs(spawnZ - hitZ));
             if (progress > 1.0f + distanceRatio + 0.1f)
             {
+                if (!isMissed && GameManager.Instance != null) GameManager.Instance.WallDodged();
                 Deactivate();
             }
         }
@@ -226,6 +241,13 @@ public class Note : MonoBehaviour
                 // 일반 노트를 못 치고 지나간 경우
                 isMissed = true;
                 if (GameManager.Instance != null) GameManager.Instance.NoteMissed();
+                
+                // 롱노트 시작 노트를 못 친 경우 빔 전체를 즉시 실패 처리한다
+                if (IsHoldType && holdGuide != null)
+                {
+                    holdGuide.ForceFail();
+                }
+
                 Deactivate();
             }
         }
@@ -276,11 +298,11 @@ public class Note : MonoBehaviour
             ? fan.Velocity.magnitude
             : Vector3.ProjectOnPlane(fan.Velocity, Vector3.forward).magnitude;
 
-        if (currentSpeed < minSwingSpeed) return;
+        // 홀드(Hold) 타입은 스윙 속도를 요구하지 않는다 - 살짝 대기만 해도 성공해야 함.
+        if (!IsHoldType && currentSpeed < minSwingSpeed) return;
 
         // 🌟 [FAN STATE CHECK]
-        // 일반 치기(Hit)는 부채가 접혀있을 때(!IsOpened)만, 베기/부치기는 펼쳐있어야(IsOpened) 작동합니다.
-        bool fanStateCorrect = (type == NoteType.Hit) ? !fan.IsOpened : fan.IsOpened;
+        bool fanStateCorrect = IsFanStateCorrect(fan);
         if (!fanStateCorrect) return;
 
         // 🌟 [SWEPT DIRECTION UNIFICATION]
@@ -292,6 +314,18 @@ public class Note : MonoBehaviour
         }
     }
 
+
+    // 홀드(Hold) 타입 여부 - 스윙 속도 요구를 면제할 때 사용.
+    private bool IsHoldType => type == NoteType.HoldFolded || type == NoteType.HoldOpen;
+
+    // 🌟 [FAN STATE CHECK]
+    // 일반 치기(Hit)/HoldFolded는 부채가 접혀있을 때(!IsOpened)만, 베기/부치기/보스/HoldOpen은
+    // 부채가 펼쳐져 있어야(IsOpened) 타격이 동작합니다.
+    private bool IsFanStateCorrect(FanSystem fan)
+    {
+        if (type == NoteType.Hit || type == NoteType.HoldFolded) return !fan.IsOpened;
+        return fan.IsOpened;
+    }
 
     /// <summary>
     /// 이전 프레임과 현재 프레임의 부채 중심 선분이 그리는 궤적을 5단계로 시간 보간하여,
@@ -430,9 +464,11 @@ public class Note : MonoBehaviour
                 break;
 
             case NoteType.Hit:
+            case NoteType.HoldFolded:
+            case NoteType.HoldOpen:
                 // 🌟 [HIT NOTE ORIGINAL RULES RESTORED]
-                // 일반 치기 노트는 방향 제한이나 타이밍 오차 계산 없이, 
-                // 부채가 접힌 상태에서 타격이 성공했다면 즉시 100% PERFECT 판정을 부여합니다.
+                // 일반 치기 노트/홀드 시작·끝 노트는 방향 제한이나 타이밍 오차 계산 없이,
+                // 부채 상태가 맞아 타격이 성공했다면 즉시 100% PERFECT 판정을 부여합니다.
                 isCorrectAction = true;
                 judgment = "PERFECT";
                 break;
@@ -466,9 +502,16 @@ public class Note : MonoBehaviour
 
         if (isCorrectAction)
         {
-            hp--; 
+            hp--;
             lastHitTime = Time.time;
             lastHitDirection = moveDir;
+
+            // 롱노트 시작 노트가 성공했다면 가이드에 홀드 유지 검사를 시작하도록 알린다.
+            if (holdGuide != null)
+            {
+                holdGuide.BeginHold();
+                holdGuide = null;
+            }
 
             // Toffee's Ink Splash visual feedback effect
             if (VolumeSettings.HitEffectOn)

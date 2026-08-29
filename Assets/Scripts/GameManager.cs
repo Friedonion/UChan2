@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using Unity.XR.CoreUtils;
 
@@ -21,9 +21,10 @@ public class GameManager : MonoBehaviour
     {
         get
         {
+            double syncOffset = VolumeSettings.SyncOffsetMs / 1000.0;
             if (currentState == GameState.Paused)
-                return pauseStartDspTime - accumulatedPausedDsp;
-            return AudioSettings.dspTime - accumulatedPausedDsp;
+                return pauseStartDspTime - accumulatedPausedDsp + syncOffset;
+            return AudioSettings.dspTime - accumulatedPausedDsp + syncOffset;
         }
     }
     public int score = 0;
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     public int damagePerMiss = 10;
 
     [Header("Audio Settings")]
-    public ChartDataSO currentChart; // 차트 데이터 추가
+    public ChartData currentChart; // 차트 데이터 (JSON 채보 로드 결과)
     public AudioClip musicTrack;
     public AudioClip slashSound; 
     public AudioClip hitSound; 
@@ -51,6 +52,11 @@ public class GameManager : MonoBehaviour
     [Header("Visual Effects")]
     [Tooltip("기본 수묵화 효과 대신 사용할 타격 이펙트 프리팹을 여기에 넣으세요.")]
     public GameObject customHitEffectPrefab;
+
+    // 노트 하나의 최종 판정 결과(Miss 여부)를 프레임 지연 없이 알림 - TutorialManager가 연습 노트
+    // 성공/실패를 감지해 재시도 루프를 도는 데 사용한다. 벽은 AddScore를 타지 않으므로 WallDodged()로 별도 발생.
+    public static event System.Action OnNoteResolved;
+    public static event System.Action OnNoteMissed;
 
     void Awake()
     {
@@ -83,6 +89,11 @@ public class GameManager : MonoBehaviour
         {
             currentChart = SongSelection.Chart;
             musicTrack   = SongSelection.Chart.audioClip;
+            
+            // 정식으로 씬을 넘어왔을 때만 연습모드 여부에 따라 무적 설정을 확실히 덮어씌움 (에디터 테스트 배려)
+            // Sync Test는 무한 루프 테스트라, Tutorial은 연습 중 반복 미스로 체력이 깎여 게임오버로 끊기면 안 되므로 항상 무적.
+            isInvincible = SongSelection.IsPracticeMode || currentChart.songName == "Sync Test" || currentChart.songName == "Tutorial";
+            
             SongSelection.Chart = null;
         }
 
@@ -113,7 +124,7 @@ public class GameManager : MonoBehaviour
         int simCombo = 0;
         foreach (var note in currentChart.notes)
         {
-            if (note.type == NoteType.Wall) continue;
+            if (note.typeEnum == NoteType.Wall) continue;
             maxPossibleScore += pointsPerNote * GetComboMultiplier(simCombo);
             simCombo++;
         }
@@ -122,9 +133,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         if (currentState != GameState.Ready) return;
-
-        // 플레이어 리센터
-        RecenterPlayer();
         
         currentState = GameState.Playing;
         isFullCombo = true;
@@ -142,8 +150,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StartGameRoutine()
     {
-        // 1. 렉 방지 및 준비를 위한 기본 대기 시간 (UI 카운트다운 가능)
-        yield return new WaitForSeconds(startDelay);
+        // 1. VR 헤드셋 트래킹 위치가 카메라에 적용될 시간을 잠깐 대기합니다 (씬 로드 직후 0값 방지)
+        yield return new WaitForSeconds(0.5f);
+        RecenterPlayer();
+
+        // 남은 시작 대기 시간 (UI 카운트다운)
+        yield return new WaitForSeconds(startDelay - 0.5f);
 
         if (currentChart != null)
         {
@@ -165,6 +177,7 @@ public class GameManager : MonoBehaviour
             if (musicTrack != null)
             {
                 musicSource.clip = musicTrack;
+                musicSource.loop = currentChart != null && currentChart.loop;
                 musicSource.Play();
                 StartCoroutine(CheckMusicEnd());
             }
@@ -205,6 +218,8 @@ public class GameManager : MonoBehaviour
     public void AddScore(NoteType type, float velocity, string judgment)
     {
         if (currentState != GameState.Playing) return;
+
+        OnNoteResolved?.Invoke();
 
         // 1. 판정 배율 결정
         float judgmentMultiplier = 1.0f;
@@ -264,13 +279,21 @@ public class GameManager : MonoBehaviour
         if (clipToPlay != null) audioSource.PlayOneShot(clipToPlay);
     }
 
+    // Wall은 CheckHitSuccessWithDirection/AddScore 경로를 타지 않으므로(공격 대상이 아니라 회피 대상),
+    // 안 맞고 끝까지 통과했을 때 Note.cs가 이 메서드로 성공을 알린다.
+    public void WallDodged()
+    {
+        if (currentState != GameState.Playing) return;
+        OnNoteResolved?.Invoke();
+    }
+
     public void NoteMissed()
     {
         if (currentState != GameState.Playing) return;
 
-#if UNITY_EDITOR
-        if (isInvincible) return; // 무적 모드일 경우 미스 판정 및 체력 감소 무시
-#endif
+        OnNoteMissed?.Invoke();
+
+        if (isInvincible) return; // 무적(연습) 모드일 경우 미스 판정 및 체력 감소 무시
 
         isFullCombo = false;
         combo = 0;
@@ -333,6 +356,11 @@ public class GameManager : MonoBehaviour
         maxPossibleScore = 0;
         currentState = GameState.Ready;
         Time.timeScale = 1f;
+        
+        // 🌟 다시하기 버그 수정: 이전 게임의 일시정지 누적 시간과 노트 찌꺼기를 완벽히 초기화합니다.
+        accumulatedPausedDsp = 0;
+        pauseStartDspTime = 0;
+        FindObjectOfType<NoteSpawner>()?.StopPlaying();
 
         if (UIManager.Instance)
         {
