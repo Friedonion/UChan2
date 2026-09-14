@@ -2335,6 +2335,9 @@ MonoBehaviour:
   trailEffectOffBtn: {fileID: 1658688491}
   trailEffectOnBg: {fileID: 842870784}
   trailEffectOffBg: {fileID: 1658688488}
+  syncOffsetText: {fileID: 0}
+  syncMinusBtn: {fileID: 0}
+  syncPlusBtn: {fileID: 0}
 --- !u!1 &727748367
 GameObject:
   m_ObjectHideFlags: 0

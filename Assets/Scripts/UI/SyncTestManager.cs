@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// "Sync Test" Â÷Æ®(BasicScene, StreamingAssets/Charts/Sync)¿¡¼­¸¸ µ¿ÀÛÇÑ´Ù.
-// ÀÌ Â÷Æ®´Â ÀÏÁ¤ÇÑ ¹ÚÀÚ(Sync.wavÀÇ Å¬¸¯À½)¿Í Á¤È®È÷ °°Àº ½Ã°¢¿¡ ³ëÆ®°¡ z=0¿¡ µµÂøÇÏµµ·Ï
-// ¸¸µé¾îÁ® ÀÖ´Ù. °î Àç»ı Áß -/+ ¹öÆ°À¸·Î VolumeSettings.SyncOffsetMs¸¦ ½Ç½Ã°£À¸·Î Á¶ÀıÇÏ¸é¼­,
-// ³ëÆ® µµÂø ½ÃÁ¡À» Å¬¸¯À½¿¡ ¸ÂÃçº¼ ¼ö ÀÖ´Ù.
-// (¿©±â¼­ Á¶ÀıÇÑ °ªÀº Àü¿ª ¼³Á¤ÀÌ¶ó ´Ù¸¥ °îÀ» ÇÃ·¹ÀÌÇÒ ¶§µµ ±×´ë·Î Àû¿ëµÈ´Ù)
+// "Sync Test" ì°¨íŠ¸(BasicScene, StreamingAssets/Charts/Sync)ì—ì„œë§Œ ë™ì‘í•œë‹¤.
+// ì´ ì°¨íŠ¸ëŠ” ì¼ì •í•œ ë°•ì(Sync.wavì˜ í´ë¦­ìŒ)ì™€ ì •í™•íˆ ê°™ì€ ì‹œê°ì— ë…¸íŠ¸ê°€ z=0ì— ë„ì°©í•˜ë„ë¡
+// ë§Œë“¤ì–´ì ¸ ìˆë‹¤. ê³¡ ì¬ìƒ ì¤‘ -/+ ë²„íŠ¼ìœ¼ë¡œ VolumeSettings.SyncOffsetMsë¥¼ ì‹¤ì‹œê°„ìœ¼ë¡œ ì¡°ì ˆí•˜ë©´ì„œ,
+// ë…¸íŠ¸ ë„ì°© ì‹œì ì„ í´ë¦­ìŒì— ë§ì¶°ë³¼ ìˆ˜ ìˆë‹¤.
+// (ì—¬ê¸°ì„œ ì¡°ì ˆí•œ ê°’ì€ ì „ì—­ ì„¤ì •ì´ë¼ ë‹¤ë¥¸ ê³¡ì„ í”Œë ˆì´í•  ë•Œë„ ê·¸ëŒ€ë¡œ ì ìš©ëœë‹¤)
 public class SyncTestManager : MonoBehaviour
 {
     [Header("Panel")]
@@ -15,7 +15,7 @@ public class SyncTestManager : MonoBehaviour
     public Transform canvasTransform;
 
     [Header("Fixed Placement")]
-    [Tooltip("BasicScene Á¤¸é(¿ùµå +Z, ¸®¼¾ÅÍµÈ ÇÃ·¹ÀÌ¾î ±âÁØ) ´ëºñ ¿À¸¥ÂÊÀ¸·Î ²ª´Â °¢µµ")]
+    [Tooltip("BasicScene ì •ë©´(ì›”ë“œ +Z, ë¦¬ì„¼í„°ëœ í”Œë ˆì´ì–´ ê¸°ì¤€) ëŒ€ë¹„ ì˜¤ë¥¸ìª½ìœ¼ë¡œ êº¾ëŠ” ê°ë„")]
     public float angleOffsetDegrees = 45f;
     public float distanceFromCenter = 2.0f;
     public float fixedHeight = 1.3f;
@@ -35,7 +35,7 @@ public class SyncTestManager : MonoBehaviour
 
     IEnumerator RunGuarded()
     {
-        // ´Ù¸¥ °î¿¡¼­´Â ÀÌ ¸Å´ÏÀú°¡ ¾Æ¹«°Íµµ ÇÏÁö ¾Êµµ·Ï, ·ÎµåµÈ Â÷Æ®°¡ È®Á¤µÉ ¶§±îÁö ±â´Ù·È´Ù°¡ È®ÀÎÇÑ´Ù.
+        // ë‹¤ë¥¸ ê³¡ì—ì„œëŠ” ì´ ë§¤ë‹ˆì €ê°€ ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•Šë„ë¡, ë¡œë“œëœ ì°¨íŠ¸ê°€ í™•ì •ë  ë•Œê¹Œì§€ ê¸°ë‹¤ë ¸ë‹¤ê°€ í™•ì¸í•œë‹¤.
         yield return new WaitUntil(() => GameManager.Instance != null && GameManager.Instance.currentChart != null);
 
         if (GameManager.Instance.currentChart.songName != TargetSongName)
@@ -52,7 +52,7 @@ public class SyncTestManager : MonoBehaviour
 
         if (panelRoot != null) panelRoot.SetActive(true);
 
-        // ÇÃ·¹ÀÌ¾î ½Ã¼±/À§Ä¡¸¦ ÀüÇô ÂüÁ¶ÇÏÁö ¾Ê°í, ¸®¼¾ÅÍµÈ ÇÃ·¹ÀÌ¾î ±âÁØ ¿ùµå ÁÂÇ¥¿¡ ¿ÏÀüÈ÷ °íÁ¤ ¼ÒÈ¯ÇÑ´Ù.
+        // í”Œë ˆì´ì–´ ì‹œì„ /ìœ„ì¹˜ë¥¼ ì „í˜€ ì°¸ì¡°í•˜ì§€ ì•Šê³ , ë¦¬ì„¼í„°ëœ í”Œë ˆì´ì–´ ê¸°ì¤€ ì›”ë“œ ì¢Œí‘œì— ì™„ì „íˆ ê³ ì • ì†Œí™˜í•œë‹¤.
         if (canvasTransform == null) yield break;
 
         Vector3 dir = Quaternion.Euler(0f, angleOffsetDegrees, 0f) * Vector3.forward;
@@ -72,6 +72,6 @@ public class SyncTestManager : MonoBehaviour
     {
         if (offsetText == null) return;
         int ms = Mathf.RoundToInt(VolumeSettings.SyncOffsetMs);
-        offsetText.text = $"½ÌÅ© ¿ÀÇÁ¼Â: {(ms >= 0 ? "+" : "")}{ms}ms";
+        offsetText.text = $"ì‹±í¬ ì˜¤í”„ì…‹: {(ms >= 0 ? "+" : "")}{ms}ms";
     }
 }

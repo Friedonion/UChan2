@@ -1973,7 +1973,10 @@ MaterialFloat2 GetDefaultSceneTextureUV( FMaterialPixelParameters Parameters, ui
 #endif
 float4 SceneTextureLookup( float2 UV, int SceneTextureIndex, bool bFiltered )
 {
-#if HDRP || URP
+#if URP
+	// Match TEXTURE2D_X when single-pass stereo uses a texture array.
+	return SAMPLE_TEXTURE2D_X(_BlitTexture, SamplerState_Linear_Clamp, UV);
+#elif HDRP
 	return SAMPLE_TEXTURE2D(_BlitTexture, SamplerState_Linear_Clamp, UV);
 #else
 	return float4( 0, 0, 0, 0 );

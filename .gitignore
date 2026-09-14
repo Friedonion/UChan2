@@ -60,15 +60,36 @@ Assets/Deoksugung_Palace/Meshes/Landscape/SM_Outside_Fence01a_Splines_0.fbx
 /python-installer.exe
 /Tools/
 
-# AI and MCP related
-/.agent/
-/.claude/
-/.cursor/
-/.gemini/
-/.mcp.json
-/python-installer.exe
-/Tools/
+# Local assistant outputs and investigation artifacts
+/GEMINI.md
+/args.json
+/check_fan.txt
+/check_openfan.txt
+/check_spawner.txt
+/depot_scene.txt
+/diff.txt
+/find_playerhead.json
+/mat_debug.txt
+/new.txt
+/note_models.txt
+/old.txt
+/openfan_struct.txt
+/p4_all_files.txt
+/p4_changes.txt
+/p4_changes_utf8.txt
+/read_guide.json
+/rotate_model.py
+/save_mats.json
+/scratch_input.json
 
 # Ignore large files
 *.pptx
 ODC/build_Final/
+
+# Local editor output
+/Logs/
+/.vscode/
+/.vsconfig
+*.csproj
+*.sln
+/BugReport/

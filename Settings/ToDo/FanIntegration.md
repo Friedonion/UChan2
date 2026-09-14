@@ -1,74 +1,74 @@
-# ºÎÃ¤ ¸ğµ¨ °ÔÀÓ ·ÎÁ÷ ¿¬µ¿ ToDo
+# ë¶€ì±„ ëª¨ë¸ ê²Œì„ ë¡œì§ ì—°ë™ ToDo
 
-## ¹è°æ
-FanTest ¾À¿¡¼­ OpenFan.fbx ¸ğµ¨ + FanAnim.anim ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ¿Ï¼ºµÈ »óÅÂ.
-ÀÌ¸¦ BasicSceneÀÇ ½ÇÁ¦ °ÔÀÓ ·ÎÁ÷(FanSystem.cs, Note.cs)¿¡ ¿¬µ¿ÇÏ´Â ÀÛ¾÷.
+## ë°°ê²½
+FanTest ì”¬ì—ì„œ OpenFan.fbx ëª¨ë¸ + FanAnim.anim ì• ë‹ˆë©”ì´ì…˜ì´ ì™„ì„±ëœ ìƒíƒœ.
+ì´ë¥¼ BasicSceneì˜ ì‹¤ì œ ê²Œì„ ë¡œì§(FanSystem.cs, Note.cs)ì— ì—°ë™í•˜ëŠ” ì‘ì—….
 
-**ºÎÃ¤ »óÅÂ ±ÔÄ¢ (º¯°æ ¾øÀ½)**
-- Æ®¸®°Å È¦µå Áß ¡æ ºÎÃ¤ ÆîÄ§ (IsOpened = true)
-- Æ®¸®°Å ¶À ¡æ ºÎÃ¤ Á¢Èû (IsOpened = false)
-- `Hit` ³ëÆ® ¡æ Á¢Èù »óÅÂ¿¡¼­ Å¸°İ
-- `Slashing / Fanning` ³ëÆ® ¡æ ÆîÄ£ »óÅÂ¿¡¼­ Å¸°İ
-
----
-
-## ÀÛ¾÷ ¼ø¼­
-
-### 1. Animator Controller ¼³Á¤ (Unity ¿¡µğÅÍ)
-- [ ] `Assets/Models/Fan/OpenFan.controller` ¿­±â
-- [ ] Default State¿¡ `FanAnim` Å¬¸³ ¿¬°á
-- [ ] State Machine ÆÄ¶ó¹ÌÅÍ ºÒÇÊ¿ä (ÄÚµå¿¡¼­ normalizedTimeÀ¸·Î Á÷Á¢ Á¦¾î)
+**ë¶€ì±„ ìƒíƒœ ê·œì¹™ (ë³€ê²½ ì—†ìŒ)**
+- íŠ¸ë¦¬ê±° í™€ë“œ ì¤‘ â†’ ë¶€ì±„ í¼ì¹¨ (IsOpened = true)
+- íŠ¸ë¦¬ê±° ë—Œ â†’ ë¶€ì±„ ì ‘í˜ (IsOpened = false)
+- `Hit` ë…¸íŠ¸ â†’ ì ‘íŒ ìƒíƒœì—ì„œ íƒ€ê²©
+- `Slashing / Fanning` ë…¸íŠ¸ â†’ í¼ì¹œ ìƒíƒœì—ì„œ íƒ€ê²©
 
 ---
 
-### 2. FanSystem.cs ¼öÁ¤ (ÄÚµå)
+## ì‘ì—… ìˆœì„œ
 
-#### 2-1. Animator ÇÊµå Ãß°¡
+### 1. Animator Controller ì„¤ì • (Unity ì—ë””í„°)
+- [ ] `Assets/Models/Fan/OpenFan.controller` ì—´ê¸°
+- [ ] Default Stateì— `FanAnim` í´ë¦½ ì—°ê²°
+- [ ] State Machine íŒŒë¼ë¯¸í„° ë¶ˆí•„ìš” (ì½”ë“œì—ì„œ normalizedTimeìœ¼ë¡œ ì§ì ‘ ì œì–´)
+
+---
+
+### 2. FanSystem.cs ìˆ˜ì • (ì½”ë“œ)
+
+#### 2-1. Animator í•„ë“œ ì¶”ê°€
 ```csharp
 [Header("Fan Model")]
-public Animator fanAnimator;  // OpenFan ¿ÀºêÁ§Æ®ÀÇ Animator
+public Animator fanAnimator;  // OpenFan ì˜¤ë¸Œì íŠ¸ì˜ Animator
 ```
 
-#### 2-2. Å¥ºê ·»´õ·¯ ¼û±è
-`CreatePrototypeFan()` ¾È¿¡¼­ Å¥ºê »ı¼º ÈÄ:
+#### 2-2. íë¸Œ ë Œë”ëŸ¬ ìˆ¨ê¹€
+`CreatePrototypeFan()` ì•ˆì—ì„œ íë¸Œ ìƒì„± í›„:
 ```csharp
 rib.GetComponent<MeshRenderer>().enabled = false;
 ```
-- Äİ¶óÀÌ´õ´Â À¯Áö (ÆÇÁ¤¿¡ ÇÊ¿ä)
-- ½Ã°¢Àº »õ OpenFan ¸ğµ¨ÀÌ ´ã´ç
+- ì½œë¼ì´ë”ëŠ” ìœ ì§€ (íŒì •ì— í•„ìš”)
+- ì‹œê°ì€ ìƒˆ OpenFan ëª¨ë¸ì´ ë‹´ë‹¹
 
-#### 2-3. Animator ±¸µ¿
-`AnimateFan()` ¾È¿¡¼­ `currentOpenAmount` °è»ê ÈÄ Ãß°¡:
+#### 2-3. Animator êµ¬ë™
+`AnimateFan()` ì•ˆì—ì„œ `currentOpenAmount` ê³„ì‚° í›„ ì¶”ê°€:
 ```csharp
 if (fanAnimator != null)
     fanAnimator.Play("FanAnim", 0, 1f - currentOpenAmount);
-    // currentOpenAmount 0(Á¢Èû) ¡æ normalizedTime 1 (clip ³¡ = Á¢Èû)
-    // currentOpenAmount 1(ÆîÄ§) ¡æ normalizedTime 0 (clip ½ÃÀÛ = ÆîÄ§)
+    // currentOpenAmount 0(ì ‘í˜) â†’ normalizedTime 1 (clip ë = ì ‘í˜)
+    // currentOpenAmount 1(í¼ì¹¨) â†’ normalizedTime 0 (clip ì‹œì‘ = í¼ì¹¨)
 ```
 
 ---
 
-### 3. BasicScene ¾À ÀÛ¾÷ (Unity ¿¡µğÅÍ)
-- [ ] BasicScene ¿­±â
-- [ ] FanSystem ¿ÀºêÁ§Æ® Ã£±â
-- [ ] `Assets/Models/Fan/OpenFan.fbx` ÇÁ¸®ÆÕÀ» FanSystemÀÇ **ÀÚ½Ä**À¸·Î µå·¡±×
-- [ ] OpenFanÀÇ À§Ä¡¡¤È¸Àü¡¤Å©±â¸¦ ±âÁ¸ Å¥ºê ºÎÃ¤¿Í °ãÄ¡µµ·Ï ¸ÂÃã
-- [ ] FanSystem InspectorÀÇ `Fan Animator` ÇÊµå¿¡ OpenFanÀÇ Animator ÄÄÆ÷³ÍÆ® µå·¡±×
+### 3. BasicScene ì”¬ ì‘ì—… (Unity ì—ë””í„°)
+- [ ] BasicScene ì—´ê¸°
+- [ ] FanSystem ì˜¤ë¸Œì íŠ¸ ì°¾ê¸°
+- [ ] `Assets/Models/Fan/OpenFan.fbx` í”„ë¦¬íŒ¹ì„ FanSystemì˜ **ìì‹**ìœ¼ë¡œ ë“œë˜ê·¸
+- [ ] OpenFanì˜ ìœ„ì¹˜Â·íšŒì „Â·í¬ê¸°ë¥¼ ê¸°ì¡´ íë¸Œ ë¶€ì±„ì™€ ê²¹ì¹˜ë„ë¡ ë§ì¶¤
+- [ ] FanSystem Inspectorì˜ `Fan Animator` í•„ë“œì— OpenFanì˜ Animator ì»´í¬ë„ŒíŠ¸ ë“œë˜ê·¸
 
 ---
 
-### 4. È®ÀÎ (º¯°æ ºÒÇÊ¿ä)
-- `Note.cs`ÀÇ ÆÇÁ¤ ·ÎÁ÷Àº `fan.IsOpened` ±â¹İÀ¸·Î ÀÌ¹Ì ¿Ï¼º
-- º°µµ ¼öÁ¤ ¾øÀÌ »õ ¸ğµ¨°ú È£È¯µÊ
+### 4. í™•ì¸ (ë³€ê²½ ë¶ˆí•„ìš”)
+- `Note.cs`ì˜ íŒì • ë¡œì§ì€ `fan.IsOpened` ê¸°ë°˜ìœ¼ë¡œ ì´ë¯¸ ì™„ì„±
+- ë³„ë„ ìˆ˜ì • ì—†ì´ ìƒˆ ëª¨ë¸ê³¼ í˜¸í™˜ë¨
 
 ---
 
-## ÆÄÀÏ °æ·Î ÂüÁ¶
-| ÆÄÀÏ | °æ·Î |
+## íŒŒì¼ ê²½ë¡œ ì°¸ì¡°
+| íŒŒì¼ | ê²½ë¡œ |
 |------|------|
-| ºÎÃ¤ ¸ğµ¨ | `Assets/Models/Fan/OpenFan.fbx` |
-| ¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³ | `Assets/Models/Fan/FanAnim.anim` |
+| ë¶€ì±„ ëª¨ë¸ | `Assets/Models/Fan/OpenFan.fbx` |
+| ì• ë‹ˆë©”ì´ì…˜ í´ë¦½ | `Assets/Models/Fan/FanAnim.anim` |
 | Animator Controller | `Assets/Models/Fan/OpenFan.controller` |
-| °ÔÀÓ ·ÎÁ÷ | `Assets/Scripts/FanSystem.cs` |
-| ³ëÆ® ÆÇÁ¤ | `Assets/Scripts/Note.cs` |
-| °ÔÀÓ ¾À | `Assets/Scenes/BasicScene.unity` |
+| ê²Œì„ ë¡œì§ | `Assets/Scripts/FanSystem.cs` |
+| ë…¸íŠ¸ íŒì • | `Assets/Scripts/Note.cs` |
+| ê²Œì„ ì”¬ | `Assets/Scenes/BasicScene.unity` |

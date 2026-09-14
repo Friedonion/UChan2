@@ -1,9 +1,0 @@
-Found Spawner
-Model: model
-  Mat: material_0 (Shader: Universal Render Pipeline/Lit) at path: Assets/Models/Slash/model.obj
-Model: model
-  Mat: material_0 (Shader: Universal Render Pipeline/Lit) at path: Assets/Models/Fanning/model.obj
-Model: model
-  Mat: material_0 (Shader: Universal Render Pipeline/Lit) at path: Assets/Models/Hit/model.obj
-Model: 22
-  Mat: material_0.001 (Shader: Universal Render Pipeline/Lit) at path: Assets/Models/LR/22.obj

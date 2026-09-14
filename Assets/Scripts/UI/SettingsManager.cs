@@ -34,7 +34,13 @@ public class SettingsManager : MonoBehaviour
     public Image  trailEffectOnBg;
     public Image  trailEffectOffBg;
 
+    [Header("Sync Offset")]
+    public TextMeshProUGUI syncOffsetText;
+    public Button syncMinusBtn;
+    public Button syncPlusBtn;
+
     const float Step = 0.05f;
+    const float SyncStep = 10f; // ms
 
     void Start()
     {
@@ -66,6 +72,9 @@ public class SettingsManager : MonoBehaviour
 
         if (trailEffectOnBtn != null) trailEffectOnBtn.onClick.AddListener(()  => SetTrailEffect(true));
         if (trailEffectOffBtn != null) trailEffectOffBtn.onClick.AddListener(() => SetTrailEffect(false));
+
+        if (syncMinusBtn != null) syncMinusBtn.onClick.AddListener(() => ChangeSyncOffset(-SyncStep));
+        if (syncPlusBtn  != null) syncPlusBtn.onClick.AddListener(()  => ChangeSyncOffset(+SyncStep));
 
         RefreshAllUI();
     }
@@ -105,6 +114,12 @@ public class SettingsManager : MonoBehaviour
         RefreshTrailEffectUI();
     }
 
+    void ChangeSyncOffset(float deltaMs)
+    {
+        VolumeSettings.SetSyncOffset(VolumeSettings.SyncOffsetMs + deltaMs);
+        RefreshAllUI();
+    }
+
     void RefreshAllUI()
     {
         masterVolumeText.text = $"{Mathf.RoundToInt(VolumeSettings.MasterVolume * 100)}%";
@@ -112,6 +127,14 @@ public class SettingsManager : MonoBehaviour
         hitVolumeText.text    = $"{Mathf.RoundToInt(VolumeSettings.HitVolume    * 100)}%";
         RefreshHitEffectUI();
         RefreshTrailEffectUI();
+        RefreshSyncOffsetUI();
+    }
+
+    void RefreshSyncOffsetUI()
+    {
+        if (syncOffsetText == null) return;
+        int ms = Mathf.RoundToInt(VolumeSettings.SyncOffsetMs);
+        syncOffsetText.text = $"{(ms >= 0 ? "+" : "")}{ms}ms";
     }
 
     void RefreshHitEffectUI()

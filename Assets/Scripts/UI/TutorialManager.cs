@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
-using Unity.XR.CoreUtils;
 using UnityEngine.InputSystem;
 using TMPro;
 
-// "Tutorial" Â÷Æ®(BasicScene, StreamingAssets/Charts/Tutorial)¿¡¼­¸¸ µ¿ÀÛÇÑ´Ù.
-// ¼³¸í Áß¿£ GameManager¸¦ Pause½ÃÄÑ ½Ã°£À» ¸ØÃß°í, Æ®¸®°Å¸¦ ´ç±â¸é ÆĞ³ÎÀ» ¼û±ä µÚ
-// ½ÇÁ¦ ¿¬½À¿ë ³ëÆ®¸¦ NoteSpawner¿¡ Å¥À×ÇØ¼­ ³¯·Áº¸³»°í, ÆÇÁ¤ÀÌ ³¡³¯ ½Ã°£¸¸Å­ ±â´Ù¸° µÚ
-// ´Ù½Ã PauseÇÏ°í ´ÙÀ½ ¼³¸íÀ¸·Î ³Ñ¾î°£´Ù.
+// "Tutorial" ì°¨íŠ¸(BasicScene, StreamingAssets/Charts/Tutorial)ì—ì„œë§Œ ë™ì‘í•œë‹¤.
+// ì„¤ëª… ì¤‘ì—” GameManagerë¥¼ Pauseì‹œì¼œ ì‹œê°„ì„ ë©ˆì¶”ê³ , íŠ¸ë¦¬ê±°ë¥¼ ë‹¹ê¸°ë©´ íŒ¨ë„ì„ ìˆ¨ê¸´ ë’¤
+// ì‹¤ì œ ì—°ìŠµìš© ë…¸íŠ¸ë¥¼ NoteSpawnerì— íì‰í•´ì„œ ë‚ ë ¤ë³´ë‚´ê³ , íŒì •ì´ ëë‚  ì‹œê°„ë§Œí¼ ê¸°ë‹¤ë¦° ë’¤
+// ë‹¤ì‹œ Pauseí•˜ê³  ë‹¤ìŒ ì„¤ëª…ìœ¼ë¡œ ë„˜ì–´ê°„ë‹¤.
 public class TutorialManager : MonoBehaviour
 {
     [System.Serializable]
@@ -20,14 +19,17 @@ public class TutorialManager : MonoBehaviour
         [TextArea(2, 4)] public string body;
         public bool hasPractice;
         public NoteType practiceType;
-        [Tooltip("0ÀÌ¸é ÀÏ¹İ ³ëÆ®, 0º¸´Ù Å©¸é ·Õ³ëÆ®·Î Ãë±Ş (ÃÊ ´ÜÀ§ À¯Áö ½Ã°£)")]
+        [Tooltip("0ì´ë©´ ì¼ë°˜ ë…¸íŠ¸, 0ë³´ë‹¤ í¬ë©´ ë¡±ë…¸íŠ¸ë¡œ ì·¨ê¸‰ (ì´ˆ ë‹¨ìœ„ ìœ ì§€ ì‹œê°„)")]
         public float holdDuration;
     }
 
     [Header("Canvas")]
     public GameObject panelRoot;
     public Transform canvasTransform;
-    public float distanceFromPlayer = 2.0f;
+    [Tooltip("BasicScene ì •ë©´(ì›”ë“œ +Z, ë¦¬ì„¼í„°ëœ í”Œë ˆì´ì–´ ê¸°ì¤€) ëŒ€ë¹„ ì˜¤ë¥¸ìª½ìœ¼ë¡œ êº¾ëŠ” ê°ë„")]
+    public float angleOffsetDegrees = 45f;
+    public float distanceFromCenter = 2.0f;
+    public float fixedHeight = 1.3f;
 
     [Header("Text")]
     public TextMeshProUGUI titleText;
@@ -38,8 +40,10 @@ public class TutorialManager : MonoBehaviour
     public int practiceLane = 1;
     public int practiceRow = 0;
     public int practiceEndLane = 3;
-    [Tooltip("³ëÆ®°¡ µµÂøÇÑ µÚ ÆÇÁ¤ÀÌ ³¡³µ´Ù°í º¸°í ´ÙÀ½ ´Ü°è·Î ³Ñ¾î°¡±â±îÁö Ãß°¡·Î ±â´Ù¸®´Â ¿©À¯ ½Ã°£(ÃÊ)")]
+    [Tooltip("ë…¸íŠ¸ê°€ ë„ì°©í•œ ë’¤ íŒì •ì´ ëë‚¬ë‹¤ê³  ë³´ê³  ë‹¤ìŒ ë‹¨ê³„ë¡œ ë„˜ì–´ê°€ê¸°ê¹Œì§€ ì¶”ê°€ë¡œ ê¸°ë‹¤ë¦¬ëŠ” ì—¬ìœ  ì‹œê°„(ì´ˆ)")]
     public float resolveBuffer = 1.5f;
+    [Tooltip("ì²´í¬ í•´ì œí•˜ë©´ Missì—¬ë„ ì¬ì‹œë„ ì—†ì´ ë…¸íŠ¸ë¥¼ í•œ ë²ˆë§Œ ìŠ¤í°í•˜ê³  ë°”ë¡œ ë‹¤ìŒ ë‹¨ê³„ë¡œ ë„˜ì–´ê°„ë‹¤ (ë””ë²„ê·¸ìš©)")]
+    public bool retryUntilSuccess = true;
 
     [Header("Scene")]
     public string nextSceneName = "MusicSelectUI";
@@ -48,66 +52,96 @@ public class TutorialManager : MonoBehaviour
     public List<TutorialStep> steps = new List<TutorialStep>
     {
         new TutorialStep {
-            title = "¿ìÂù2¿¡ ¿À½Å °É È¯¿µÇÕ´Ï´Ù",
-            body  = "ºÎÃ¤¸¦ ÈÖµÑ·¯ ³¯¾Æ¿À´Â ³ëÆ®¸¦ ÃÄ³»´Â VR ¸®µë°ÔÀÓÀÔ´Ï´Ù.\nÆ®¸®°Å¸¦ ´ç±â¸é ´ÙÀ½ ¼³¸íÀ¸·Î ³Ñ¾î°©´Ï´Ù."
+            title = "í’ë¥˜ì— ì˜¤ì‹  ê±¸ í™˜ì˜í•©ë‹ˆë‹¤",
+            body  = "ë¶€ì±„ë¥¼ íœ˜ë‘˜ëŸ¬ ë‚ ì•„ì˜¤ëŠ” ë…¸íŠ¸ë¥¼ ì³ë‚´ëŠ” VR ë¦¬ë“¬ê²Œì„ì…ë‹ˆë‹¤.\níŠ¸ë¦¬ê±°ë¥¼ ë‹¹ê¸°ë©´ ë‹¤ìŒ ì„¤ëª…ìœ¼ë¡œ ë„˜ì–´ê°‘ë‹ˆë‹¤."
         },
         new TutorialStep {
-            title = "Ä¡±â (Hit)",
-            body  = "ºÎÃ¤¸¦ Á¢Àº »óÅÂ·Î, Á¤¸é¿¡¼­ ¿À´Â ³ëÆ®¸¦ ÇâÇØ ÃÄ³À´Ï´Ù.\nÆ®¸®°Å¸¦ ´ç±â¸é ¿¹½Ã ³ëÆ®°¡ ³¯¾Æ¿É´Ï´Ù.",
+            title = "ì¹˜ê¸° (Hit)",
+            body  = "ë¶€ì±„ë¥¼ ì ‘ì€ ìƒíƒœë¡œ, ì •ë©´ì—ì„œ ì˜¤ëŠ” ë…¸íŠ¸ë¥¼ í–¥í•´ ì³ëƒ…ë‹ˆë‹¤.\níŠ¸ë¦¬ê±°ë¥¼ ë‹¹ê¸°ë©´ ì˜ˆì‹œ ë…¸íŠ¸ê°€ ë‚ ì•„ì˜µë‹ˆë‹¤.",
             hasPractice = true, practiceType = NoteType.Hit
         },
         new TutorialStep {
-            title = "º£±â (Slashing)",
-            body  = "ºÎÃ¤¸¦ Æí »óÅÂ·Î, È­»ìÇ¥ ¹æÇâÀ» µû¶ó ´ë°¢¼±À¸·Î º£¾î³À´Ï´Ù.",
+            title = "ë² ê¸° (Slashing)",
+            body  = "ë¶€ì±„ë¥¼ í¸ ìƒíƒœë¡œ, í™”ì‚´í‘œ ë°©í–¥ì„ ë”°ë¼ ëŒ€ê°ì„ ìœ¼ë¡œ ë² ì–´ëƒ…ë‹ˆë‹¤.",
             hasPractice = true, practiceType = NoteType.Slashing
         },
         new TutorialStep {
-            title = "ºÎÄ¡±â (Fanning)",
-            body  = "ºÎÃ¤¸¦ Æí »óÅÂ·Î, È­»ìÇ¥°¡ °¡¸®Å°´Â ¹æÇâÀ» ÇâÇØ ºÎÃ¤ÁúÇÏµí ¹Ğ¾î³À´Ï´Ù.",
+            title = "ë¶€ì¹˜ê¸° (Fanning)",
+            body  = "ë¶€ì±„ë¥¼ í¸ ìƒíƒœë¡œ, í™”ì‚´í‘œê°€ ê°€ë¦¬í‚¤ëŠ” ë°©í–¥ì„ í–¥í•´ ë¶€ì±„ì§ˆí•˜ë“¯ ë°€ì–´ëƒ…ë‹ˆë‹¤.",
             hasPractice = true, practiceType = NoteType.Fanning
         },
         new TutorialStep {
-            title = "º¸½º (Boss)",
-            body  = "ºÎÃ¤¸¦ Æí »óÅÂ·Î °­ÇÏ°Ô ÈÖµÎ¸£¼¼¿ä. ¿¬¼ÓÀ¸·Î ¸ÂÈú ¶§´Â ¸Å¹ø ¹İ´ë ¹æÇâÀ¸·Î ÈÖµÑ·¯¾ß ÇÕ´Ï´Ù.",
-            hasPractice = true, practiceType = NoteType.Boss
+            title = "ì²´ë ¥ (HP)",
+            body  = "ë…¸íŠ¸ë¥¼ ë†“ì¹˜ë©´ ì²´ë ¥ì´ 10 ì¤„ì–´ë“¤ì–´ìš”. ì²´ë ¥ì´ 0ì´ ë˜ë©´ ê·¸ ìë¦¬ì—ì„œ ê³¡ì´ ëë‚˜ë²„ë¦¬ë‹ˆ ì£¼ì˜í•˜ì„¸ìš”.\n(ì§€ê¸ˆì€ ì—°ìŠµ ì¤‘ì´ë¼ ì‹¤ì œë¡œ ì²´ë ¥ì´ ì¤„ì§€ëŠ” ì•Šì•„ìš”)"
         },
         new TutorialStep {
-            title = "·Õ³ëÆ® ½ÃÀÛ - Á¢Èû",
-            body  = "ºÎÃ¤¸¦ Á¢Àº »óÅÂ·Î ³ëÆ®¿¡ »ìÂ¦ ´ê±â¸¸ ÇØµµ È¦µå°¡ ½ÃÀÛµË´Ï´Ù.\nÀÌÈÄ °¡ÀÌµå¶óÀÎÀ» µû¶ó ºÎÃ¤ »óÅÂ¸¦ À¯ÁöÇÏ¼¼¿ä.",
+            title = "ë¡±ë…¸íŠ¸ - ì ‘í˜",
+            body  = "ë¶€ì±„ë¥¼ ì ‘ì€ ìƒíƒœë¡œ ë…¸íŠ¸ì— ì‚´ì§ ë‹¿ìœ¼ë©´ í™€ë“œê°€ ì‹œì‘ë©ë‹ˆë‹¤.\nì¤‘ìš”í•œ ê±´ ê·¸ ë‹¤ìŒì´ì—ìš” - ê°€ì´ë“œë¼ì¸ì„ ë”°ë¼ê°€ëŠ” ë‚´ë‚´ ë¶€ì±„ë¥¼ ì ‘ì€ ìƒíƒœë¡œ ìœ ì§€í•´ì•¼ í•©ë‹ˆë‹¤.",
             hasPractice = true, practiceType = NoteType.HoldFolded, holdDuration = 3f
         },
         new TutorialStep {
-            title = "·Õ³ëÆ® ½ÃÀÛ - ÆîÄ§",
-            body  = "ºÎÃ¤¸¦ Æí »óÅÂ·Î ³ëÆ®¿¡ »ìÂ¦ ´ê±â¸¸ ÇØµµ È¦µå°¡ ½ÃÀÛµË´Ï´Ù.\nÀÌÈÄ °¡ÀÌµå¶óÀÎÀ» µû¶ó ºÎÃ¤ »óÅÂ¸¦ À¯ÁöÇÏ¼¼¿ä.",
+            title = "ë¡±ë…¸íŠ¸ - í¼ì¹¨",
+            body  = "ì˜í•˜ì…¨ìŠµë‹ˆë‹¤. ì´ë²ˆì—ëŠ” ê°™ì€ ë°©ì‹ìœ¼ë¡œ ë¶€ì±„ë¥¼ í¼ì¹œ ì±„ ìœ ì§€í•´ë´…ì‹œë‹¤.",
             hasPractice = true, practiceType = NoteType.HoldOpen, holdDuration = 3f
         },
         new TutorialStep {
-            title = "º® (Wall)",
-            body  = "°ø°İÇÒ ¼ö ¾ø´Â Àå¾Ö¹°ÀÔ´Ï´Ù. ¸Ó¸®¿¡ ´êÀ¸¸é ¹Ì½º Ã³¸®µÇ´Ï ¸öÀ» ¿òÁ÷¿© ÇÇÇÏ¼¼¿ä.",
+            title = "ë²½ (Wall)",
+            body  = "ê³µê²©í•  ìˆ˜ ì—†ëŠ” ì¥ì• ë¬¼ì…ë‹ˆë‹¤. ë¨¸ë¦¬ì— ë‹¿ìœ¼ë©´ ë¯¸ìŠ¤ ì²˜ë¦¬ë˜ë‹ˆ ëª¸ì„ ì›€ì§ì—¬ í”¼í•˜ì„¸ìš”.",
             hasPractice = true, practiceType = NoteType.Wall
         },
         new TutorialStep {
-            title = "ÁØºñ ¿Ï·á!",
-            body  = "ÀÌÁ¦ °îÀ» ¼±ÅÃÇØ ÇÃ·¹ÀÌ¸¦ ½ÃÀÛÇØº¼±î¿ä?"
+            title = "ì¤€ë¹„ ì™„ë£Œ!",
+            body  = "ì´ì œ ê³¡ì„ ì„ íƒí•´ í”Œë ˆì´ë¥¼ ì‹œì‘í•´ë³¼ê¹Œìš”?"
         },
     };
 
     const string TargetSongName = "Tutorial";
 
     private NoteSpawner spawner;
-    private Camera vrCam;
+
+    // ë¡±ë…¸íŠ¸ëŠ” ì´ë¡ ìƒ ì„¸ ê°€ì§€ íŒì •(ì‹œì‘ ë…¸íŠ¸ í„°ì¹˜ / ê°€ì´ë“œë¼ì¸ ìœ ì§€ / ë ë…¸íŠ¸ í„°ì¹˜)ìœ¼ë¡œ ì´ë£¨ì–´ì§„ë‹¤.
+    // ì•ì˜ ë‘ ê°œëŠ” ê²°ê³¼ê°€ ê·¸ë•Œê·¸ë•Œ ì´ boolë“¤ì— ë°˜ì˜ë˜ê³ , ê°€ì´ë“œë¼ì¸ ìœ ì§€ ì—¬ë¶€ëŠ” íŒì • ì‹œì ì—
+    // LongNoteGuide.HoldFailedë¥¼ ì§ì ‘ ì½ì–´ì„œ í™•ì¸í•œë‹¤(ë³„ë„ boolë¡œ ì•ˆ ë“¤ê³  ìˆì–´ë„ ì¦‰ì‹œ ì¡°íšŒ ê°€ëŠ¥).
+    // ì¼ë°˜ ë…¸íŠ¸ëŠ” ì‹œì‘ íŒì • í•˜ë‚˜ë¿ì´ë¯€ë¡œ endOkëŠ” ì• ì´ˆì— "í•„ìš” ì—†ìŒ(true)"ìœ¼ë¡œ ì‹œì‘í•œë‹¤.
+    private bool practiceStartOk;
+    private bool practiceEndOk;
+
+    // Wall ì „ìš©: ë²½ì€ "ë¶€ë”ªíˆë©´ ê·¸ ì¦‰ì‹œ í™•ì • ì‹¤íŒ¨"ë¼ì„œ ë¡±ë…¸íŠ¸ì²˜ëŸ¼ Endpointê¹Œì§€ ê¸°ë‹¤ë ¸ë‹¤ê°€ íŒì •í• 
+    // ì´ìœ ê°€ ì—†ë‹¤(ê¸°ë‹¤ë ¤ë´¤ì ê²°ê³¼ê°€ ë°”ë€Œì§€ ì•ŠìŒ). ë°˜ëŒ€ë¡œ "ì•ˆ ë§ê³  í†µê³¼"ëŠ” ë²½ ê¸¸ì´ë§Œí¼ íŒì •ì„ ì„
+    // ì™„ì „íˆ ì§€ë‚˜ê°€ì•¼ WallDodgedê°€ ë¶ˆë¦¬ëŠ”ë°, ì´ í†µê³¼ ì†Œìš” ì‹œê°„ì€ travelTimeë§Œìœ¼ë¡œëŠ” ëª» êµ¬í•´ì„œ
+    // ê³ ì • ëŒ€ê¸° ëŒ€ì‹  ì‹¤ì œ ê²°ê³¼ ì´ë²¤íŠ¸(ì„±ê³µ/ì‹¤íŒ¨)ê°€ ì˜¬ ë•Œê¹Œì§€ ì§ì ‘ ê¸°ë‹¤ë¦°ë‹¤.
+    private bool practiceMissed;
+
+    void OnEnable()
+    {
+        GameManager.OnNoteResolved += HandlePracticeResolved;
+        GameManager.OnNoteMissed += HandlePracticeMissed;
+    }
+
+    void OnDisable()
+    {
+        GameManager.OnNoteResolved -= HandlePracticeResolved;
+        GameManager.OnNoteMissed -= HandlePracticeMissed;
+    }
+
+    // OnNoteResolvedëŠ” ë¡±ë…¸íŠ¸ì¼ ë•Œ ì‹œì‘ ë…¸íŠ¸ì—ì„œ í•œ ë²ˆ, ë ë…¸íŠ¸ì—ì„œ í•œ ë²ˆ, ìˆœì„œëŒ€ë¡œ ë‘ ë²ˆ ì˜¨ë‹¤.
+    void HandlePracticeResolved()
+    {
+        if (!practiceStartOk) practiceStartOk = true;
+        else practiceEndOk = true;
+    }
+
+    void HandlePracticeMissed() => practiceMissed = true;
 
     void Start()
     {
-        var xrOrigin = FindObjectOfType<XROrigin>();
-        vrCam = xrOrigin != null ? xrOrigin.Camera : Camera.main;
+        HidePanel();
         spawner = FindObjectOfType<NoteSpawner>();
-
         StartCoroutine(RunGuarded());
     }
 
-    // ´Ù¸¥ °î(Sync Test µî)¿¡¼­´Â ÀÌ ¸Å´ÏÀú°¡ ¾Æ¹«°Íµµ ÇÏÁö ¾Êµµ·Ï, ·ÎµåµÈ Â÷Æ®°¡ È®Á¤µÉ ¶§±îÁö
-    // ±â´Ù·È´Ù°¡ È®ÀÎÇÑ´Ù. (ÀÌ °¡µå°¡ ¾ø¾î¼­ ´Ù¸¥ Â÷Æ®¸¦ ÇÃ·¹ÀÌÇÒ ¶§µµ Æ©Åä¸®¾ó ÆĞ³ÎÀÌ ¶ß´Â ¹ö±×°¡ ÀÖ¾úÀ½)
+    // ë‹¤ë¥¸ ê³¡(Sync Test ë“±)ì—ì„œëŠ” ì´ ë§¤ë‹ˆì €ê°€ ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•Šë„ë¡, ë¡œë“œëœ ì°¨íŠ¸ê°€ í™•ì •ë  ë•Œê¹Œì§€
+    // ê¸°ë‹¤ë ¸ë‹¤ê°€ í™•ì¸í•œë‹¤. (ì´ ê°€ë“œê°€ ì—†ì–´ì„œ ë‹¤ë¥¸ ì°¨íŠ¸ë¥¼ í”Œë ˆì´í•  ë•Œë„ íŠœí† ë¦¬ì–¼ íŒ¨ë„ì´ ëœ¨ëŠ” ë²„ê·¸ê°€ ìˆì—ˆìŒ)
     IEnumerator RunGuarded()
     {
         yield return new WaitUntil(() => GameManager.Instance != null && GameManager.Instance.currentChart != null);
@@ -118,39 +152,43 @@ public class TutorialManager : MonoBehaviour
             yield break;
         }
 
-        StartCoroutine(InitCanvas());
+        PlaceCanvas();
         StartCoroutine(RunSequence());
     }
 
-    // XR Æ®·¡Å·ÀÌ ÃÊ±âÈ­µÉ ¶§±îÁö 2ÇÁ·¹ÀÓ ´ë±â ÈÄ Äµ¹ö½º¸¦ ÇÃ·¹ÀÌ¾î Á¤¸é¿¡ 1È¸ °íÁ¤ (IntroManager¿Í µ¿ÀÏ ÆĞÅÏ)
-    IEnumerator InitCanvas()
+    // SyncTestManagerì™€ ë™ì¼í•œ ë°©ì‹: í”Œë ˆì´ì–´ ì‹œì„ /ìœ„ì¹˜ë¥¼ ì „í˜€ ì°¸ì¡°í•˜ì§€ ì•Šê³ , ë¦¬ì„¼í„°ëœ í”Œë ˆì´ì–´
+    // ê¸°ì¤€ ì›”ë“œ ì¢Œí‘œ(ì •ë©´ ëŒ€ë¹„ angleOffsetDegreesë§Œí¼ ìš°ì¸¡)ì— ì™„ì „íˆ ê³ ì • ì†Œí™˜í•œë‹¤.
+    void PlaceCanvas()
     {
-        yield return null;
-        yield return null;
+        if (canvasTransform == null) return;
 
-        if (canvasTransform == null || vrCam == null) yield break;
-
-        Vector3 forward = new Vector3(vrCam.transform.forward.x, 0f, vrCam.transform.forward.z).normalized;
-        if (forward.sqrMagnitude < 0.01f) forward = Vector3.forward;
-
-        canvasTransform.position = vrCam.transform.position + forward * distanceFromPlayer;
-        canvasTransform.rotation = Quaternion.LookRotation(forward, Vector3.up);
+        Vector3 dir = Quaternion.Euler(0f, angleOffsetDegrees, 0f) * Vector3.forward;
+        Vector3 pos = dir * distanceFromCenter;
+        pos.y = fixedHeight;
+        canvasTransform.position = pos;
+        canvasTransform.rotation = Quaternion.LookRotation(dir, Vector3.up);
     }
 
     IEnumerator RunSequence()
     {
-        // spawner.IsActive±îÁö È®ÀÎÇØ¾ß ÇÑ´Ù: GameManager.StartGame()Àº currentState¸¦ PlayingÀ¸·Î
-        // µ¿±âÀûÀ¸·Î ¸ÕÀú ¹Ù²Ù°í, NoteSpawner.StartPlaying()Àº ±×º¸´Ù ÇÑÂü µÚ(startDelay °æ°ú ÈÄ)¿¡ È£ÃâµÈ´Ù.
-        // currentState¸¸ º¸°í ¿©±â¼­ ¹Ù·Î PauseGame()ÇÏ¸é startDelay ´ë±â ÄÚ·çÆ¾±îÁö timeScale=0À¸·Î ¸ØÃç¹ö·Á¼­,
-        // Ã¹ ¿¬½À ´Ü°è°¡ spawner.IsActive¸¦ ±â´Ù¸®´Ù ¿µ¿øÈ÷ Ç®¸®Áö ¾Ê´Â ±³Âø »óÅÂ¿¡ ºüÁø´Ù.
-        yield return new WaitUntil(() => GameManager.Instance != null && GameManager.Instance.currentState == GameState.Playing
-            && spawner != null && spawner.IsActive);
+        // currentStateë§Œ í™•ì •ë˜ë©´ ë°”ë¡œ ì‹œì‘í•œë‹¤(=ê±°ì˜ ì¦‰ì‹œ). spawner.IsActiveëŠ” ì•„ì§ ê¸°ë‹¤ë¦¬ì§€ ì•ŠëŠ”ë‹¤ -
+        // GameManager.StartGame()ì´ currentStateë¥¼ Playingìœ¼ë¡œ ë™ê¸°ì ìœ¼ë¡œ ë¨¼ì € ë°”ê¾¸ê³ ,
+        // NoteSpawner.StartPlaying()ì€ ê·¸ë³´ë‹¤ í•œì°¸ ë’¤(startDelayâ‰ˆ3ì´ˆ ê²½ê³¼ í›„)ì— í˜¸ì¶œë˜ê¸° ë•Œë¬¸ì—,
+        // ì—¬ê¸°ì„œ spawner.IsActiveê¹Œì§€ ê¸°ë‹¤ë¦¬ë©´ ì—°ìŠµì´ í•„ìš” ì—†ëŠ” ì²« ì¸íŠ¸ë¡œ íŒ¨ë„ì¡°ì°¨ ê·¸ 3ì´ˆë¥¼ ê·¸ëŒ€ë¡œ ë¨¹ëŠ”ë‹¤.
+        yield return new WaitUntil(() => GameManager.Instance != null && GameManager.Instance.currentState == GameState.Playing);
 
         for (int i = 0; i < steps.Count; i++)
         {
             TutorialStep step = steps[i];
 
-            if (GameManager.Instance.currentState == GameState.Playing)
+            // ì—°ìŠµì´ ìˆëŠ” ìŠ¤í…ì€ ë…¸íŠ¸ë¥¼ ìŠ¤í°í•´ì•¼ í•˜ë‹ˆ spawnerê°€ ì¤€ë¹„ë  ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
+            if (step.hasPractice)
+                yield return new WaitUntil(() => spawner != null && spawner.IsActive);
+
+            // spawnerê°€ ì•„ì§ ì¤€ë¹„ ì•ˆ ëœ ìƒíƒœ(=GameManagerì˜ ì‹œì‘ ì¹´ìš´íŠ¸ë‹¤ìš´ì´ ì•„ì§ ì•ˆ ëë‚¨)ì—ì„œ
+            // PauseGame()ì„ ê±¸ë©´ ê·¸ ì¹´ìš´íŠ¸ë‹¤ìš´ ì½”ë£¨í‹´ ìì²´ê°€ timeScale=0ì— ê±¸ë ¤ ì˜ì›íˆ ë©ˆì¶°ë²„ë¦°ë‹¤.
+            // ê·¸ë˜ì„œ ì¤€ë¹„ë˜ê¸° ì „ê¹Œì§€ëŠ”(=ì£¼ë¡œ ì²« ì¸íŠ¸ë¡œ íŒ¨ë„) Pause ì—†ì´ íŒ¨ë„ë§Œ ë¨¼ì € ë³´ì—¬ì¤€ë‹¤.
+            if (GameManager.Instance.currentState == GameState.Playing && spawner != null && spawner.IsActive)
                 GameManager.Instance.PauseGame();
             ShowStep(step, i == steps.Count - 1);
 
@@ -160,22 +198,74 @@ public class TutorialManager : MonoBehaviour
 
             HidePanel();
 
-            // ½ºÆ÷³Ê°¡ ¾ÆÁ÷ ÁØºñµÇÁö ¾Ê¾Ò´Ù¸é(¾À ·Îµå Á÷ÈÄ µî) ÁØºñµÉ ¶§±îÁö¸¸ Âª°Ô ´ë±â
-            yield return new WaitUntil(() => spawner != null && spawner.IsActive);
-
             if (GameManager.Instance.currentState == GameState.Paused)
                 GameManager.Instance.ResumeGame();
 
             Vector3 dir = (step.practiceType == NoteType.Wall) ? Vector3.zero : Vector3.right;
-            spawner.QueuePracticeNote(
-                step.practiceType, practiceLane, practiceRow, dir,
-                step.holdDuration,
-                step.holdDuration > 0f ? practiceEndLane : -1,
-                step.holdDuration > 0f ? practiceRow : -1);
-
+            bool isHoldStep = step.holdDuration > 0f;
+            bool isWallStep = step.practiceType == NoteType.Wall;
             float travelTime = GameManager.Instance.currentChart != null ? GameManager.Instance.currentChart.travelTime : 4f;
-            float waitTime = travelTime + step.holdDuration + resolveBuffer;
-            yield return new WaitForSeconds(waitTime);
+            float naturalDuration = travelTime + step.holdDuration; // ë…¸íŠ¸ê°€ ìŠ¤í°ë¼ì„œ Endpointì— ë„ë‹¬í•˜ê¸°ê¹Œì§€ ê±¸ë¦¬ëŠ” ì‹œê°„
+
+            // íŒì • ë„ì¤‘ì—ëŠ” ì•„ë¬´ê²ƒë„ í™•ì¸í•˜ì§€ ì•Šê³ , ë…¸íŠ¸ê°€ ì‹¤ì œë¡œ Endpointì— ë„ë‹¬í•  ì‹œê°„ë§Œí¼ ë”± í•œ ë²ˆ
+            // ê¸°ë‹¤ë¦° ë’¤(ì½”ë£¨í‹´ í´ë§ ì—†ì´ ê³ ì • ëŒ€ê¸°) ê·¸ ì‹œì ì— íŒì •ì„ í™•ì¸í•œë‹¤. ì‹¤íŒ¨ê°€ ê·¸ ì „ì— ì´ë¯¸
+            // ì •í•´ì¡Œì–´ë„(ì˜ˆ: í™€ë“œ ì¤‘ê°„ì— ë†“ì¹¨) Endpoint ì „ì—ëŠ” ì¬ì‹œë„í•˜ê±°ë‚˜ ë„˜ì–´ê°€ì§€ ì•ŠëŠ”ë‹¤ - ê·¸ë˜ì•¼
+            // í™”ë©´ì—ì„œ ë…¸íŠ¸ê°€ ê°‘ìê¸° ëŠê¸°ëŠ” ëŠë‚Œ ì—†ì´ í•­ìƒ ëê¹Œì§€ ë³´ì—¬ì§„ë‹¤.
+            // ë²½(Wall)ë„ ì´ ì›ì¹™ì€ ê°™ë‹¤: ë¶€ë”ªíŒ ìˆœê°„ íŒì • ìì²´ëŠ” ì´ë¯¸ í™•ì •ì´ì§€ë§Œ(Note.csê°€ Missì—¬ë„
+            // DeactivateëŠ” ëê¹Œì§€ ë¯¸ë£¸), ë²½ ì˜¤ë¸Œì íŠ¸ëŠ” ëª¸ì„ ë‹¤ ì§€ë‚˜ì¹  ë•Œê¹Œì§€ í™”ë©´ì— ë‚¨ì•„ìˆëŠ”ë‹¤.
+            // ê·¸ë˜ì„œ íŒì • ì´ë²¤íŠ¸ë¥¼ ë°›ì€ ë’¤ì—ë„ ì‹¤ì œë¡œ ê·¸ ë²½ Noteê°€ ë¹„í™œì„±í™”ë  ë•Œê¹Œì§€ í•œ ë²ˆ ë” ê¸°ë‹¤ë¦°ë‹¤
+            // (ë²½ ê¸¸ì´ ë•Œë¬¸ì— ì†Œìš” ì‹œê°„ì„ travelTimeë§Œìœ¼ë¡œ ëª» êµ¬í•´ì„œ ê³ ì • ì‹œê°„ ëŒ€ì‹  ì˜¤ë¸Œì íŠ¸ ìƒíƒœë¥¼ ì§ì ‘ ë³¸ë‹¤).
+            // retryUntilSuccessê°€ êº¼ì ¸ìˆìœ¼ë©´(ì„ì‹œ í…ŒìŠ¤íŠ¸ ëª¨ë“œ) í•œ ë²ˆë§Œ ìŠ¤í°í•˜ê³  ê²°ê³¼ì™€ ìƒê´€ì—†ì´ ë„˜ì–´ê°„ë‹¤.
+            while (true)
+            {
+                practiceStartOk = false;
+                practiceEndOk = !isHoldStep; // ì¼ë°˜ ë…¸íŠ¸ëŠ” ë íŒì •ì´ ì• ì´ˆì— ì—†ìœ¼ë¯€ë¡œ í•­ìƒ ì¶©ì¡±
+                practiceMissed = false;
+                spawner.QueuePracticeNote(
+                    step.practiceType, practiceLane, practiceRow, dir,
+                    step.holdDuration,
+                    isHoldStep ? practiceEndLane : -1,
+                    isHoldStep ? practiceRow : -1);
+
+                LongNoteGuide guide = null;
+                Note wallNote = null;
+                if (isHoldStep)
+                {
+                    yield return null;
+                    yield return null; // NoteSpawnerê°€ ì¡ì„ í•œë‘ í”„ë ˆì„ ì—¬ìœ 
+                    guide = FindObjectOfType<LongNoteGuide>();
+                }
+                else if (isWallStep)
+                {
+                    yield return null;
+                    yield return null;
+                    foreach (var n in FindObjectsOfType<Note>())
+                    {
+                        if (n.type == NoteType.Wall) { wallNote = n; break; }
+                    }
+                }
+
+                if (isWallStep)
+                {
+                    yield return new WaitUntil(() => practiceStartOk || practiceMissed);
+                    if (wallNote != null)
+                        yield return new WaitUntil(() => wallNote == null || !wallNote.gameObject.activeInHierarchy);
+                }
+                else
+                {
+                    yield return new WaitForSeconds(naturalDuration);
+                }
+
+                // Endpoint íŒì •: ì„¸ ê°€ì§€(ì‹œì‘/ê°€ì´ë“œë¼ì¸/ë)ê°€ ì „ë¶€ trueì¼ ë•Œë§Œ ì„±ê³µ.
+                bool holdOk = guide == null || !guide.HoldFailed;
+                bool success = practiceStartOk && holdOk && practiceEndOk;
+
+                if (success || !retryUntilSuccess) break;
+
+                yield return new WaitForSeconds(0.5f); // ì¬ë„ì „ ì „ ì§§ê²Œ í…€ì„ ë‘”ë‹¤
+            }
+
+            yield return new WaitForSeconds(resolveBuffer);
         }
 
         yield return FinishTutorial();
@@ -188,9 +278,9 @@ public class TutorialManager : MonoBehaviour
         if (bodyText != null) bodyText.text = step.body;
         if (promptText != null)
         {
-            promptText.text = isLast ? "(Æ®¸®°Å¸¦ ´ç°Ü ½ÃÀÛÇÏ±â)"
-                : step.hasPractice ? "(Æ®¸®°Å¸¦ ´ç±â¸é ¿¹½Ã ³ëÆ®°¡ ³¯¾Æ¿É´Ï´Ù)"
-                : "(Æ®¸®°Å¸¦ ´ç°Ü °è¼Ó)";
+            promptText.text = isLast ? "(íŠ¸ë¦¬ê±°ë¥¼ ë‹¹ê²¨ ì‹œì‘í•˜ê¸°)"
+                : step.hasPractice ? "(íŠ¸ë¦¬ê±°ë¥¼ ë‹¹ê¸°ë©´ ì˜ˆì‹œ ë…¸íŠ¸ê°€ ë‚ ì•„ì˜µë‹ˆë‹¤)"
+                : "(íŠ¸ë¦¬ê±°ë¥¼ ë‹¹ê²¨ ê³„ì†)";
         }
     }
 
@@ -199,11 +289,11 @@ public class TutorialManager : MonoBehaviour
         if (panelRoot != null) panelRoot.SetActive(false);
     }
 
-    // Æ®¸®°Å¸¦ "´ç±â´Â ¼ø°£"(rising edge)¸¸ ¹İÀÀÇÑ´Ù. Time.timeScaleÀÌ 0(Pause Áß)ÀÌ¾îµµ
-    // ÇÁ·¹ÀÓ ±â¹İ ´ë±â(yield return null)¶ó Á¤»óÀûÀ¸·Î µ¿ÀÛÇÑ´Ù.
+    // íŠ¸ë¦¬ê±°ë¥¼ "ë‹¹ê¸°ëŠ” ìˆœê°„"(rising edge)ë§Œ ë°˜ì‘í•œë‹¤. Time.timeScaleì´ 0(Pause ì¤‘)ì´ì–´ë„
+    // í”„ë ˆì„ ê¸°ë°˜ ëŒ€ê¸°(yield return null)ë¼ ì •ìƒì ìœ¼ë¡œ ë™ì‘í•œë‹¤.
     IEnumerator WaitForTriggerPull()
     {
-        while (GetTriggerHeld()) yield return null; // ÀÌÀü Æ®¸®°Å ÀÔ·ÂÀÌ ¾ÆÁ÷ ´­·ÁÀÖÀ¸¸é ¸ÕÀú ¶¼±â¸¦ ±â´Ù¸²
+        while (GetTriggerHeld()) yield return null; // ì´ì „ íŠ¸ë¦¬ê±° ì…ë ¥ì´ ì•„ì§ ëˆŒë ¤ìˆìœ¼ë©´ ë¨¼ì € ë–¼ê¸°ë¥¼ ê¸°ë‹¤ë¦¼
 
         bool prev = false;
         while (true)

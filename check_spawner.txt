@@ -1,1 +1,0 @@
-NoteSpawner fanningModel is: model

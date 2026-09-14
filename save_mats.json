@@ -1,4 +1,0 @@
-{
-  "csharpCode": "var closedRing = GameObject.Find(\"Note_Ring_Closed\");\nvar openedRing = GameObject.Find(\"Note_Ring_Opened\");\nif (closedRing != null) {\n    var mr = closedRing.GetComponent<MeshRenderer>();\n    if (mr != null) {\n        var mat = mr.sharedMaterial;\n        if (!UnityEditor.AssetDatabase.Contains(mat)) {\n            UnityEditor.AssetDatabase.CreateAsset(mat, \"Assets/Materials/SolidNeon_Cyan.mat\");\n        }\n    }\n}\nif (openedRing != null) {\n    var mr = openedRing.GetComponent<MeshRenderer>();\n    if (mr != null) {\n        var mat = mr.sharedMaterial;\n        if (!UnityEditor.AssetDatabase.Contains(mat)) {\n            UnityEditor.AssetDatabase.CreateAsset(mat, \"Assets/Materials/SolidNeon_Magenta.mat\");\n        }\n    }\n}\nUnityEditor.AssetDatabase.SaveAssets();",
-  "isMethodBody": true
-}

@@ -3058,14 +3058,6 @@ MonoBehaviour:
     hasPractice: 1
     practiceType: 1
     holdDuration: 0
-  - title: "\uBCF4\uC2A4 (Boss)"
-    body: "\uBD80\uCC44\uB97C \uD3B8 \uC0C1\uD0DC\uB85C \uAC15\uD558\uAC8C \uD718\uB450\uB974\uC138\uC694.
-      \uCD1D 3\uBC88 \uB9DE\uD600\uC57C \uC4F0\uB7EC\uC9C0\uB294\uB370,\n\uB450 \uBC88\uC9F8
-      \uD0C0\uACA9\uBD80\uD130\uB294 \uB9E4\uBC88 \uC9C1\uC804\uACFC \uBC18\uB300
-      \uBC29\uD5A5\uC73C\uB85C \uD718\uB458\uB7EC\uC57C \uC778\uC815\uB429\uB2C8\uB2E4."
-    hasPractice: 1
-    practiceType: 3
-    holdDuration: 0
   - title: "\uCCB4\uB825 (HP)"
     body: "\uB178\uD2B8\uB97C \uB193\uCE58\uBA74 \uCCB4\uB825\uC774 10 \uC904\uC5B4\uB4E4\uC5B4\uC694.
       \uCCB4\uB825\uC774 0\uC774 \uB418\uBA74 \uADF8 \uC790\uB9AC\uC5D0\uC11C \uACE1\uC774
@@ -63189,7 +63181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

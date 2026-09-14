@@ -1,7 +1,0 @@
-Found 2 FanSystems.
-Fan_Logic has fanAnimator: OpenFan
-Prefab is valid? True
-Prefab has 34 renderers.
-Fan_Logic has fanAnimator: OpenFan
-Prefab is valid? True
-Prefab has 34 renderers.

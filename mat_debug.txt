@@ -1,2 +1,0 @@
-MAT_PATH: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat
-MAT_NAME: Lit
