@@ -85,6 +85,18 @@ Assets/Deoksugung_Palace/Meshes/Landscape/SM_Outside_Fence01a_Splines_0.fbx
 # Ignore large files
 *.pptx
 ODC/build_Final/
+/Build/
+/Builds/
+/folder/Uchan2/
+/Assets/Audio/
+/Assets/Deoksugung_Palace/
+/Assets/StreamingAssets/Charts/**/*.wav
+/Assets/StreamingAssets/Charts/**/*.mp3
+/Assets/StreamingAssets/Charts/**/*.mp4
+/Assets/StreamingAssets/Charts/**/*.m4a
+/Assets/StreamingAssets/Charts/**/*.mov
+/Assets/StreamingAssets/Charts/**/*.avi
+/Assets/StreamingAssets/Charts/**/*.mkv
 
 # Local editor output
 /Logs/
