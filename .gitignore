@@ -90,13 +90,24 @@ ODC/build_Final/
 /folder/Uchan2/
 /Assets/Audio/
 /Assets/Deoksugung_Palace/
+/Assets/LIV/Avatar/
+/Assets/Models/
 /Assets/StreamingAssets/Charts/**/*.wav
+/Assets/StreamingAssets/Charts/**/*.wav.meta
 /Assets/StreamingAssets/Charts/**/*.mp3
+/Assets/StreamingAssets/Charts/**/*.mp3.meta
 /Assets/StreamingAssets/Charts/**/*.mp4
+/Assets/StreamingAssets/Charts/**/*.mp4.meta
 /Assets/StreamingAssets/Charts/**/*.m4a
+/Assets/StreamingAssets/Charts/**/*.m4a.meta
 /Assets/StreamingAssets/Charts/**/*.mov
+/Assets/StreamingAssets/Charts/**/*.mov.meta
 /Assets/StreamingAssets/Charts/**/*.avi
+/Assets/StreamingAssets/Charts/**/*.avi.meta
 /Assets/StreamingAssets/Charts/**/*.mkv
+/Assets/StreamingAssets/Charts/**/*.mkv.meta
+/Assets/StreamingAssets/Charts/**/*.zip
+/Assets/StreamingAssets/Charts/**/*.zip.meta
 
 # Local editor output
 /Logs/
